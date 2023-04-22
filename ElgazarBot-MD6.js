@@ -7211,7 +7211,7 @@ case 'غون':
 if (!text) return m.reply(`هلا يحب`)
 break
 
-case 'السلام عليكم': case 'سلام عليكم' : case 'سلام' : case 'السلام عليكم ورحمة الله وبركاته' : 
+case 'سلام': case 'السلام' : 
 if (!text) return m.reply(`وعليكم السلام ورحمة الله وبركاته`)
 break
    
@@ -7232,12 +7232,12 @@ if (!text) return
  m.reply(`بس روح نام😂`)
 break
 
-case 'هاي': case 'هايي' :
+case 'هاي': case 'هايي' : case 'هلو' : case 'هلوو' : case 'هيلو' : 
 if (!text) return
  m.reply(`استرجل وقول السلام عليكم يوااد😒`)
 break
 
-case 'تبن بلدي': 
+case 'تبن': 
 if (!text) return
  m.reply(`تبن بلدك ولا تبن جاموس😂`)
 break
@@ -7252,7 +7252,7 @@ if (!text) return
  m.reply(`اسكت انت ياهطف`)
 break
 
-case 'كلزق': case: 'كلخرا' : case 'كل زق' : 
+case 'كلزق': case: 'كلخرا' : 
 if (!text) return
  m.reply(`ما باكلك😮‍💨`)
 break
@@ -7260,6 +7260,22 @@ break
 case 'اتفق': 
 if (!text) return
  m.reply(`اطلق😎`)
+break
+
+case '🐦':
+if (!text) return m.reply(`انظر بعيد`)
+break
+
+case '🗿':
+if (!text) return m.reply(`وجهك مسطح😂`)
+break
+
+case 'ههه':
+if (!text) return m.reply(`تدوم`)
+break
+
+case '😂': case '🤣' : 
+if (!text) return m.reply(`تدوم يارب😊`)
 break
 
 case 'quotes':
