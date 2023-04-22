@@ -1328,7 +1328,7 @@ break
                 if (!isAdmins) throw mess.admin
 let teks = `══✪〘˙·٠${themeemoji}● منشن للغلابه ●${themeemoji}٠·˙〙✪══
  
- 🌿 *الرساله : ${q ? q : 'توماس عمكم'}*\n\n`
+ 🌿 *الرساله : ${q ? q : 'مفيش رساله'}*\n\n`
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
                 }
@@ -1698,7 +1698,7 @@ await ElgazarBot.sendMessage(i, { video:media,  caption: txt, mentions:participa
              case 'الصاحيين': case 'المتصلين': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
-                    ElgazarBot.sendText(m.chat, '𓆩  *اهوو جبتهم لك😂*  𓆪:\n\n' + online.map(v => '◐ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    ElgazarBot.sendText(m.chat, '𓆩  *قفشتكم يا ورعان👾*  𓆪:\n\n' + online.map(v => '◐ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
 case 'sticker': case 's': case 'ملصق': case 'ستيكر': {
@@ -2014,7 +2014,7 @@ if (!text) return m.reply(`Example : ${prefix + command} Stay jb`)
 *┃🍁القناه :* ${anulay.author.url}
 *┃🎲الوصف :* ${anulay.description}
 *┃🌿 الرابط :* ${anulay.url}
-┃اسم البوت : 📶 𝑬𝑳𝒁𝑨3𝑬𝑴 𝑮𝑶𝑵ْ 📶 
+┃اسم البوت : 📶 𝗕𝗢𝗧 𝘽𝙇𝘼𝘾𝙆 ٍِ۬𝙓ْ 📶 
 
 ┗━━━━━━━━━❊`,
                     footer: botname,
@@ -3218,9 +3218,9 @@ var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/cosplay.json'))
 var hasil = pickRandom(notnot)
 ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'cat':
+case 'قطه':
 m.reply(mess.wait)
-var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
+var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/cat.json'))
 var hasil = pickRandom(notnot)
 ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
@@ -3253,9 +3253,9 @@ var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/kayes.json'))
 var hasil = pickRandom(notnot)
 ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'kpop':
+case 'كيبوب':
 m.reply(mess.wait)
-var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
+var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/kpop.json'))
 var hasil = pickRandom(notnot)
 ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
@@ -3267,9 +3267,9 @@ var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/notnot.json'))
 var hasil = pickRandom(notnot)
 ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'car':
+case 'سياره':
 m.reply(mess.wait)
-var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
+var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/car.json'))
 var hasil = pickRandom(notnot)
 ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
@@ -3518,7 +3518,7 @@ case 'developer': case 'dev': {
 reply(`•CHEEMS BOT DEVELOPER•\n\n\n   ©2021-2022 Xeon Bot Inc.\n\n🦄Dream Guy Xeon\nPm: wa.me/916909137213`)
 }
             break
-case 'owner': case 'المطور': case 'المالك': case 'mod': {
+case 'owner': case 'المطور': case 'توماس': case 'mod': {
 ElgazarBot.sendContact(m.chat, owner, m)
 }
             break
@@ -4204,7 +4204,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nتحذير للاعضاء الغير مشرفين اذا لم تكن مشرف وارسلت اي روابط سوف يتم طردك من الجروب`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nتحذير للاعضاء الي مش مشرفين اي حد منكم هيبعت رابط سيتم طرده`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkAll) return m.reply('معطل بالفعل')
 let off = ntilinkall.indexOf(from)
@@ -4235,7 +4235,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nاي شخص سوف يسب سيتم طرده علي الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nاي حد قليل ادب ويسب سيتم طرده!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiToxic) return m.reply('معطل بالفعل')
 let off = nttoxic.indexOf(from)
@@ -4398,7 +4398,7 @@ case 'dare': case 'تويت':
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هي عيوب سورس الجزار ؟ ", 
+"ما هي عيوب سورس غون ؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -6950,27 +6950,27 @@ case 'الغباء': {
             }
             break
 case 'بوت': {
-            	let lowq = `*البوت متصل يعم متصدعناش🤺:*\n*${runtime(process.uptime())}*`
+            	let lowq = `*البوت متصل ياجدعاااان🙋🏻‍♂️:*\n*${runtime(process.uptime())}*`
                 let buttons = [{ buttonId: 'menu', buttonText: { displayText: 'الاوامر' }, type: 1 }]
                 await ElgazarBot.sendButtonText(m.chat, buttons, lowq, botname, m, {quoted: fkontak})
             	}
             break
 case 'الحب':
-				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @abdallah`)
+				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @hussein`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${teng}%*` }, { quoted: m })
 
 					break
 case 'الكره':
-				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @abdallah`)
+				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @hussein`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${tik}%*` }, { quoted: m })
 					break
 					case 'شخصيتك':
 					if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @abdallah`)
-					const xeony =['زفت','واطي','غبي','مطيع','غلبان','جدع','طيب','حبوب','جميل','حمار','محترم','شرموط','كلب','ورع']
+					const xeony =['زفت','واطي','غبي','مطيع','غلبان','جدع','طيب','حبوب','جميل','حمار','محترم','شرموط','كلب','ورع','جامد','برنس','ابن ناس','جميل','معفن']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
 					ElgazarBot.sendMessage(from, { text: `التحقق من الشخصيه : ${q}\nالاجابه : *${taky}*` }, { quoted: m })
 				     break
@@ -7179,8 +7179,9 @@ const reply = `
 case 'السورس': case 'script': {
 teks = `⋆ تم تطوير وبرمجه هذا السورس •
 ⋆ بواسطه حسين علي •
+⋆ اللقب: توماس •
 ⋆ يمكنك التواصل مع المبرمج عبر التيلجرام ⤌⤈
- https://husseinali_1
+ https://t.me/husseinali_1
 تبعني عبر اليوتيوب ⤌⤈
 https://youtube.com/@MR_ThomasFF
 واشترك وفعل الجرس..🌍🔥`
@@ -7207,59 +7208,20 @@ ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
             
-case 'غون':
-if (!text) return m.reply(`هلا يحب`)
+case 'غون': case 'جيت': 
+if (!text) return m.reply(`هلا وغلا ياحب`)
 break
 
-case 'سلام': case 'السلام' : 
+case 'سلام': case 'السلام': 
 if (!text) return m.reply(`وعليكم السلام ورحمة الله وبركاته`)
 break
-   
-   case 'ملل': case 'مللل' :case 'ملللل': 
-if (!text) return m.reply(`نعرف ف خلينا ساكتين`)
-break                                          
 
-case 'يب':
-if (!text) return m.reply(`استرجل وقول نعم`)
+case 'حسين':
+if (!text) return m.reply(`احلى من قال اسمي♥`)
 break
 
-case 'نعم':
-if (!text) return m.reply(`نعامة ترفسك👻😂`)
-break
-
-case 'سكربت' : case 'sc' : 
-if (!text) return
- m.reply(`بس روح نام😂`)
-break
-
-case 'هاي': case 'هايي' : case 'هلو' : case 'هلوو' : case 'هيلو' : 
-if (!text) return
- m.reply(`استرجل وقول السلام عليكم يوااد😒`)
-break
-
-case 'تبن': 
-if (!text) return
- m.reply(`تبن بلدك ولا تبن جاموس😂`)
-break
-
-case 'حسين': 
-if (!text) return
- m.reply(`احلى من قال اسمي♥`)
-break
-
-case 'اسكت': 
-if (!text) return
- m.reply(`اسكت انت ياهطف`)
-break
-
-case 'كلزق': case: 'كلخرا' : 
-if (!text) return
- m.reply(`ما باكلك😮‍💨`)
-break
-
-case 'اتفق': 
-if (!text) return
- m.reply(`اطلق😎`)
+case 'تبن':
+if (!text) return m.reply(`تبن بلدك ولا تبن جاموس😂`)
 break
 
 case '🐦':
@@ -7267,17 +7229,17 @@ if (!text) return m.reply(`انظر بعيد`)
 break
 
 case '🗿':
-if (!text) return m.reply(`وجهك مسطح😂`)
+if (!text) return m.reply(`وجهك مسطح`)
 break
 
-case 'ههه':
-if (!text) return m.reply(`تدوم`)
+case 'باي':
+if (!text) return m.reply(`في داهيه`)
 break
 
-case '😂': case '🤣' : 
-if (!text) return m.reply(`تدوم يارب😊`)
+case 'script':
+if (!text) return m.reply(`مفيش روح نام`)
 break
-
+                        
 case 'quotes':
 const quotexeony = await axios.get(`https://favqs.com/api/qotd`)
         const textquotes = `*${themeemoji} Quote:* ${quotexeony.data.quote.body}\n\n*${themeemoji} Author:* ${quotexeony.data.quote.author}`
@@ -8192,7 +8154,7 @@ if (args.length == 0) return m.reply(`اكتب ${prefix+command} والعدد\n�
 amount = `${encodeURI(q)}`
 ydd = `${botname}`
 for (let i = 0; i < amount; i++) {
-let teks = `══✪〘 *منشن للخرفان🐑* 〙✪══
+let teks = `══✪〘 *منشن للحلوين* 〙✪══
  ${themeemoji} *الرساله : ${q ? q : 'مفيش رساله'}*\n\n`
 for (let mem of participants) {
 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
@@ -8438,10 +8400,10 @@ throw `Thanks me
 https://youtube.com/@MR_ThomasFF
 
 
-201146121794
+201227179105
 
 
-HUSSEIN ALI
+YoUsSef Al SoLtAn
 
 https://www.instagram.com/youssef.alsoltan_
 `
@@ -8476,7 +8438,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"black ʙᴏт",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8973,7 +8935,7 @@ teks = `• مرحبا ياحب ⤌⤈
 ( .التنصيب )
 ♚ لعرض روابط وصنع بوت مشابه
 ꔹ━━━━━ꔹ
-( .المطور )
+( .توماس )
 ♚ لمعرفه مطور البوت 
 ꔹ━━━━━ꔹ
 ( .انطق )
