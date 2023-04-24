@@ -997,7 +997,7 @@ ${arr.slice(6).join('')}
             state: 'WAITING'
             }
             if (text) room.name = text
-            m.reply('في انتظار لاعب اخر' + (text ? ` اكتب الأمر أدناه ${prefix}${command} ${text}` : ''))
+            m.reply('استنى الاعب التاني' + (text ? `اكتب نفس الامر ${prefix}${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
@@ -1117,7 +1117,7 @@ break
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: '❤️', buttonText: { displayText: 'كن رفيق الروح❤✨' }, type: 1 }
+                        { buttonId: '❤️', buttonText: { displayText: 'كن رفيق روحي♥😊' displayText: 'لا تكن رفيق روحي💔😒' }, type: 1 }
                     ]
                     await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
@@ -1133,7 +1133,7 @@ break
 @${me.split('@')[0]} 💔 @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: '💔', buttonText: { displayText: 'فارقني 💔️' }, type: 1 }
+                        { buttonId: '💔', buttonText: { displayText: 'فارقني 💔️' displayText: 'لااا تفارقني🥹' }, type: 1 }
                     ]
                     await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
@@ -1148,7 +1148,7 @@ break
 「 الي يشوفهم مناسبين لبعض زيي يضغط يب 🤡 」◣`
             let menst = [orang, jodoh]
             let buttons = [
-                        { buttonId: '「 يب هم مناسبين لبعض😂🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' }, type: 1 }
+                        { buttonId: '「 يب هم مناسبين لبعض😂🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' displayText: '「 لا مش مناسبين لبعض😮‍💨 」◣' }, type: 1 }
                     ]
                     await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: menst})
             }
