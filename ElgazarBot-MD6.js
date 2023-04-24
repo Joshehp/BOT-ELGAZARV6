@@ -997,7 +997,7 @@ ${arr.slice(6).join('')}
             state: 'WAITING'
             }
             if (text) room.name = text
-            m.reply('استنى الاعب التاني' + (text ? `اكتب نفس الامر ${prefix}${command} ${text}` : ''))
+            m.reply('في انتظار لاعب اخر' + (text ? ` اكتب الأمر أدناه ${prefix}${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
@@ -1117,7 +1117,7 @@ break
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: '❤️', buttonText: { displayText: 'كن رفيق روحي♥😊' displayText: 'لا تكن رفيق روحي💔😒' }, type: 1 }
+                        { buttonId: '❤️', buttonText: { displayText: 'كن رفيق الروح❤✨' }, type: 1 }
                     ]
                     await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
@@ -1133,7 +1133,7 @@ break
 @${me.split('@')[0]} 💔 @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: '💔', buttonText: { displayText: 'فارقني 💔️' displayText: 'لااا تفارقني🥹' }, type: 1 }
+                        { buttonId: '💔', buttonText: { displayText: 'فارقني 💔️' }, type: 1 }
                     ]
                     await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
@@ -1148,7 +1148,7 @@ break
 「 الي يشوفهم مناسبين لبعض زيي يضغط يب 🤡 」◣`
             let menst = [orang, jodoh]
             let buttons = [
-                        { buttonId: '「 يب هم مناسبين لبعض😂🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' displayText: '「 لا مش مناسبين لبعض😮‍💨 」◣' }, type: 1 }
+                        { buttonId: '「 يب هم مناسبين لبعض😂🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' }, type: 1 }
                     ]
                     await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: menst})
             }
@@ -6970,7 +6970,7 @@ ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالا�
 					break
 					case 'شخصيتك':
 					if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @abdallah`)
-					const xeony =['زفت','واطي','غبي','مطيع','غلبان','جدع','طيب','حبوب','جميل','حمار','محترم','شرموط','كلب','ورع','جامد','برنس','ابن ناس','جميل','معفن']
+					const xeony =['زفت','واطي','غبي','مطيع','غلبان','جدع','طيب','حبوب','جميل','حمار','محترم','شرموط','كلب','ورع','جامد','برنس','ابن ناس','جميل','معفن', 'بياخد فيها','وسخ','منحرف'،'بتاع بنات','انثى','عمه بهجت صابر','كل يوم بيحضر Xx',']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
 					ElgazarBot.sendMessage(from, { text: `التحقق من الشخصيه : ${q}\nالاجابه : *${taky}*` }, { quoted: m })
 				     break
@@ -7236,10 +7236,45 @@ case 'باي':
 if (!text) return m.reply(`في داهيه`)
 break
 
-case 'script':
+case 'سكربت': case 'التنصيب': 
 if (!text) return m.reply(`مفيش روح نام`)
 break
-                        
+   
+case 'ههه': case'هههه': case 'ههههه': case 'هههههه': case 'ههههههه': case 'هههههههه': 
+if (!text) return m.reply(`تدوم الضحكه الحلوة😊`)
+break                                      
+
+case '😂': case '😂😂': case '😂😂😂': case '😂😂😂😂': case '😂😂😂😂😂': 
+if (!text) return m.reply(`تدوم الضحكه الحلوة😍`)
+break
+
+case 'احبك': case 'بحبك': 
+if (!text) return m.reply(`هممم مشكوك فيك😐`)
+break
+
+case 'اممم': case 'امممم': case 'اممممم'
+if (!text) return m.reply(`متل م تفعل البقره:`)
+break
+
+case 'غون كيفك':
+if (!text) return m.reply(`بخير الحمدلله`)
+break 
+ 
+case 'غون وينك':
+if (!text) return m.reply(`بالحمام شو شايفني وين😹`)
+break
+
+case 'تست':
+if (!text) return m.reply(`تستووو🤙🌝`)
+break
+ 
+case 'كيوت':
+if (!text) return m.reply(`كيت كيت😪⛄`)
+break                                         
+case 'كلزق': case 'كلخرا': 
+if (!text) return m.reply(`مين ياكلك انت😐`)
+break
+                            
 case 'quotes':
 const quotexeony = await axios.get(`https://favqs.com/api/qotd`)
         const textquotes = `*${themeemoji} Quote:* ${quotexeony.data.quote.body}\n\n*${themeemoji} Author:* ${quotexeony.data.quote.author}`
