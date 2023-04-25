@@ -29,8 +29,8 @@ global.linkz = "https://youtube.com/@MR_ThomasFF" //your theme url which will be
 global.websitex = "https://telegra.ph/file/25ac27774c8a0420e2649.jpg" //ur website to be displayed
 global.botscript = 'https://youtube.com/@MR_ThomasFF' //script link
 global.themeemoji = "♥" //ur theme emoji
-global.packname = "⍣حقوق البوت غون⍣" //ur sticker watermark packname
-global.author = "⍣لا للسرقه! 🔪👻⍣" //ur sticker watermark author
+global.packname = "حقوق العم غون" //ur sticker watermark packname
+global.author = "BOT GON" //ur sticker watermark author
 global.wm = "☃️𝑬𝑳𝒁𝑨3𝑬𝑴 𝑮𝑶𝑵☃️." //ur watermark
 
 // Other
