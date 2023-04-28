@@ -15,23 +15,23 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.owner = ['201146121794'] //ur owner number
-global.ownername = "العم طوماس☃️" //ur owner name
+global.owner = ['201552130095'] //ur owner number
+global.ownername = "YUICHI" //ur owner name
 global.ytname = "YT: ELZA3EM" //ur yt chanel name
 global.socialm = "GitHub: ELZA3EM" //ur github or insta name
 global.location = "Africa, Egypt, Cairo" //ur location
 
 //bot bomdy 
-global.ownernomer = "201146121794" //ur number
-global.premium = ['201146121794'] //ur premium number
-global.botname = '☃️𝑬𝑳𝒁𝑨3𝑬𝑴 𝑮𝑶𝑵☃️' //ur bot name
+global.ownernomer = "201552130095" //ur number
+global.premium = ['201552130095'] //ur premium number
+global.botname = 'KATAGIRI YUCHI' //ur bot name
 global.linkz = "https://youtube.com/@MR_ThomasFF" //your theme url which will be displayed on whatsapp
 global.websitex = "https://telegra.ph/file/25ac27774c8a0420e2649.jpg" //ur website to be displayed
 global.botscript = 'https://youtube.com/@MR_ThomasFF' //script link
 global.themeemoji = "♥" //ur theme emoji
-global.packname = "حقوق العم غون" //ur sticker watermark packname
-global.author = "BOT GON" //ur sticker watermark author
-global.wm = "☃️𝑬𝑳𝒁𝑨3𝑬𝑴 𝑮𝑶𝑵☃️." //ur watermark
+global.packname = "حقوق يويتشي" //ur sticker watermark packname
+global.author = "BOT YUICHI" //ur sticker watermark author
+global.wm = "KTAGIRI YUICHI." //ur watermark
 
 // Other
 global.sessionName = 'session'
