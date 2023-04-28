@@ -2015,7 +2015,7 @@ if (!text) return m.reply(`Example : ${prefix + command} Stay jb`)
 *┃🎲الوصف :* ${anulay.description}
 *┃🌿 الرابط :* ${anulay.url}
 
-┃اسم البوت : 📶 𝑬𝑳𝒁𝑨3𝑬𝑴 𝑮𝑶𝑵 📶 
+┃اسم البوت : 📶 YUITCHEBOT 📶 
 
 ┗━━━━━━━━━❊`,
                     footer: botname,
@@ -4399,13 +4399,13 @@ case 'dare': case 'تويت':
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هي عيوب سورس غون ؟ ", 
+"ما هي عيوب سورس يويتشي ؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليه غون جدع؟ ", 
- "ليه غون جدع؟ ", 
+"ليه يويتشي جدع؟ ", 
+ "ليه يويتشي جدع؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
@@ -4416,13 +4416,13 @@ case 'dare': case 'تويت':
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس غون ؟؟ ", 
+" هل يعجبك سورس يويتشي ؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس غون ؟ ", 
+"اي رايك في سورس يويتشي ؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
@@ -4710,7 +4710,7 @@ case 'dare': case 'تويت':
   "أجمل شي بحياتك وش هو؟ ",
 ]
               const xeondare = dare[Math.floor(Math.random() * dare.length)]
-              bufferdare = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              bufferdare = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: bufferdare, caption: '*☆ مرحبا بك في قسم تويت*\nꔹ━━━━━ꔹ\n'+ xeondare }, {quoted:m})
               break
                             break
@@ -4814,7 +4814,7 @@ case 'dare': case 'تويت':
 "لو خيروك |  بين مشاركة المنزل مع عائلة من الفئران أو عائلة من الأشخاص المزعجين الفضوليين الذين يتدخلون في كل كبيرة وصغيرة؟ ",
 ]
               const xeontruth = truth[Math.floor(Math.random() * truth.length)]
-              buffertruth = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              buffertruth = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: buffertruth, caption: '*☆ مرحبا بك في لعبة لو خيروك*\nꔹ━━━━━ꔹ\n'+ xeontruth }, {quoted:m})
               break  
               
@@ -4863,7 +4863,7 @@ case 'dare': case 'تويت':
 "‏مامن لسان يستغفر إلا فتحت له الدنيا بما فيها أستغفرك ربي وأتوب إليك "
 ]
               const xeontruth1 = truth1[Math.floor(Math.random() * truth1.length)]
-              buffertruth1 = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              buffertruth1 = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: buffertruth1, caption: '*☆ مرحبا بك في قسم الاذكار*\nꔹ━━━━━ꔹ\n'+ xeontruth1 }, {quoted:m})
               break
        
@@ -4982,10 +4982,10 @@ case 'dare': case 'تويت':
        
        case 'gmscat': case 'كت':
               const gmscat =[
-    "『فيجيتا』","『غوكو』","『شيسوي』","『ايتاشي』","『ناروتو』","『كيلوا』","『لوفي زورو سانجي』","『زاراكي ايزن توسين』","『ناروتو ساسكي كاكاشي』","『مادارا اوبيتو』","『هاشيراما توبيراما』","『انزاي دازاي』","『هاغومورو』","『سوكونا يوجي』","『كاكاشي هاتاكي』","『فوغاكو اوتشيها』","『ناروتو اوزوماكي』","『غارب لوفي ايس ساب』و","『اكاينو اوكيجي كيزارو』","『غون كيلوا』","『اوميني』","『سيلفا زينو نيترو』","『استا يامي』","『كيسكي يوروتشي ايتشيغو』","『ساروتوبي دانزو』","『فوجيتورا』","『نامي روبين』","『هيماواري هينات』","『ستارك جريمجو نيل』","『الوكا』","『شينو كيبا』","『روك لي مايت غاي』","『ايتاشي ساسكي』","『كونان ناغاتو ياهيكو』","『جيرايا تسونادي』","『ساي اينو』","『شينرا』","『ثوركيل ثورفين ثورز』","『اشيلاد』","『لاو ميهوك زورو』","『تيتش ادوارد』","『ناكا اوتشيها』","『هيروزين ساروتوبي』","『مونكي دي لوفي』","『كارين』","『موريا』","『اشورا هامورا』","『انيوشا كاجومي』","『ديدارا ساسوري』","『روجر رايلي』","『تانجيرو نيزيكو』","『زينيتسو اينوسكي』","『زيك ايرين』","『ميكاسا اني』","『ليفاي اكيرمان』","『ايروين مايكي』","『مايكي دراكن』","『هيسوكا』","『ارمين』","『هاتسوني ميكو』","『كورو』","『اوراهارا كيسكي』","『شينوبو كاناو』","『كيسامي اكاشي』","『كوزان』",
+    "『فيجيتا』","『غوكو』","『شيسوي』","『ايتاشي』","『ناروتو』","『كيلوا』","『لوفي زورو سانجي』","『زاراكي ايزن توسين』","『ناروتو ساسكي كاكاشي』","『مادارا اوبيتو』","『هاشيراما توبيراما』","『انزاي دازاي』","『هاغومورو』","『سوكونا يوجي』","『كاكاشي هاتاكي』","『فوغاكو اوتشيها』","『ناروتو اوزوماكي』","『غارب لوفي ايس ساب』و","『اكاينو اوكيجي كيزارو』","『يويتشي كيلوا』","『اوميني』","『سيلفا زينو نيترو』","『استا يامي』","『كيسكي يوروتشي ايتشيغو』","『ساروتوبي دانزو』","『فوجيتورا』","『نامي روبين』","『هيماواري هينات』","『ستارك جريمجو نيل』","『الوكا』","『شينو كيبا』","『روك لي مايت غاي』","『ايتاشي ساسكي』","『كونان ناغاتو ياهيكو』","『جيرايا تسونادي』","『ساي اينو』","『شينرا』","『ثوركيل ثورفين ثورز』","『اشيلاد』","『لاو ميهوك زورو』","『تيتش ادوارد』","『ناكا اوتشيها』","『هيروزين ساروتوبي』","『مونكي دي لوفي』","『كارين』","『موريا』","『اشورا هامورا』","『انيوشا كاجومي』","『ديدارا ساسوري』","『روجر رايلي』","『تانجيرو نيزيكو』","『زينيتسو اينوسكي』","『زيك ايرين』","『ميكاسا اني』","『ليفاي اكيرمان』","『ايروين مايكي』","『مايكي دراكن』","『هيسوكا』","『ارمين』","『هاتسوني ميكو』","『كورو』","『اوراهارا كيسكي』","『شينوبو كاناو』","『كيسامي اكاشي』","『كوزان』",
 ]
               const xeongmscat = gmscat[Math.floor(Math.random() * gmscat.length)]
-              buffergmscat = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              buffergmscat = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: buffergmscat, caption: '*☆ مرحبا بك في كت*\nꔹ━━━━━ꔹ\n'+ xeongmscat }, {quoted:m})
               break
        
@@ -5053,7 +5053,7 @@ case 'dare': case 'تويت':
 " كنت نصحت نفسي ياخويا😹",
 ]
               const xeonisjshsd = isjshsd[Math.floor(Math.random() * isjshsd.length)]
-              bufferisjshsd = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              bufferisjshsd = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: bufferisjshsd, caption: '*☆ اتفضل النصيحه اعمل بيها*\nꔹ━━━━━ꔹ\n'+ xeonisjshsd }, {quoted:m})
               break
        
@@ -5111,7 +5111,7 @@ case 'dare': case 'تويت':
 "دولة واسم بحرف ⤌ ب  ",
 ]
               const xeonidhsisgd = idhsisgd[Math.floor(Math.random() * idhsisgd.length)]
-              bufferidhsisgd = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              bufferidhsisgd = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: bufferidhsisgd, caption: '*☆ مرحبا بك في لعبة الحروف*\nꔹ━━━━━ꔹ\n'+ xeonidhsisgd }, {quoted:m})
               break
        
@@ -5360,7 +5360,7 @@ case 'dare': case 'تويت':
 "سورتان في القرآن الكريم معروفتين باسم الزهراوان، فما هما؟ ",
 ]
               const xeonjtudvu = jtudvu[Math.floor(Math.random() * jtudvu.length)]
-              bufferjtudvu = await getBuffer(`https://telegra.ph/file/25ac27774c8a0420e2649.jpg`)
+              bufferjtudvu = await getBuffer(`https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`)
               Elza3emgonBot.sendMessage(from, { image: bufferjtudvu, caption: '*☆ اتفضل سوال يلا جاوب*\nꔹ━━━━━ꔹ\n'+ xeonjtudvu }, {quoted:m})
               break
        
@@ -6941,7 +6941,7 @@ case 'how': {
             }
             break
 case 'الغباء': {
-            	if (!text) throw `مثال : ${prefix + command} غون`
+            	if (!text) throw `مثال : ${prefix + command} يويتشي`
             	let ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
                 let kah = ra[Math.floor(Math.random() * ra.length)]
                 let jawab = `*الاسم ${text}*\nالاجابه : ${kah}%`
@@ -6950,7 +6950,7 @@ case 'الغباء': {
             }
             break
 case 'بوت': {
-            	let lowq = `*بالمناسبة انا اسمي غون ومتصل حاليا بلاش ازعاج لوسمحت👻:*\n*${runtime(process.uptime())}*`
+            	let lowq = `*بالمناسبة انا اسمي يويتشي ومتصل حاليا بلاش ازعاج لوسمحت👻:*\n*${runtime(process.uptime())}*`
                 let buttons = [{ buttonId: 'menu', buttonText: { displayText: 'الاوامر' }, type: 1 }]
                 await Elza3emgonBot.sendButtonText(m.chat, buttons, lowq, botname, m, {quoted: fkontak})
             	}
@@ -7194,26 +7194,26 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
             break
             
-case 'غون':
+case 'يويتشي':
 if (!text) return m.reply(`هلا يحب`)
 break
 
@@ -7253,7 +7253,7 @@ case 'لا':
 if (!text) return m.reply(`طيب اسكت فهمنا🙂`)
 break 
 
-case 'استماره': case 'استمارة': 
+case 'استماره':
 if (!text) return m.reply(`⧼
 
 *❛ ━━━━━━･❪ ⚡ ❫ ･━━━━━━ ❜*
@@ -7282,7 +7282,7 @@ if (!text) return m.reply(`⧼
 *⁴اذا ما عبيت الاستمارة خلال 48ساعه يتم طردك*
 *❛ ━━━━━━･❪ ⚡ ❫ ･━━━━━━ ❜*
 *توقيع*
-*⚡⧽*`)
+*⚡⧽*`) 
 break
                                          
 case 'quotes':
@@ -8476,19 +8476,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8537,19 +8537,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8622,19 +8622,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8689,19 +8689,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8750,19 +8750,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8802,19 +8802,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8890,19 +8890,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -8947,19 +8947,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -9246,19 +9246,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche ",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -9277,7 +9277,7 @@ teks = `•╗ مرحبا ياعزيزي ⤌⤈
 •╣ مميزات البوت كثيره جدا 
 •╝ ويعمل بجودة فائقه وعاليه
 𓍹————————————𓍻
-𓆩قائمة اوامر سورس غون𓆪 
+𓆩قائمة اوامر سورس يويتشي𓆪 
 𓍹————————————𓍻
 ( .م1 ) ☞ اوامر الاعضاء
 ( .م2 ) ☞ اوامر المالك
@@ -9294,19 +9294,19 @@ let buttons = [
 {buttonId: `owner`, buttonText: {displayText: 'المطور👤'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://telegra.ph/file/25ac27774c8a0420e2649.jpg`},
+image: {url: `https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"𝚃𝙷𝙾𝙼𝙰𝚂 ",
-body: "سورس غون", 
+title:"yuitche",
+body: "سورس يويتشي", 
 thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://telegra.ph/file/25ac27774c8a0420e2649.jpg',
-sourceUrl: "https://telegra.ph/file/25ac27774c8a0420e2649.jpg"
+mediaUrl: 'https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg',
+sourceUrl: "https://telegra.ph/file/7f5dc7e3d7dec8b7f042c.jpg"
 }}
 }
 Elza3emgonBot.sendMessage(m.chat, buttonMessage, { quoted: m })
